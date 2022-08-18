@@ -1,11 +1,11 @@
 import styles from "./styles.module.scss";
-import whiteLogo from "../../../public/assets/whiteLogo.svg";
+import whiteLogo from "../../../public/assets/logo_branco.svg";
 import Image from "next/image";
 
 import { BiMenuAltRight } from "react-icons/bi";
 import { TbBrandWhatsapp } from "react-icons/tb";
 
-import { IconButton } from "../../design/IconButton";
+import { IconButtonPrimary } from "../../design/IconButtonPrimary";
 
 export function Header() {
   return (
@@ -15,8 +15,8 @@ export function Header() {
       </div>
 
       <div className={styles.buttonsContainer}>
-        <IconButton icon={<TbBrandWhatsapp size={100} />} />
-        <IconButton icon={<BiMenuAltRight size={100} />} />
+        <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
+        <IconButtonPrimary icon={<BiMenuAltRight size="1.6rem" />} />
       </div>
     </div>
   );

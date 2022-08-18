@@ -6,7 +6,7 @@ interface IconButtonProps
   icon: ReactNode;
 }
 
-export function IconButton({ icon, ...props }: IconButtonProps) {
+export function IconButtonPrimary({ icon, ...props }: IconButtonProps) {
   return (
     <button className={styles.buttonContainer} {...props}>
       {icon}
