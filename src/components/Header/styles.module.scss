@@ -1,10 +1,36 @@
 .HeaderContainer {
+  position: relative;
+  background: url("/assets/images/header.png");
+  background-repeat: no-repeat;
+  background-position: right 65%;
+  background-size: 1200px;
   display: flex;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 2rem 1.6rem;
+  height: 30vh;
+
+  @media (min-width: 768px) {
+    background-size: 992px;
+    padding: 2rem 3.25rem;
+  }
+
+  @media (min-width: 992px) {
+    background-size: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    background-size: cover;
+    padding-left: calc((110vw - 1200px) / 2);
+    padding-right: calc((110vw - 1200px) / 2);
+  }
 }
 
 .buttonsContainer {
   display: flex;
   gap: 1rem;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
 }

@@ -5,4 +5,9 @@
   align-items: center;
   gap: 1rem;
   transform: translateY(-50%);
+
+  @media (min-width: 1200px) {
+    padding-left: calc((100vw - 1200px) / 2);
+    padding-right: calc((100vw - 1200px) / 2);
+  }
 }
