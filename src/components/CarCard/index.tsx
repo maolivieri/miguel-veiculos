@@ -17,12 +17,12 @@ export function CarCard() {
         <div className={styles.imageWrapper}>
           <Image width={1350} height={885} src={carImage} alt="" />
         </div>
-        <div className={styles.checkboxWrapper}>
+        {/* <div className={styles.checkboxWrapper}>
           <Checkbox
             checked={checked}
             onChange={() => setChecked((prevState) => !prevState)}
           />
-        </div>
+        </div> */}
       </div>
       <div className={styles.main}>
         <p className={styles.name}>Honda City LX</p>
