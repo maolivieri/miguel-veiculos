@@ -6,12 +6,11 @@
   background-size: 1200px;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1.6rem;
   height: 30vh;
 
   @media (min-width: 768px) {
     background-size: 992px;
-    padding: 2rem 3.25rem;
+    // padding: 2rem 3.25rem;
   }
 
   @media (min-width: 992px) {
@@ -20,9 +19,34 @@
 
   @media (min-width: 1200px) {
     background-size: cover;
+    // padding-left: calc((110vw - 1200px) / 2);
+    // padding-right:  calc((110vw - 1200px) / 2);
+  }
+}
+
+.FixedWrapper {
+  padding: 2rem 1.6rem;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    padding: 2rem 3.25rem;
+  }
+
+  @media (min-width: 1200px) {
     padding-left: calc((110vw - 1200px) / 2);
     padding-right: calc((110vw - 1200px) / 2);
   }
+}
+
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: max-height overflow padding 4s ease-in-out;
 }
 
 .buttonsContainer {
