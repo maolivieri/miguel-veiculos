@@ -1,0 +1,81 @@
+.container {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  width: 100vw;
+  display: flex;
+}
+
+.card {
+  margin: auto;
+  background: var(--white);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 0.6rem 0.8rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+
+  //   @media (min-width: 1200px) {
+  //     padding-left: calc((100vw - 1200px) / 2);
+  //     padding-right: calc((100vw - 1200px) / 2);
+  //   }
+}
+
+.hidden {
+  max-height: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: max-height overflow padding 4s ease-in-out;
+}
+
+.iconButton {
+  position: relative;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  border-radius: 15px;
+  background: var(--gray-200);
+  color: var(--primary);
+
+  border-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.settingFlag {
+  position: absolute;
+  top: 0;
+  right: -0.375rem;
+  //   transform: translateX(-50%);
+  transform: translateY(-50%);
+  background: var(--secondary);
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 700;
+
+  @media (min-width: 1200px) {
+    font-size: 0.8rem;
+  }
+}

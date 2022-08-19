@@ -15,9 +15,7 @@ export function Header({ isSearchVisible }: IProps) {
   return (
     <div className={styles.HeaderContainer}>
       <div
-        className={`${styles.FixedWrapper} ${
-          !isSearchVisible && styles.hidden
-        }`}
+        className={`${styles.FixedWrapper} ${isSearchVisible && styles.hidden}`}
       >
         <div>
           <Image width={129} height={48} src={whiteLogo} alt="" />
