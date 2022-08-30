@@ -1,12 +1,16 @@
 .HeaderContainer {
-  position: fixed;
-  padding: 2rem 1.6rem;
+  position: absolute;
+  top: 0;
+  padding: 0.8rem 1.6rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: 999;
+  // min-height: 3rem;
 
   @media (min-width: 768px) {
-    padding: 2rem 3.25rem;
+    padding-left: 3.25rem;
+    padding-right: 3.25rem;
   }
 
   @media (min-width: 1200px) {

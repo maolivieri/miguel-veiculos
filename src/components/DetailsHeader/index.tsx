@@ -11,7 +11,7 @@ import { ReturnButton } from "../../design/ReturnButton";
 
 export function DetailsHeader() {
   return (
-    <div className={styles.HeaderContainer}>
+    <header className={styles.HeaderContainer}>
       <div className={styles.returnButtonWrapper}>
         <ReturnButton />
       </div>
@@ -26,6 +26,6 @@ export function DetailsHeader() {
         <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
         <IconButtonPrimary icon={<BiMenuAltRight size="1.6rem" />} />
       </div>
-    </div>
+    </header>
   );
 }
