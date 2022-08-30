@@ -1,0 +1,47 @@
+.HeaderContainer {
+  position: fixed;
+  padding: 2rem 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    padding: 2rem 3.25rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc((110vw - 1200px) / 2);
+    padding-right: calc((110vw - 1200px) / 2);
+  }
+}
+
+.logoWrapper {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.fullLogoWrapper {
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+
+.returnButtonWrapper {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+}
