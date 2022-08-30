@@ -49,6 +49,11 @@
   transition: max-height overflow padding 4s ease-in-out;
 }
 
+.fixedWrapperCondensed {
+  background-color: var(--gray-200);
+  z-index: 999;
+}
+
 .buttonsContainer {
   display: flex;
   gap: 1rem;
