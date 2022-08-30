@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       <Header isSearchVisible={isSearchVisible} />
       <ReactVisibilitySensor
         partialVisibility
-        offset={{ top: 150 }}
+        offset={{ top: 140 }}
         // minTopValue={300}
         onChange={(isVisible: boolean) => {
           setIsSearchVisible(!isVisible);
