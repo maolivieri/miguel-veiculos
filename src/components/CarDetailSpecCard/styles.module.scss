@@ -1,0 +1,22 @@
+.card {
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--gray-200);
+
+  h6 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary);
+  }
+
+  p {
+    font-size: 0.7rem;
+    margin: 0;
+    margin-top: 0.4rem;
+    color: var(--black);
+  }
+}
