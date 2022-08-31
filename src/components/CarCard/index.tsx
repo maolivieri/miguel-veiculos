@@ -7,15 +7,21 @@ import { useState } from "react";
 
 import { BsGear, BsCalendar4Week } from "react-icons/bs";
 import { GiPathDistance } from "react-icons/gi";
+import { ICar } from "../../types/Car";
+import { formatToCurrency } from "../../lib/formatToCurrency";
 
-export function CarCard() {
+interface IProps {
+  car: ICar;
+}
+
+export function CarCard({ car }: IProps) {
   const [checked, setChecked] = useState(false);
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.imageWrapper}>
-          <Image width={1350} height={885} src={carImage} alt="" />
+          <Image width={1350} height={885} src={car.main_image?.url} alt="" />
         </div>
         {/* <div className={styles.checkboxWrapper}>
           <Checkbox
@@ -25,21 +31,21 @@ export function CarCard() {
         </div> */}
       </div>
       <div className={styles.main}>
-        <p className={styles.name}>Honda City LX</p>
-        <p className={styles.price}>R$65.900,00</p>
+        <p className={styles.name}>{car.modelo}</p>
+        <p className={styles.price}>{formatToCurrency(car.preco)}</p>
       </div>
       <div className={styles.footer}>
         <div className={styles.detail}>
           <BsCalendar4Week size="1rem" />
-          <p>2018 | 2019</p>
+          <p>{car.ano}</p>
         </div>
         <div className={styles.detail}>
           <BsGear size="1rem" />
-          <p>1.6 Flex</p>
+          <p>{car.combustivel}</p>
         </div>
         <div className={styles.detail}>
           <GiPathDistance size="1rem" />
-          <p>29.000 km</p>
+          <p>{car.km}</p>
         </div>
       </div>
     </div>
