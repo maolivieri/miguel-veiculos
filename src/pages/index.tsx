@@ -56,6 +56,7 @@ export const getStaticProps: GetStaticProps = async () => {
           publishedAt
           stage
           tracao
+          finalDaPlaca
           marca {
             nome
             logo {

@@ -23,6 +23,7 @@ export type ICar = {
   cambio: string;
   carroceria: string;
   combustivel: string;
+  finalDaPlaca: string;
   confortos: {
     nome: string;
   }[];
