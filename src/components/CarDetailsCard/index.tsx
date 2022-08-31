@@ -106,7 +106,7 @@ export function CarDetailsCard({ car }: IProps) {
           </div>
         </div>
       </div>
-      <h4>Opcionais</h4>
+      <h4 className={styles.optionalsHeadTitle}>Opcionais</h4>
       <div className={styles.optionalsWrapper}>
         <OptionalCard
           icon={<BsCalendar4Week />}
