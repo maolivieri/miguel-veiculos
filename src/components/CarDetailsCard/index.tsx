@@ -8,6 +8,7 @@ import { BsGear, BsCalendar4Week } from "react-icons/bs";
 import { GiPathDistance } from "react-icons/gi";
 import { ReturnButton } from "../../design/ReturnButton";
 import { CarDetailSpecCard } from "../CarDetailSpecCard";
+import { OptionalCard } from "../OptionalCard";
 
 export function CarDetailsCard() {
   const car = {
@@ -65,6 +66,29 @@ export function CarDetailsCard() {
             <CarDetailSpecCard icon={<BsGear />} title="KM" value="40.000 KM" />
           </div>
         </div>
+      </div>
+      <h4>Opcionais</h4>
+      <div className={styles.optionalsWrapper}>
+        <OptionalCard
+          icon={<BsCalendar4Week />}
+          title="Essenciais"
+          list={["Ar condicionado", "Travas elétricas", "Vidros elétricos"]}
+        />
+        <OptionalCard
+          icon={<BsCalendar4Week />}
+          title="Essenciais"
+          list={["Ar condicionado", "Travas elétricas", "Vidros elétricos"]}
+        />
+        <OptionalCard
+          icon={<BsCalendar4Week />}
+          title="Essenciais"
+          list={["Ar condicionado", "Travas elétricas", "Vidros elétricos"]}
+        />
+        <OptionalCard
+          icon={<BsCalendar4Week />}
+          title="Essenciais"
+          list={["Ar condicionado", "Travas elétricas", "Vidros elétricos"]}
+        />
       </div>
     </main>
   );
