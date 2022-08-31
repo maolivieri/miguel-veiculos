@@ -1,0 +1,15 @@
+.card {
+  background: var(--gray-200);
+  background-image: linear-gradient(var(--gray-200), var(--white));
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+
+  h4 {
+    margin: 0;
+    padding-top: 0.4rem;
+  }
+
+  ul {
+    padding-inline-start: 1rem;
+  }
+}
