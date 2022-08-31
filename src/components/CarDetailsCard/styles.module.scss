@@ -9,9 +9,19 @@
   margin-top: 6rem;
   padding: 2rem;
 
+  header {
+    display: none;
+  }
+
   @media (min-width: 768px) {
     margin-left: 3.25rem;
     margin-right: 3.25rem;
+  }
+
+  @media (min-width: 992px) {
+    header {
+      display: block;
+    }
   }
 
   @media (min-width: 1200px) {
@@ -24,9 +34,26 @@
   // }
 }
 
+.imageAndDetailsWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+  }
+}
+
 .imageWrapper {
-  padding: 0 8rem;
+  padding: 0 2rem;
   // width: 80%;
+  @media (min-width: 768px) {
+    padding: 0 8rem;
+  }
+  @media (min-width: 992px) {
+    padding: 0 1rem;
+  }
 }
 
 .carInfoWrapper {
@@ -62,13 +89,13 @@
 
   .name {
     grid-area: title;
-    font-size: 1.875rem;
+    font-size: 1.7rem;
     font-weight: 800;
     margin: 0;
   }
   .price {
     grid-area: price;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 0;
   }
 }
@@ -80,6 +107,7 @@
   text-transform: uppercase;
   color: var(--white);
   font-weight: 600;
+  font-size: 0.6rem;
 
   .leftFlag {
     position: relative;
@@ -158,5 +186,22 @@
     min-height: 2.25rem;
     display: flex;
     align-items: center;
+    text-align: right;
+  }
+}
+
+.specsWrapper {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
   }
 }
