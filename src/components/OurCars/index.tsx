@@ -1,16 +1,17 @@
+import { ICar } from "../../types/Car";
 import { CarCard } from "../CarCard";
 import styles from "./styles.module.scss";
 
-export function OurCars() {
+interface IProps {
+  cars: ICar[];
+}
+
+export function OurCars({ cars }: IProps) {
   return (
     <div className={styles.container}>
-      <CarCard />
-      <CarCard />
-      <CarCard />
-      <CarCard />
-      <CarCard />
-      <CarCard />
-      <CarCard />
+      {cars.map((car) => (
+        <CarCard key={car.id} car={car} />
+      ))}
     </div>
   );
 }
