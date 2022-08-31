@@ -1,13 +1,27 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
-import { BsGear, BsCalendar4Week } from "react-icons/bs";
-import { GiPathDistance } from "react-icons/gi";
 import { ReturnButton } from "../../design/ReturnButton";
 import { CarDetailSpecCard } from "../CarDetailSpecCard";
 import { OptionalCard } from "../OptionalCard";
 import { ICar } from "../../types/Car";
 import { formatToCurrency } from "../../lib/formatToCurrency";
+
+//icons
+
+import { BsGear, BsCalendar4Week, BsDoorClosed } from "react-icons/bs";
+import { GiCarSeat, GiGearStickPattern, GiPathDistance } from "react-icons/gi";
+import { BiGasPump, BiTransferAlt } from "react-icons/bi";
+import { ImPower } from "react-icons/im";
+import { TbCar } from "react-icons/tb";
+import { FaLeaf } from "react-icons/fa";
+import {
+  AiFillSafetyCertificate,
+  AiOutlineCheckCircle,
+  AiOutlineNumber,
+} from "react-icons/ai";
+import { GrTechnology } from "react-icons/gr";
+import { MdAirlineSeatIndividualSuite } from "react-icons/md";
 
 interface IProps {
   car: ICar;
@@ -55,51 +69,59 @@ export function CarDetailsCard({ car }: IProps) {
             </div>
           </div>
           <div className={styles.specsWrapper}>
-            <CarDetailSpecCard icon={<BsGear />} title="Ano" value={car.ano} />
-            <CarDetailSpecCard icon={<BsGear />} title="KM" value={car.km} />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<BsCalendar4Week />}
+              title="Ano"
+              value={car.ano}
+            />
+            <CarDetailSpecCard
+              icon={<GiPathDistance />}
+              title="KM"
+              value={car.km}
+            />
+            <CarDetailSpecCard
+              icon={<BiGasPump />}
               title="Combustível"
               value={car.combustivel}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<ImPower />}
               title="Potência"
               value={car.potencia}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<GiGearStickPattern />}
               title="Cambio"
               value={car.cambio}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<FaLeaf />}
               title="Autonomia"
               value={`${car.autonomia} Km/L`}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<BiTransferAlt />}
               title="Tração"
               value={car.tracao}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<BsDoorClosed />}
               title="Portas"
               value={`${car.portas}`}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<AiOutlineNumber />}
               title="Placa"
               value={car.finalDaPlaca}
             />
             <CarDetailSpecCard icon={<BsGear />} title="Cor" value={car.cor} />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<GiCarSeat />}
               title="Assentos"
               value={`${car.assentos}`}
             />
             <CarDetailSpecCard
-              icon={<BsGear />}
+              icon={<TbCar />}
               title="Carroceri"
               value={car.carroceria}
             />
@@ -109,22 +131,22 @@ export function CarDetailsCard({ car }: IProps) {
       <h4 className={styles.optionalsHeadTitle}>Opcionais</h4>
       <div className={styles.optionalsWrapper}>
         <OptionalCard
-          icon={<BsCalendar4Week />}
+          icon={<AiOutlineCheckCircle />}
           title="Essenciais"
           list={car.essenciais}
         />
         <OptionalCard
-          icon={<BsCalendar4Week />}
+          icon={<MdAirlineSeatIndividualSuite />}
           title="Conforto"
           list={car.confortos}
         />
         <OptionalCard
-          icon={<BsCalendar4Week />}
+          icon={<GrTechnology />}
           title="Tecnologia"
           list={car.tecnologias}
         />
         <OptionalCard
-          icon={<BsCalendar4Week />}
+          icon={<AiFillSafetyCertificate />}
           title="Segurança"
           list={car.segurancas}
         />
