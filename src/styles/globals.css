@@ -24,30 +24,39 @@ body {
 @media (max-width: 1200px) {
   html,
   body {
-    font-size: 94%;
+    font-size: 100%;
   }
 }
 
 @media (max-width: 992px) {
   html,
   body {
-    font-size: 84%;
+    font-size: 87.5%;
   }
 }
 
 @media (max-width: 768px) {
   html,
   body {
-    font-size: 68%;
+    font-size: 81.25%;
   }
 }
 
 @media (max-width: 576px) {
   html,
   body {
-    font-size: 62.5%;
+    font-size: 75%;
   }
 }
+
+/* 
+* 16 = 100
+* 15 = 93.75
+* 14 = 87.5
+* 13 = 81.25
+* 12 = 75
+* 11 = 68.75
+*/
 
 a {
   color: inherit;
