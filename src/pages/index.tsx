@@ -16,6 +16,7 @@ const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [isSearchVisible, setIsSearchVisible] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
 
   const cars: ICar[] = carsProps;
 
@@ -30,7 +31,7 @@ const Home: NextPage = ({
           setIsSearchVisible(!isVisible);
         }}
       >
-        <HomeSearch />
+        <HomeSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </ReactVisibilitySensor>
       <OurCars cars={cars} />
       <HomeFloatingMenu isSearchVisible={isSearchVisible} />

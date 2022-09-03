@@ -7,9 +7,18 @@
   border-radius: 10px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   padding: 0.4rem 0.4rem;
+
+  input {
+    border: 0;
+    outline: 0;
+  }
+  input:focus {
+    outline: none !important;
+  }
 }
 
 .buttonContainer {
+  margin-left: 1rem;
   width: 2.6rem;
   aspect-ratio: 1;
   display: flex;
@@ -39,4 +48,12 @@
   :focus-visible {
     outline: none !important;
   }
+}
+
+.clearButton {
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }

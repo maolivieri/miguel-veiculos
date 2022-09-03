@@ -3,13 +3,14 @@
   background: url("/assets/images/header.png");
   background-repeat: no-repeat;
   background-position: right 65%;
-  background-size: 1200px;
+  background-size: 992 px;
   display: flex;
   justify-content: space-between;
-  height: 30vh;
+  height: 40vh;
 
   @media (min-width: 768px) {
     background-size: 992px;
+    height: 30vh;
     // padding: 2rem 3.25rem;
   }
 
