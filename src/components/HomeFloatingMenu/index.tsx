@@ -24,25 +24,25 @@ export function HomeFloatingMenu({ isSearchVisible }: IProps) {
           onClick={() => setIsActive(0)}
           className={`${styles.iconButton} ${isActive === 0 && styles.active}`}
         >
-          <IoGridOutline size="1.2rem" />
+          <IoGridOutline size="1.5rem" />
         </button>
         <button
           onClick={() => setIsActive(1)}
           className={`${styles.iconButton} ${isActive === 1 && styles.active}`}
         >
-          <IoListOutline size="1.2rem" />
+          <IoListOutline size="1.5rem" />
         </button>
         <button
           onClick={() => setIsActive(2)}
           className={`${styles.iconButton} ${isActive === 2 && styles.active}`}
         >
-          <BiSortDown size="1.2rem" />
+          <BiSortDown size="1.5rem" />
         </button>
         <button
           onClick={() => setIsActive(3)}
           className={`${styles.iconButton} ${isActive === 3 && styles.active}`}
         >
-          <IoSearch size="1.2rem" />
+          <IoSearch size="1.5rem" />
         </button>
         <button
           onClick={() => setIsActive(4)}
@@ -51,7 +51,7 @@ export function HomeFloatingMenu({ isSearchVisible }: IProps) {
           {settingsActiveCount > 0 && (
             <div className={styles.settingFlag}>{settingsActiveCount}</div>
           )}
-          <IoOptions size="1.2rem" />
+          <IoOptions size="1.6rem" />
         </button>
       </div>
     </div>
