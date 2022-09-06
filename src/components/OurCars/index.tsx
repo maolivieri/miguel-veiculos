@@ -8,10 +8,13 @@ interface IProps {
 
 export function OurCars({ cars }: IProps) {
   return (
-    <div className={styles.container}>
-      {cars.map((car) => (
-        <CarCard key={car.id} car={car} />
-      ))}
-    </div>
+    <>
+      <h3 className={styles.title}>Nossos Veículos</h3>
+      <div className={styles.container}>
+        {cars.map((car) => (
+          <CarCard key={car.id} car={car} />
+        ))}
+      </div>
+    </>
   );
 }

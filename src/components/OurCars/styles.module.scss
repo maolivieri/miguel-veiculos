@@ -23,3 +23,21 @@
     grid-template-columns: 4fr 4fr 4fr; //12columns
   }
 }
+
+.title {
+  font-size: 1.3rem;
+  margin: 0.5rem 1rem 0.3rem 1.6rem;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    margin-left: 3.25rem;
+  }
+
+  @media (min-width: 992px) {
+    margin-left: calc((110vw - 992px) / 2);
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: calc((110vw - 1200px) / 2);
+  }
+}
