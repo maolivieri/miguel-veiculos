@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
-import carImage from "../../../public/assets/images/honda_civic.png";
-import { Checkbox } from "../../design/Checkbox";
+import car_placeholder from "../../../public/assets/images/car-placeholder.png";
+// import { Checkbox } from "../../design/Checkbox";
 import { useState } from "react";
 
 import { BsGear, BsCalendar4Week } from "react-icons/bs";
@@ -34,7 +34,12 @@ export function CarCard({ car }: IProps) {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.imageWrapper}>
-            <Image width={1350} height={885} src={car.main_image?.url} alt="" />
+            <Image
+              width={1350}
+              height={885}
+              src={car.main_image?.url || car_placeholder}
+              alt=""
+            />
           </div>
           {/* <div className={styles.checkboxWrapper}>
           <Checkbox
