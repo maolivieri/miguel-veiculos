@@ -23,8 +23,8 @@ export function DetailsHeader() {
       </div>
 
       <div className={styles.buttonsContainer}>
-        <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
-        <IconButtonPrimary icon={<BiMenuAltRight size="1.6rem" />} />
+        <IconButtonPrimary icon={<TbBrandWhatsapp size="1.8rem" />} />
+        <IconButtonPrimary icon={<BiMenuAltRight size="1.8rem" />} />
       </div>
     </header>
   );
