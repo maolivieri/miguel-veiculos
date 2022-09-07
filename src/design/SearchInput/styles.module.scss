@@ -15,6 +15,11 @@
   input:focus {
     outline: none !important;
   }
+
+  @media (min-width: 992px) {
+    height: 3rem;
+    padding: 0.1rem 0.4rem;
+  }
 }
 
 .buttonContainer {
@@ -34,6 +39,11 @@
   font-style: inherit;
   font-weight: inherit;
   line-height: inherit;
+
+  @media (min-width: 992px) {
+    width: 2.4rem;
+    border-radius: 0.6rem;
+  }
 }
 
 .input {
