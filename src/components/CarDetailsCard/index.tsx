@@ -6,6 +6,7 @@ import { CarDetailSpecCard } from "../CarDetailSpecCard";
 import { OptionalCard } from "../OptionalCard";
 import { ICar } from "../../types/Car";
 import { formatToCurrency } from "../../lib/formatToCurrency";
+import car_placeholder from "../../../public/assets/images/car-placeholder.png";
 
 //icons
 
@@ -35,7 +36,12 @@ export function CarDetailsCard({ car }: IProps) {
       </header>
       <div className={styles.imageAndDetailsWrapper}>
         <div className={styles.imageWrapper}>
-          <Image width={1350} height={885} src={car.main_image?.url} alt="" />
+          <Image
+            width={1350}
+            height={885}
+            src={car.main_image?.url || car_placeholder}
+            alt=""
+          />
         </div>
         <div>
           <div className={styles.carInfoWrapper}>
