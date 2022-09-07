@@ -1,16 +1,28 @@
 .HeaderContainer {
-  position: absolute;
+  position: fixed;
   top: 0;
   padding: 0.8rem 1.6rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   z-index: 999;
+  background-color: var(--white);
+  margin: 0;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(7.8px);
+  -webkit-backdrop-filter: blur(7.8px);
+
   // min-height: 3rem;
 
   @media (min-width: 768px) {
     padding-left: 3.25rem;
     padding-right: 3.25rem;
+  }
+
+  @media (min-width: 992px) {
+    background-color: var(--gray-200);
   }
 
   @media (min-width: 1200px) {
