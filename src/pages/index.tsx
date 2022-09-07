@@ -9,6 +9,7 @@ import { HomeFloatingMenu } from "../components/HomeFloatingMenu";
 import { HomeSearch } from "../components/HomeSearch";
 import { Layout } from "../components/Layout";
 import { OurCars } from "../components/OurCars";
+import { SideDrawer } from "../components/SideDrawer";
 import { client } from "../lib/apollo";
 import { ICar } from "../types/Car";
 
@@ -27,6 +28,7 @@ const Home: NextPage = ({
 
   return (
     <Layout>
+      <SideDrawer />
       <Header isSearchVisible={isSearchVisible} />
       <ReactVisibilitySensor
         partialVisibility

@@ -7,12 +7,16 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { TbBrandWhatsapp } from "react-icons/tb";
 
 import { IconButtonPrimary } from "../../design/IconButtonPrimary";
+import { useContext } from "react";
+import { SystemContext } from "../../context/systemContext";
 
 interface IProps {
   isSearchVisible: boolean;
 }
 
 export function Header({ isSearchVisible }: IProps) {
+  const { toggleDrawer } = useContext(SystemContext);
+
   return (
     <div className={styles.HeaderContainer}>
       <div
@@ -37,7 +41,9 @@ export function Header({ isSearchVisible }: IProps) {
           >
             <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
           </a>
-          <IconButtonPrimary icon={<BiMenuAltRight size="1.6rem" />} />
+          <div onClick={toggleDrawer}>
+            <IconButtonPrimary icon={<BiMenuAltRight size="1.6rem" />} />
+          </div>
         </div>
       </div>
     </div>

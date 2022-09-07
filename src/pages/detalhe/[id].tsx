@@ -6,17 +6,18 @@ import styles from "./styles.module.scss";
 
 import { ICar } from "../../types/Car";
 import { GetStaticProps } from "next";
+import { SideDrawer } from "../../components/SideDrawer";
 
 interface IProps {
   carProps: ICar;
 }
 
-// export default function CarDetailsPage({ carProps }: IProps) {
 export default function CarDetailsPage({ carProps }: IProps) {
   const car = carProps;
 
   return (
     <div className={styles.container}>
+      <SideDrawer />
       <DetailsHeader />
       {!!car && <CarDetailsCard car={car} />}
     </div>

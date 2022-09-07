@@ -8,8 +8,12 @@ import { TbBrandWhatsapp } from "react-icons/tb";
 
 import { IconButtonPrimary } from "../../design/IconButtonPrimary";
 import { ReturnButton } from "../../design/ReturnButton";
+import { useContext } from "react";
+import { SystemContext } from "../../context/systemContext";
 
 export function DetailsHeader() {
+  const { toggleDrawer } = useContext(SystemContext);
+
   return (
     <header className={styles.HeaderContainer}>
       <div className={styles.returnButtonWrapper}>
@@ -29,7 +33,9 @@ export function DetailsHeader() {
         >
           <IconButtonPrimary icon={<TbBrandWhatsapp size="1.8rem" />} />
         </a>
-        <IconButtonPrimary icon={<BiMenuAltRight size="1.8rem" />} />
+        <div onClick={toggleDrawer}>
+          <IconButtonPrimary icon={<BiMenuAltRight size="1.8rem" />} />
+        </div>
       </div>
     </header>
   );
