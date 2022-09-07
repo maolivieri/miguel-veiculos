@@ -19,6 +19,11 @@ const Home: NextPage = ({
   const [searchValue, setSearchValue] = useState("");
 
   const cars: ICar[] = carsProps;
+  const carsFiltered = cars.filter(
+    (car) =>
+      car.modelo.toLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+      car.marca.nome.toLowerCase().includes(searchValue.toLocaleLowerCase())
+  );
 
   return (
     <Layout>
@@ -33,7 +38,7 @@ const Home: NextPage = ({
       >
         <HomeSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </ReactVisibilitySensor>
-      <OurCars cars={cars} />
+      <OurCars cars={carsFiltered} />
       <HomeFloatingMenu isSearchVisible={isSearchVisible} />
     </Layout>
   );
