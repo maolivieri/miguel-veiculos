@@ -7,6 +7,7 @@
   border-radius: 20px;
   margin: 1rem 1rem;
   padding-top: 7rem;
+  background: var(--white);
 
   header {
     display: none;
@@ -62,33 +63,55 @@
 
 .carInfoWrapper {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: auto auto 1fr;
+  grid-gap: 0.5rem;
+  grid-template-columns: auto 1fr;
   grid-auto-rows: minmax(min-content, max-content);
   align-items: center;
   grid-template-areas:
-    "logo title title"
-    "logo price flags";
+    "logo title"
+    "logo price";
 
   @media (min-width: 768px) {
     grid-template-areas:
-      "logo title title"
-      "logo price flags";
+      "logo title"
+      "logo price";
+  }
+
+  @media (min-width: 992px) {
+    grid-gap: 0.5rem;
+    grid-template-areas:
+      "logo title"
+      "logo price";
   }
 
   @media (min-width: 1200px) {
+    grid-gap: 0.8rem;
     grid-template-areas:
-      "logo title title"
-      "logo price flags";
+      "logo title"
+      "logo price";
   }
 
   .brandImageWrapper {
     grid-area: logo;
-    width: 7rem;
+    width: 3rem;
     background-color: var(--gray-200);
-    border-radius: 10px;
-    // max-height: 100%;
-    // aspect-ratio: 1;
+    border-radius: 0.8rem;
+    align-self: flex-start;
+    margin-right: 0.8rem;
+
+    @media (min-width: 768px) {
+      width: 4rem;
+    }
+    @media (min-width: 1200px) {
+      width: 5rem;
+    }
+  }
+
+  .priceAndFlagsWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .name {
@@ -97,9 +120,12 @@
     font-weight: 800;
     margin: 0;
   }
+
   .price {
     grid-area: price;
     font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
     margin: 0;
   }
 }
@@ -123,6 +149,7 @@
     min-height: 2.25rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 
     &:after {
       content: "";
@@ -146,6 +173,7 @@
     min-height: 2.25rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 
     &:after {
       content: "";
@@ -169,6 +197,7 @@
     min-height: 2.25rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 
     &:after {
       content: "";
@@ -191,6 +220,7 @@
     display: flex;
     align-items: center;
     text-align: right;
+    white-space: nowrap;
   }
 }
 
@@ -198,7 +228,8 @@
   padding-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -212,10 +243,14 @@
 
 .optionalsWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
 
   @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

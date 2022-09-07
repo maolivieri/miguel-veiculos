@@ -29,6 +29,8 @@ interface IProps {
 }
 
 export function CarDetailsCard({ car }: IProps) {
+  console.log(car);
+
   return (
     <main className={styles.mainContainer}>
       <header>
@@ -54,24 +56,26 @@ export function CarDetailsCard({ car }: IProps) {
               />
             </div>
             <h3 className={styles.name}>{car.modelo}</h3>
-            <p className={styles.price}>{formatToCurrency(car.preco)}</p>
-            <div className={styles.flagsWrapper}>
-              {(car.opcional_esquerdo || car.opcional_direito) && (
-                <div
-                  className={
-                    car.opcional_esquerdo && car.opcional_direito
-                      ? styles.leftFlag
-                      : car.opcional_esquerdo && !car.opcional_direito
-                      ? styles.leftFlagOnly
-                      : styles.leftFlagInverted
-                  }
-                >
-                  {car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}
-                </div>
-              )}
-              {car.opcional_esquerdo && car.opcional_direito && (
-                <div className={styles.rightFlag}>TANQUE CHEIO</div>
-              )}
+            <div className={styles.priceAndFlagsWrapper}>
+              <p className={styles.price}>{formatToCurrency(car.preco)}</p>
+              <div className={styles.flagsWrapper}>
+                {(car.opcional_esquerdo || car.opcional_direito) && (
+                  <div
+                    className={
+                      car.opcional_esquerdo && car.opcional_direito
+                        ? styles.leftFlag
+                        : car.opcional_esquerdo && !car.opcional_direito
+                        ? styles.leftFlagOnly
+                        : styles.leftFlagInverted
+                    }
+                  >
+                    {car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}
+                  </div>
+                )}
+                {car.opcional_esquerdo && car.opcional_direito && (
+                  <div className={styles.rightFlag}>TANQUE CHEIO</div>
+                )}
+              </div>
             </div>
           </div>
           <div className={styles.specsWrapper}>
@@ -128,7 +132,7 @@ export function CarDetailsCard({ car }: IProps) {
             />
             <CarDetailSpecCard
               icon={<TbCar />}
-              title="Carroceri"
+              title="Carroceria"
               value={car.carroceria}
             />
           </div>
