@@ -31,7 +31,12 @@ export function Header({ isSearchVisible }: IProps) {
         </div>
 
         <div className={styles.buttonsContainer}>
-          <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
+          <a
+            aria-label="Contato pelo WhatsApp"
+            href="https://wa.me/5519971568585"
+          >
+            <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
+          </a>
           <IconButtonPrimary icon={<BiMenuAltRight size="1.6rem" />} />
         </div>
       </div>

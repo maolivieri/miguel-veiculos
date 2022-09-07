@@ -23,7 +23,12 @@ export function DetailsHeader() {
       </div>
 
       <div className={styles.buttonsContainer}>
-        <IconButtonPrimary icon={<TbBrandWhatsapp size="1.8rem" />} />
+        <a
+          aria-label="Contato pelo WhatsApp"
+          href="https://wa.me/5519971568585"
+        >
+          <IconButtonPrimary icon={<TbBrandWhatsapp size="1.8rem" />} />
+        </a>
         <IconButtonPrimary icon={<BiMenuAltRight size="1.8rem" />} />
       </div>
     </header>
