@@ -1,0 +1,64 @@
+.container {
+  min-height: 100vh;
+
+  .header {
+    // position: relative;
+    height: 50vh;
+    background: var(--white);
+
+    .mapWrapper {
+      width: 100vw;
+      height: 50vh;
+    }
+  }
+
+  .main {
+    z-index: 100;
+    height: 55vh;
+    position: relative;
+
+    @media (min-width: 992px) {
+      width: 100%;
+      padding-left: calc((110vw - 1200px) / 2);
+      padding-right: calc((110vw - 1200px) / 2);
+    }
+  }
+
+  .card {
+    width: 80vw;
+    margin: -5vh auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .pageTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .copyTitle {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin: 0;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+  .copy {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    margin: 0;
+    // margin-bottom: 1.4rem;
+  }
+}
+.map {
+  width: 100%;
+  height: 50vh;
+  // top: 0;
+  z-index: 1;
+}
