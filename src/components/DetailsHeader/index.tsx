@@ -10,6 +10,7 @@ import { IconButtonPrimary } from "../../design/IconButtonPrimary";
 import { ReturnButton } from "../../design/ReturnButton";
 import { useContext } from "react";
 import { SystemContext } from "../../context/systemContext";
+import Link from "next/link";
 
 export function DetailsHeader() {
   const { toggleDrawer } = useContext(SystemContext);
@@ -19,12 +20,16 @@ export function DetailsHeader() {
       <div className={styles.returnButtonWrapper}>
         <ReturnButton />
       </div>
-      <div className={styles.logoWrapper}>
-        <Image width={48} height={48} src={iconLogo} alt="" />
-      </div>
-      <div className={styles.fullLogoWrapper}>
-        <Image width={129} height={48} src={greenLogo} alt="" />
-      </div>
+      <Link href="/" passHref>
+        <a className={styles.logoWrapper}>
+          <Image width={48} height={48} src={iconLogo} alt="" />
+        </a>
+      </Link>
+      <Link href="/" passHref>
+        <a className={styles.fullLogoWrapper}>
+          <Image width={129} height={48} src={greenLogo} alt="" />
+        </a>
+      </Link>
 
       <div className={styles.buttonsContainer}>
         <a

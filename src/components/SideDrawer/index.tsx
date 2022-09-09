@@ -1,10 +1,5 @@
-import {
-  AnchorHTMLAttributes,
-  HTMLAttributes,
-  ReactComponentElement,
-  ReactNode,
-  useContext,
-} from "react";
+import { ReactNode, useContext } from "react";
+import Link, { LinkProps } from "next/link";
 import { BsInfoCircle, BsTelephone } from "react-icons/bs";
 import {
   FaFacebookF,
@@ -24,17 +19,35 @@ interface LineItemProps {
   target?: string;
 }
 
-const LineItem = ({ icon, text, to, target = "_blank" }: LineItemProps) => {
-  return (
-    <a className={styles.lineItem} href={to} target={target}>
-      <div>{icon}</div>
-      <p>{text}</p>
-    </a>
-  );
-};
+interface LinkItemProps extends LinkProps {
+  icon: ReactNode;
+  text: string;
+  href: string;
+}
 
 export function SideDrawer() {
   const { isDrawerOpen, toggleDrawer } = useContext(SystemContext);
+
+  const LinkItem = ({ icon, text, href, ...props }: LinkItemProps) => {
+    return (
+      <Link href={href} passHref {...props}>
+        <a className={styles.lineItem} onClick={toggleDrawer}>
+          <div>{icon}</div>
+          <p>{text}</p>
+        </a>
+      </Link>
+    );
+  };
+
+  const LineItem = ({ icon, text, to, target = "_blank" }: LineItemProps) => {
+    return (
+      <a className={styles.lineItem} href={to} target={target}>
+        <div>{icon}</div>
+        <p>{text}</p>
+      </a>
+    );
+  };
+
   return (
     <div className={`${styles.container} ${isDrawerOpen && styles.openDrawer}`}>
       <nav className={`${styles.nav} ${isDrawerOpen && styles.openNavDrawer}`}>
@@ -67,13 +80,21 @@ export function SideDrawer() {
         </div>
         <div className={styles.abouttWrapper}>
           <h3 className={styles.lineTitle}>Miguel Veículos</h3>
-          <LineItem icon={<BsInfoCircle />} text="Sobre nós" to="" />
-          <LineItem
+          <LinkItem
+            icon={<BsInfoCircle />}
+            text="Sobre nós"
+            href="/sobre-nos"
+          />
+          <LinkItem
             icon={<MdOutlineStorefront />}
             text="Conheça a loja"
-            to=""
+            href="/nossa-loja"
           />
-          <LineItem icon={<MdOutlineLocationOn />} text="Localização" to="" />
+          <LinkItem
+            icon={<MdOutlineLocationOn />}
+            text="Localização"
+            href="/localizacao"
+          />
         </div>
       </nav>
       <div className={styles.dropShaddow} onClick={toggleDrawer} />

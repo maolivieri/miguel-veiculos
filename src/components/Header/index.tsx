@@ -9,6 +9,7 @@ import { TbBrandWhatsapp } from "react-icons/tb";
 import { IconButtonPrimary } from "../../design/IconButtonPrimary";
 import { useContext } from "react";
 import { SystemContext } from "../../context/systemContext";
+import Link from "next/link";
 
 interface IProps {
   isSearchVisible: boolean;
@@ -25,14 +26,16 @@ export function Header({ isSearchVisible }: IProps) {
           isSearchVisible && styles.fixedWrapperCondensed
         }`}
       >
-        <div>
-          <Image
-            width={129}
-            height={48}
-            src={isSearchVisible ? greenLogo : whiteLogo}
-            alt=""
-          />
-        </div>
+        <Link href="/" passHref>
+          <a>
+            <Image
+              width={129}
+              height={48}
+              src={isSearchVisible ? greenLogo : whiteLogo}
+              alt=""
+            />
+          </a>
+        </Link>
 
         <div className={styles.buttonsContainer}>
           <a
