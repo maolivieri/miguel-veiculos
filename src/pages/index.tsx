@@ -3,6 +3,7 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { useState } from "react";
 
 import ReactVisibilitySensor from "react-visibility-sensor";
+import { FiltersModal } from "../components/FiltersModal";
 
 import { Header } from "../components/Header";
 import { HomeFloatingMenu } from "../components/HomeFloatingMenu";
@@ -42,6 +43,7 @@ const Home: NextPage = ({
       </ReactVisibilitySensor>
       <OurCars cars={carsFiltered} />
       <HomeFloatingMenu isSearchVisible={isSearchVisible} />
+      <FiltersModal />
     </Layout>
   );
 };
