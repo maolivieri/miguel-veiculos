@@ -11,16 +11,19 @@ export default function OurStore() {
       </header>
       <main className={styles.main}>
         <div className={styles.card}>
-          <h1 className={styles.title}>Nossa Loja</h1>
-          <p className={styles.copy}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis
-            massa sed elementum tempus egestas sed sed. Est velit egestas dui id
-            ornare arcu odio ut. Posuere morbi leo urna molestie at. Vitae
-            auctor eu augue ut lectus arcu bibendum at varius. Vitae auctor eu
-            augue ut lectus arcu bibendum at varius.
-          </p>
-          {/* <p>…</p> */}
+          <div className={styles.cardImage}></div>
+          <div className={styles.cardContent}>
+            <h1 className={styles.title}>Nossa Loja</h1>
+            <p className={styles.copy}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis
+              massa sed elementum tempus egestas sed sed. Est velit egestas dui
+              id ornare arcu odio ut. Posuere morbi leo urna molestie at. Vitae
+              auctor eu augue ut lectus arcu bibendum at varius. Vitae auctor eu
+              augue ut lectus arcu bibendum at varius.
+            </p>
+            {/* <p>…</p> */}
+          </div>
         </div>
       </main>
     </div>
