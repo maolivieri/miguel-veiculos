@@ -1,0 +1,28 @@
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 30vh;
+  background: var(--white);
+  z-index: 2;
+}
+
+.FixedWrapper {
+  padding: 2rem 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    padding: 2rem 3.25rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc((110vw - 1200px) / 2);
+    padding-right: calc((110vw - 1200px) / 2);
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+}
