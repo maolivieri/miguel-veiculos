@@ -6,18 +6,22 @@ export default function OurStore() {
   return (
     <div className={styles.container}>
       <SideDrawer />
-      <SubPagesHeader />
-      <main>
-        <h1>Nossa Loja</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis
-          massa sed elementum tempus egestas sed sed. Est velit egestas dui id
-          ornare arcu odio ut. Posuere morbi leo urna molestie at. Vitae auctor
-          eu augue ut lectus arcu bibendum at varius. Vitae auctor eu augue ut
-          lectus arcu bibendum at varius.
-        </p>
-        {/* <p>…</p> */}
+      <header className={styles.header}>
+        <SubPagesHeader />
+      </header>
+      <main className={styles.main}>
+        <div className={styles.card}>
+          <h1 className={styles.title}>Nossa Loja</h1>
+          <p className={styles.copy}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis
+            massa sed elementum tempus egestas sed sed. Est velit egestas dui id
+            ornare arcu odio ut. Posuere morbi leo urna molestie at. Vitae
+            auctor eu augue ut lectus arcu bibendum at varius. Vitae auctor eu
+            augue ut lectus arcu bibendum at varius.
+          </p>
+          {/* <p>…</p> */}
+        </div>
       </main>
     </div>
   );
