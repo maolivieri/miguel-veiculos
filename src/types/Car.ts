@@ -1,6 +1,6 @@
 export type ICar = {
   id: string;
-  km: string;
+  km: number;
   modelo: string;
   opcional_direito: boolean;
   opcional_esquerdo: boolean;
@@ -17,17 +17,29 @@ export type ICar = {
   main_image: {
     url: string;
   };
-  ano: string;
+  anoFabricacao: number;
+  anoModelo: number;
   assentos: number;
   autonomia: number;
-  cambio: string;
-  carroceria: string;
-  combustivel: string;
+  cambio: {
+    nome: string;
+  };
+  carroceria: {
+    nome: string;
+  };
+  combustivel: {
+    nome: string;
+  };
   finalDaPlaca: string;
   confortos: {
     nome: string;
   }[];
-  cor: string;
+  cor: {
+    nome: string;
+    cor: {
+      hex: string;
+    };
+  };
   essenciais: {
     nome: string;
   }[];
@@ -40,6 +52,9 @@ export type ICar = {
     nome: string;
   }[];
   tecnologias: {
+    nome: string;
+  }[];
+  documentacoes: {
     nome: string;
   }[];
 };

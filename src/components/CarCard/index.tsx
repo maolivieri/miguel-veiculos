@@ -55,15 +55,15 @@ export function CarCard({ car }: IProps) {
         <div className={styles.footer}>
           <div className={styles.detail}>
             <BsCalendar4Week size="1rem" />
-            <p>{car.ano}</p>
+            <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
           </div>
           <div className={styles.detail}>
             <BsGear size="1rem" />
-            <p>{car.combustivel}</p>
+            <p>{car.combustivel?.nome}</p>
           </div>
           <div className={styles.detail}>
             <GiPathDistance size="1rem" />
-            <p>{car.km}</p>
+            <p>{`${car.km} KM`}</p>
           </div>
         </div>
       </div>

@@ -76,16 +76,28 @@ export const getStaticProps: GetStaticProps = async () => {
           main_image {
             url
           }
-          ano
+          anoFabricacao
+          anoModelo
           assentos
           autonomia
-          cambio
-          carroceria
-          combustivel
+          cambio {
+            nome
+          }
+          carroceria {
+            nome
+          }
+          combustivel {
+            nome
+          }
           confortos {
             nome
           }
-          cor
+          cor {
+            nome
+            cor {
+              hex
+            }
+          }
           essenciais {
             nome
           }
@@ -101,6 +113,9 @@ export const getStaticProps: GetStaticProps = async () => {
             nome
           }
           tecnologias {
+            nome
+          }
+          documentacoes {
             nome
           }
         }

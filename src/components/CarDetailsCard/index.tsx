@@ -52,7 +52,7 @@ export function CarDetailsCard({ car }: IProps) {
                 width={150}
                 height={150}
                 src={car.marca?.logo?.url}
-                alt={`logotipo da marca ${car.marca.nome}`}
+                alt={`logotipo da marca ${car.marca?.nome}`}
               />
             </div>
             <h3 className={styles.name}>{car.modelo}</h3>
@@ -82,17 +82,17 @@ export function CarDetailsCard({ car }: IProps) {
             <CarDetailSpecCard
               icon={<BsCalendar4Week />}
               title="Ano"
-              value={car.ano}
+              value={`${car.anoFabricacao} | ${car.anoModelo}`}
             />
             <CarDetailSpecCard
               icon={<GiPathDistance />}
               title="KM"
-              value={car.km}
+              value={`${car.km} KM`}
             />
             <CarDetailSpecCard
               icon={<BiGasPump />}
               title="Combustível"
-              value={car.combustivel}
+              value={car.combustivel?.nome}
             />
             <CarDetailSpecCard
               icon={<ImPower />}
@@ -102,7 +102,7 @@ export function CarDetailsCard({ car }: IProps) {
             <CarDetailSpecCard
               icon={<GiGearStickPattern />}
               title="Cambio"
-              value={car.cambio}
+              value={car.cambio?.nome}
             />
             <CarDetailSpecCard
               icon={<FaLeaf />}
@@ -124,7 +124,11 @@ export function CarDetailsCard({ car }: IProps) {
               title="Placa"
               value={car.finalDaPlaca}
             />
-            <CarDetailSpecCard icon={<BsGear />} title="Cor" value={car.cor} />
+            <CarDetailSpecCard
+              icon={<BsGear />}
+              title="Cor"
+              value={car.cor?.nome}
+            />
             <CarDetailSpecCard
               icon={<GiCarSeat />}
               title="Assentos"
@@ -133,7 +137,7 @@ export function CarDetailsCard({ car }: IProps) {
             <CarDetailSpecCard
               icon={<TbCar />}
               title="Carroceria"
-              value={car.carroceria}
+              value={car.carroceria?.nome}
             />
           </div>
         </div>
