@@ -1,0 +1,39 @@
+.hiddenModal {
+  position: fixed;
+  overflow: hidden;
+  max-height: 0;
+  min-height: 0;
+  height: 0;
+}
+
+.filtersModalContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  transition: background-color 3s ease;
+  // overflow: hidden;
+}
+
+.main {
+  background: var(--white);
+  border-radius: 10px 10px 0 0;
+  padding: 1.3rem;
+
+  transition: height 1.5s;
+}
+
+.dropShaddow {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  transition: background-color 3s ease;
+  // backdrop-filter: blur(0.8px);
+  // -webkit-backdrop-filter: blur(0.8px);
+}

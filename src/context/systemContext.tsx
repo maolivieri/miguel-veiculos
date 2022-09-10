@@ -6,17 +6,14 @@ import {
   useState,
 } from "react";
 
-type FilterOptions =
+export type FilterOptions =
   | "preco"
   | "ano"
   | "km"
   | "carroceria"
-  | "essenciais"
-  | "conforto"
-  | "tecnologia"
-  | "seguranca"
+  | "opcionais"
   | "marca"
-  | " cambio"
+  | "cambio"
   | "combustivel"
   | "cor"
   | "documentacao"
@@ -68,29 +65,31 @@ interface Props {
 //cambio
 //carroceria
 //combustivel
+export const initialFiltersValue = {
+  minPrice: null,
+  maxPrice: null,
+  startYear: null,
+  endYear: null,
+  kmStart: null,
+  kmEnd: null,
+  carrocerias: [],
+  marcas: [],
+  cambios: [],
+  combustíveis: [],
+  cores: [],
+  conforto: [],
+  tecnologia: [],
+  seguranca: [],
+  essenciais: [],
+  documentacoes: [],
+};
 
 export const SystemContextProvider = ({ children }: Props) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isFiltersOpen, setIsFilterOpen] = useState(false);
   const [focusedFilter, setFocusedFilter] = useState<FilterOptions>(null);
-  const [activeFilters, setActiveFilters] = useState<Filters>({
-    minPrice: null,
-    maxPrice: null,
-    startYear: null,
-    endYear: null,
-    kmStart: null,
-    kmEnd: null,
-    carrocerias: [],
-    marcas: [],
-    cambios: [],
-    combustíveis: [],
-    cores: [],
-    conforto: [],
-    tecnologia: [],
-    seguranca: [],
-    essenciais: [],
-    documentacoes: [],
-  });
+  const [activeFilters, setActiveFilters] =
+    useState<Filters>(initialFiltersValue);
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
