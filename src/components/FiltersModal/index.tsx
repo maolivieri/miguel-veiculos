@@ -1,25 +1,32 @@
 import { useContext } from "react";
-import { BiGasPump, BiTransferAlt } from "react-icons/bi";
-import { HiOutlineClipboardList } from "react-icons/hi";
-import {
-  BsCalendar4Week,
-  BsCheck2Square,
-  BsDoorClosed,
-  BsGear,
-} from "react-icons/bs";
-import { ImPower } from "react-icons/im";
-import { TbCurrencyDollar } from "react-icons/tb";
+import styles from "./styles.module.scss";
 import {
   initialFiltersValue,
   SystemContext,
 } from "../../context/systemContext";
+
+//Components
 import { ButtonPrimary } from "../../design/ButtonPrimary";
 import { ButtonSecondary } from "../../design/ButtonSecondary";
 import { FilterItem } from "./components/FilterItem";
 import { FilterWrapper } from "./components/FilterWrapper";
-import styles from "./styles.module.scss";
-import { GiGearStickPattern, GiPathDistance } from "react-icons/gi";
-import { AiOutlineCar } from "react-icons/ai";
+
+//Icons
+import {
+  IconAno,
+  IconCambio,
+  IconCarroceria,
+  IconCombustivel,
+  IconCor,
+  IconDocumentation,
+  IconKM,
+  IconMarca,
+  IconOpcionais,
+  IconPortas,
+  IconPotencia,
+  IconPreco,
+  IconTracao,
+} from "../../design/Icons";
 
 export function FiltersModal() {
   const { isFiltersOpen, toggleFilters, setActiveFilters } =
@@ -36,74 +43,64 @@ export function FiltersModal() {
         <h4 className={styles.title}>Filtros</h4>
         <div className={styles.filterWrapper}>
           <FilterItem
-            icon={<TbCurrencyDollar />}
+            icon={<IconPreco />}
             title="Preço"
             total={1}
             filter="preco"
           />
+          <FilterItem icon={<IconAno />} title="Ano" total={1} filter="ano" />
+          <FilterItem icon={<IconKM />} title="KM" total={1} filter="km" />
           <FilterItem
-            icon={<BsCalendar4Week />}
-            title="Ano"
-            total={1}
-            filter="ano"
-          />
-          <FilterItem
-            icon={<GiPathDistance />}
-            title="KM"
-            total={1}
-            filter="km"
-          />
-          <FilterItem
-            icon={<TbCurrencyDollar />}
+            icon={<IconCarroceria />}
             title="Carroceria"
             total={1}
             filter="carroceria"
           />
           <FilterItem
-            icon={<BsCheck2Square />}
+            icon={<IconOpcionais />}
             title="Opcionais"
             total={1}
             filter="opcionais"
           />
           <FilterItem
-            icon={<AiOutlineCar />}
+            icon={<IconMarca />}
             title="Marca"
             total={1}
             filter="marca"
           />
           <FilterItem
-            icon={<GiGearStickPattern />}
+            icon={<IconCambio />}
             title="Câmbio"
             total={1}
             filter="cambio"
           />
           <FilterItem
-            icon={<BiGasPump />}
+            icon={<IconCombustivel />}
             title="Combustível"
             total={1}
             filter="combustivel"
           />
-          <FilterItem icon={<BsGear />} title="Cor" total={1} filter="cor" />
+          <FilterItem icon={<IconCor />} title="Cor" total={1} filter="cor" />
           <FilterItem
-            icon={<HiOutlineClipboardList />}
+            icon={<IconDocumentation />}
             title="Documentação"
             total={1}
             filter="documentacao"
           />
           <FilterItem
-            icon={<ImPower />}
+            icon={<IconPotencia />}
             title="Potência"
             total={1}
             filter="potencia"
           />
           <FilterItem
-            icon={<BsDoorClosed />}
+            icon={<IconPortas />}
             title="Portas"
             total={1}
             filter="portas"
           />
           <FilterItem
-            icon={<BiTransferAlt />}
+            icon={<IconTracao />}
             title="Tração"
             total={1}
             filter="tracao"

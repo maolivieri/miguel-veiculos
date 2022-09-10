@@ -1,15 +1,13 @@
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./styles.module.scss";
 
 import car_placeholder from "../../../public/assets/images/car-placeholder.png";
-// import { Checkbox } from "../../design/Checkbox";
-import { useState } from "react";
 
-import { BsGear, BsCalendar4Week } from "react-icons/bs";
-import { GiPathDistance } from "react-icons/gi";
 import { ICar } from "../../types/Car";
 import { formatToCurrency } from "../../lib/formatToCurrency";
-import Link from "next/link";
+import { IconAno, IconCombustivel, IconKM } from "../../design/Icons";
 
 interface IProps {
   car: ICar;
@@ -17,13 +15,6 @@ interface IProps {
 
 export function CarCard({ car }: IProps) {
   const [checked, setChecked] = useState(false);
-
-  //   <Link
-  //   href={{
-  //     pathname: '/to-your-other-page',
-  //     query: data // the data
-  //   }}
-  // >
 
   return (
     <Link
@@ -54,15 +45,15 @@ export function CarCard({ car }: IProps) {
         </div>
         <div className={styles.footer}>
           <div className={styles.detail}>
-            <BsCalendar4Week size="1rem" />
+            <IconAno size="1rem" />
             <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
           </div>
           <div className={styles.detail}>
-            <BsGear size="1rem" />
+            <IconCombustivel size="1rem" />
             <p>{car.combustivel?.nome}</p>
           </div>
           <div className={styles.detail}>
-            <GiPathDistance size="1rem" />
+            <IconKM size="1rem" />
             <p>{`${car.km} KM`}</p>
           </div>
         </div>
