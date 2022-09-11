@@ -1,0 +1,60 @@
+.mainTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+
+  h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin: 0;
+  }
+}
+
+.filterWrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 30vh;
+}
+
+.filterRange {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 0;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    margin: 0;
+  }
+
+  h6 {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0.4rem 0;
+  }
+}
+
+.listTitle {
+  color: var(--secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 3rem 1rem;
+}

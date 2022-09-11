@@ -1,0 +1,77 @@
+.SliderContainer {
+  width: 100%;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+  position: absolute;
+}
+
+.slider__track {
+  background-color: var(--gray-400);
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: red;
+  z-index: 2;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: calc(100% - 2rem);
+  outline: none;
+}
+
+.thumbleft {
+  z-index: 3;
+}
+
+.thumbright {
+  z-index: 4;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  //   margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  //   margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}

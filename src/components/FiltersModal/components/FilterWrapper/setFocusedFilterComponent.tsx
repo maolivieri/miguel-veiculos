@@ -1,9 +1,10 @@
 import { FilterOptions } from "../../../../context/systemContext";
+import { PriceFilter } from "../PriceFilter";
 
 export function SetFocusedFilterComponent(focusedFilter: FilterOptions) {
   switch (focusedFilter) {
     case "preco":
-      return <div>preco</div>;
+      return <PriceFilter />;
     case "ano":
       return <div>ano</div>;
     case "km":
