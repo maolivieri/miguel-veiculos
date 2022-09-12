@@ -17,7 +17,6 @@ export function FilterItem({ icon, title, total, filter }: IProps) {
   const { focusedFilter, setFocusedFilter } = useContext(SystemContext);
 
   const handleAddClick = () => {
-    console.log("clicked");
     if (focusedFilter !== filter) {
       setFocusedFilter(filter);
     } else {
@@ -38,7 +37,7 @@ export function FilterItem({ icon, title, total, filter }: IProps) {
           </div>
         )}
         <div className={styles.add} onClick={handleAddClick}>
-          <MdAdd size="1.5rem" />
+          <MdAdd size='1.5rem' />
         </div>
       </div>
     </div>

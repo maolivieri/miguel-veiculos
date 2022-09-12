@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import styles from "./styles.module.scss";
 
 export function RangeSlider() {
@@ -9,17 +8,21 @@ export function RangeSlider() {
   return (
     <div className={styles.SliderContainer}>
       <input
-        type="range"
-        min="0"
-        max="1000"
+        title='left'
+        type='range'
+        min='0'
+        max='1000'
+        aria-label='range-slider2'
         // value={value1}
-        onChange={(e) => console.log(e)}
+        onChange={(e) => console.log(e.target.value)}
         className={`${styles.thumb} ${styles.thumbleft}`}
       />
       <input
-        type="range"
-        min="0"
-        max="1000"
+        title='rigth'
+        aria-label='range-slider2'
+        type='range'
+        min='0'
+        max='1000'
         className={`${styles.thumb} ${styles.thumbright}`}
       />
       <div className={styles.slider}>

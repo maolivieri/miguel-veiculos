@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { SystemContext } from "../../../../context/systemContext";
-import { SetFocusedFilterComponent } from "./SetFocusedFilterComponent";
+import { SetFocusedFilterComponent } from "./setFocusedFilterComponent";
 import styles from "./styles.module.scss";
 
 export function FilterWrapper() {
