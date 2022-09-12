@@ -1,12 +1,13 @@
 import { FilterOptions } from "../../../../context/systemContext";
-import { PriceFilter } from "../PriceFilter";
+import { FilterAno } from "../FilterAno";
+import { FilterPreco } from "../FilterPreco";
 
 export function SetFocusedFilterComponent(focusedFilter: FilterOptions) {
   switch (focusedFilter) {
     case "preco":
-      return <PriceFilter />;
+      return <FilterPreco />;
     case "ano":
-      return <div>ano</div>;
+      return <FilterAno />;
     case "km":
       return <div>km</div>;
     case "carroceria":
