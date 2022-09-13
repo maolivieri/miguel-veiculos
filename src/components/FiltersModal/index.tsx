@@ -87,7 +87,7 @@ export function FiltersModal() {
             total={1}
             filter="documentacao"
           />
-          <FilterItem
+          {/* <FilterItem
             icon={<IconPotencia />}
             title="Potência"
             total={1}
@@ -104,7 +104,7 @@ export function FiltersModal() {
             title="Tração"
             total={1}
             filter="tracao"
-          />
+          /> */}
         </div>
         <div className={styles.buttonsWrapper}>
           <ButtonPrimary text="Filtrar" onClick={toggleFilters} />
