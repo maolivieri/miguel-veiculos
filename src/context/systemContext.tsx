@@ -32,7 +32,7 @@ interface Filters {
   carrocerias: string[];
   marcas: string[];
   cambios: string[];
-  combustíveis: string[];
+  combustiveis: string[];
   cores: string[];
   essenciais: string[];
   conforto: string[];
@@ -75,7 +75,7 @@ export const initialFiltersValue = {
   carrocerias: [],
   marcas: [],
   cambios: [],
-  combustíveis: [],
+  combustiveis: [],
   cores: [],
   conforto: [],
   tecnologia: [],
