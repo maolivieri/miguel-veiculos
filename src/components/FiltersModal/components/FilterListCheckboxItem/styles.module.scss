@@ -1,0 +1,31 @@
+.listItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0.2rem 0;
+}
+
+.name {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 0.8rem;
+  padding-right: 1.5rem;
+
+  .count {
+    margin: 0;
+    padding: 0;
+    color: var(--secondary);
+  }
+
+  .checkboxWrapper {
+    width: 1.5rem;
+    aspect-ratio: 1;
+  }
+}
