@@ -22,7 +22,7 @@ export type FilterOptions =
   | "tracao"
   | null;
 
-interface Filters {
+export interface Filters {
   minPrice: number | null;
   maxPrice: number | null;
   startYear: number | null;

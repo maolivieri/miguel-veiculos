@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { FiltersModal } from "../components/FiltersModal";
@@ -11,22 +11,32 @@ import { HomeSearch } from "../components/HomeSearch";
 import { Layout } from "../components/Layout";
 import { OurCars } from "../components/OurCars";
 import { SideDrawer } from "../components/SideDrawer";
+import { SystemContext } from "../context/systemContext";
 import { client } from "../lib/apollo";
+import { filterCar } from "../lib/filterCars";
 import { ICar } from "../types/Car";
 
 const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { activeFilters } = useContext(SystemContext);
+
   const [isSearchVisible, setIsSearchVisible] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
   const cars: ICar[] = carsProps;
-  const carsFiltered = cars.filter(
+
+  const carsSearchResult = cars.filter(
     (car) =>
       car.modelo.toLowerCase().includes(searchValue.toLocaleLowerCase()) ||
       car.marca.nome.toLowerCase().includes(searchValue.toLocaleLowerCase())
   );
 
+  const carsFiltered = carsSearchResult.filter((car) =>
+    filterCar(car, activeFilters)
+  );
+
+  const carsArray = carsFiltered;
   return (
     <Layout>
       <SideDrawer />
@@ -41,7 +51,7 @@ const Home: NextPage = ({
       >
         <HomeSearch searchValue={searchValue} setSearchValue={setSearchValue} />
       </ReactVisibilitySensor>
-      <OurCars cars={carsFiltered} />
+      <OurCars cars={carsArray} />
       <HomeFloatingMenu isSearchVisible={isSearchVisible} />
       <FiltersModal />
     </Layout>
