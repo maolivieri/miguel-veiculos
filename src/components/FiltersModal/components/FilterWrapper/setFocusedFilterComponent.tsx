@@ -3,6 +3,7 @@ import { FilterAno } from "../Filters/FilterAno";
 import { FilterCambio } from "../Filters/FilterCambio";
 import { FilterCarroceria } from "../Filters/FilterCarroceria";
 import { FilterCombustivel } from "../Filters/FilterCombustivel";
+import { FilterCor } from "../Filters/FilterCor";
 import { FilterDocumentacao } from "../Filters/FilterDocumentacao";
 import { FilterKM } from "../Filters/FilterKM";
 import { FilterMarcas } from "../Filters/FilterMarcas";
@@ -28,7 +29,7 @@ export function SetFocusedFilterComponent(focusedFilter: FilterOptions) {
     case "combustivel":
       return <FilterCombustivel />;
     case "cor":
-      return <div>cor</div>;
+      return <FilterCor />;
     case "documentacao":
       return <FilterDocumentacao />;
     case "potencia":
