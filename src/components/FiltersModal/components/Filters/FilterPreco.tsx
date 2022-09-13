@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { ButtonPrimary } from "../../../design/ButtonPrimary";
-import { IconPreco } from "../../../design/Icons";
-import { RangeSlider } from "../../../design/RangeSlider";
+import { SystemContext } from "../../../../context/systemContext";
+import { ButtonPrimary } from "../../../../design/ButtonPrimary";
+import { ButtonSecondary } from "../../../../design/ButtonSecondary";
+import { IconPreco } from "../../../../design/Icons";
+import { RangeSlider } from "../../../../design/RangeSlider";
+import { formatToCurrency } from "../../../../lib/formatToCurrency";
 import styles from "./styles.module.scss";
-import { formatToCurrency } from "../../../lib/formatToCurrency";
-import { SystemContext } from "../../../context/systemContext";
-import { ButtonSecondary } from "../../../design/ButtonSecondary";
 
 export function FilterPreco() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =

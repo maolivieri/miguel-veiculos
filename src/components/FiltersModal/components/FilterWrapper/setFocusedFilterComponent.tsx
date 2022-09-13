@@ -1,6 +1,7 @@
 import { FilterOptions } from "../../../../context/systemContext";
-import { FilterAno } from "../FilterAno";
-import { FilterPreco } from "../FilterPreco";
+import { FilterAno } from "../Filters/FilterAno";
+import { FilterKM } from "../Filters/FilterKM";
+import { FilterPreco } from "../Filters/FilterPreco";
 
 export function SetFocusedFilterComponent(focusedFilter: FilterOptions) {
   switch (focusedFilter) {
@@ -9,7 +10,7 @@ export function SetFocusedFilterComponent(focusedFilter: FilterOptions) {
     case "ano":
       return <FilterAno />;
     case "km":
-      return <div>km</div>;
+      return <FilterKM />;
     case "carroceria":
       return <div>carroceria</div>;
     case "opcionais":

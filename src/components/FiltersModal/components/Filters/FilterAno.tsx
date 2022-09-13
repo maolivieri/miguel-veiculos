@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import { ButtonPrimary } from "../../../design/ButtonPrimary";
-import { IconPreco } from "../../../design/Icons";
-import { RangeSlider } from "../../../design/RangeSlider";
+import { ButtonPrimary } from "../../../../design/ButtonPrimary";
+import { IconAno } from "../../../../design/Icons";
+import { RangeSlider } from "../../../../design/RangeSlider";
 import styles from "./styles.module.scss";
-import { SystemContext } from "../../../context/systemContext";
-import { ButtonSecondary } from "../../../design/ButtonSecondary";
+import { SystemContext } from "../../../../context/systemContext";
+import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 
 export function FilterAno() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
@@ -36,8 +36,8 @@ export function FilterAno() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
-        <IconPreco size="1.4rem" />
-        <h3>Preço</h3>
+        <IconAno size="1.4rem" />
+        <h3>Ano</h3>
       </div>
       <div className={styles.filterWrapper}>
         <div className={styles.filterRange}>
