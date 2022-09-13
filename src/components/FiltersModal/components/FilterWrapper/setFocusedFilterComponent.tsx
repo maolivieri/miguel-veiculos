@@ -1,6 +1,9 @@
 import { FilterOptions } from "../../../../context/systemContext";
 import { FilterAno } from "../Filters/FilterAno";
+import { FilterCambio } from "../Filters/FilterCambio";
 import { FilterCarroceria } from "../Filters/FilterCarroceria";
+import { FilterCombustivel } from "../Filters/FilterCombustivel";
+import { FilterDocumentacao } from "../Filters/FilterDocumentacao";
 import { FilterKM } from "../Filters/FilterKM";
 import { FilterMarcas } from "../Filters/FilterMarcas";
 import { FilterPreco } from "../Filters/FilterPreco";
@@ -20,13 +23,13 @@ export function SetFocusedFilterComponent(focusedFilter: FilterOptions) {
     case "marca":
       return <FilterMarcas />;
     case "cambio":
-      return <div>cambio</div>;
+      return <FilterCambio />;
     case "combustivel":
-      return <div>combustivel</div>;
+      return <FilterCombustivel />;
     case "cor":
       return <div>cor</div>;
     case "documentacao":
-      return <div>documentacao</div>;
+      return <FilterDocumentacao />;
     case "potencia":
       return <div>potencia</div>;
     case "portas":
