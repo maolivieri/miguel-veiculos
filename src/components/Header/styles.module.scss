@@ -1,6 +1,30 @@
 .HeaderContainer {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 40vh;
+
+  @media (min-width: 768px) {
+    height: 30vh;
+  }
+
+  @media (min-width: 1200px) {
+    height: 40vh;
+  }
+}
+
+.image1 {
   background: url("/assets/images/header.png");
+}
+
+.image2 {
+  background: url("/assets/images/header_alt.png");
+}
+
+.HeaderImageBox {
+  position: absolute;
+  inset: 0;
+  // background: url("/assets/images/header.png");
   background-repeat: no-repeat;
   background-position: right 65%;
   background-size: 992px;
@@ -31,14 +55,34 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
+  margin: 0;
 
   @media (min-width: 768px) {
     padding: 2rem 3.25rem;
   }
 
+  @media (min-width: 992px) {
+    padding-left: calc((110vw - 992px) / 2);
+    padding-right: calc((110vw - 992px) / 2);
+    // grid-template-columns: 4fr 4fr 4fr; //12columns
+  }
+
   @media (min-width: 1200px) {
-    padding-left: calc((110vw - 1200px) / 2);
-    padding-right: calc((110vw - 1200px) / 2);
+    padding-left: calc((88vw - 1200px) / 2);
+    padding-right: calc((88vw - 1200px) / 2);
+  }
+}
+
+.logoWrapper {
+  width: 10rem;
+
+  @media (min-width: 992px) {
+    width: 11rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 2rem;
+    width: 12rem;
   }
 }
 
@@ -58,6 +102,10 @@
 .buttonsContainer {
   display: flex;
   gap: 1rem;
+
+  @media (min-width: 1200px) {
+    margin-right: 2rem;
+  }
 }
 
 .backgroundImage {
