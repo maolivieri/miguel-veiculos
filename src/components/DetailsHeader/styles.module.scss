@@ -22,12 +22,29 @@
   }
 
   @media (min-width: 992px) {
-    background-color: var(--gray-200);
+    // background-color: var(--gray-200);
   }
 
+  // @media (min-width: 1200px) {
+  //   padding-left: calc((110vw - 1200px) / 2);
+  //   padding-right: calc((110vw - 1200px) / 2);
+  // }
+
   @media (min-width: 1200px) {
-    padding-left: calc((110vw - 1200px) / 2);
-    padding-right: calc((110vw - 1200px) / 2);
+    // margin-left: calc((110vw - 1500px) / 2);
+    // margin-right: calc((110vw - 1500px) / 2);
+    padding-left: calc((95vw - 1100px) / 2);
+    padding-right: calc((95vw - 1100px) / 2);
+  }
+
+  @media (min-width: 1300px) {
+    padding-left: calc((90vw - 1100px) / 2);
+    padding-right: calc((90vw - 1100px) / 2);
+  }
+
+  @media (min-width: 1400px) {
+    padding-left: calc((86vw - 1100px) / 2);
+    padding-right: calc((86vw - 1100px) / 2);
   }
 }
 
@@ -45,9 +62,11 @@
 
 .fullLogoWrapper {
   display: none;
+  margin-left: 2rem;
 
   @media (min-width: 992px) {
     display: block;
+    width: 10rem;
   }
 }
 
@@ -60,4 +79,8 @@
 .buttonsContainer {
   display: flex;
   gap: 1rem;
+
+  @media (min-width: 992px) {
+    margin-right: 2rem;
+  }
 }

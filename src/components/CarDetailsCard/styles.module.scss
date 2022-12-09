@@ -30,8 +30,20 @@
   }
 
   @media (min-width: 1200px) {
-    margin-left: calc((110vw - 1500px) / 2);
-    margin-right: calc((110vw - 1500px) / 2);
+    // margin-left: calc((110vw - 1500px) / 2);
+    // margin-right: calc((110vw - 1500px) / 2);
+    margin-left: calc((95vw - 1100px) / 2);
+    margin-right: calc((95vw - 1100px) / 2);
+  }
+
+  @media (min-width: 1300px) {
+    margin-left: calc((90vw - 1100px) / 2);
+    margin-right: calc((90vw - 1100px) / 2);
+  }
+
+  @media (min-width: 1400px) {
+    margin-left: calc((86vw - 1100px) / 2);
+    margin-right: calc((86vw - 1100px) / 2);
   }
 
   // header {
@@ -44,7 +56,12 @@
   grid-template-columns: 1fr;
   gap: 2rem;
 
-  @media (min-width: 992px) {
+  // @media (min-width: 992px) {
+  //   grid-template-columns: 7fr 5fr;
+  //   gap: 4rem;
+  // }
+
+  @media (min-width: 1200px) {
     grid-template-columns: 7fr 5fr;
     gap: 4rem;
   }
@@ -56,7 +73,12 @@
   @media (min-width: 768px) {
     padding: 0 8rem;
   }
-  @media (min-width: 992px) {
+
+  // @media (min-width: 992px) {
+  //   padding: 0 1rem;
+  // }
+
+  @media (min-width: 1200px) {
     padding: 0 1rem;
   }
 }
@@ -77,12 +99,12 @@
       "logo price";
   }
 
-  @media (min-width: 992px) {
-    grid-gap: 0.5rem;
-    grid-template-areas:
-      "logo title"
-      "logo price";
-  }
+  // @media (min-width: 992px) {
+  //   grid-gap: 0.5rem;
+  //   grid-template-areas:
+  //     "logo title"
+  //     "logo price";
+  // }
 
   @media (min-width: 1200px) {
     grid-gap: 0.8rem;
@@ -235,7 +257,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 
-  @media (min-width: 992px) {
+  // @media (min-width: 992px) {
+  //   grid-template-columns: 1fr 1fr 1fr 1fr;
+  //   gap: 1rem;
+  // }
+
+  @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
   }
@@ -250,7 +277,11 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (min-width: 992px) {
+  // @media (min-width: 992px) {
+  //   grid-template-columns: 1fr 1fr 1fr 1fr;
+  // }
+
+  @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
@@ -260,7 +291,12 @@
   color: var(--secondary);
   margin-top: 3rem;
 
-  @media (min-width: 992px) {
+  // @media (min-width: 992px) {
+  //   grid-template-columns: 1fr 1fr 1fr 1fr;
+  //   padding-top: 1rem;
+  // }
+
+  @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding-top: 1rem;
   }

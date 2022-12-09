@@ -27,7 +27,13 @@ export function DetailsHeader() {
       </Link>
       <Link href="/" passHref>
         <a className={styles.fullLogoWrapper}>
-          <Image width={129} height={48} src={greenLogo} alt="" />
+          <Image
+            width={129}
+            height={48}
+            src={greenLogo}
+            alt=""
+            layout="responsive"
+          />
         </a>
       </Link>
 
