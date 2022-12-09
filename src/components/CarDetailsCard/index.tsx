@@ -84,69 +84,69 @@ export function CarDetailsCard({ car }: IProps) {
           </div>
           <div className={styles.specsWrapper}>
             <CarDetailSpecCard
-              icon={<IconAno />}
+              icon={<IconAno size={12} />}
               title="Ano"
               value={`${car.anoFabricacao} | ${car.anoModelo}`}
             />
             <CarDetailSpecCard
-              icon={<IconKM />}
+              icon={<IconKM size={12} />}
               title="KM"
               value={`${car.km} KM`}
             />
             <CarDetailSpecCard
-              icon={<IconCombustivel />}
+              icon={<IconCombustivel size={12} />}
               title="Combustível"
               value={car.combustivel?.nome}
             />
             <CarDetailSpecCard
-              icon={<IconPotencia />}
+              icon={<IconPotencia size={12} />}
               title="Potência"
               value={car.potencia}
             />
             <CarDetailSpecCard
-              icon={<IconCambio />}
-              title="Cambio"
+              icon={<IconCambio size={12} />}
+              title="Câmbio"
               value={car.cambio?.nome}
             />
             <CarDetailSpecCard
-              icon={<IconAutonomia />}
+              icon={<IconAutonomia size={12} />}
               title="Autonomia"
               value={`${car.autonomia} Km/L`}
             />
             <CarDetailSpecCard
-              icon={<IconTracao />}
+              icon={<IconTracao size={12} />}
               title="Tração"
               value={car.tracao}
             />
             <CarDetailSpecCard
-              icon={<IconPortas />}
+              icon={<IconPortas size={12} />}
               title="Portas"
               value={`${car.portas}`}
             />
             <CarDetailSpecCard
-              icon={<IconPlaca />}
+              icon={<IconPlaca size={12} />}
               title="Placa"
               value={car.finalDaPlaca}
             />
             <CarDetailSpecCard
-              icon={<IconCor />}
+              icon={<IconCor size={12} />}
               title="Cor"
               value={car.cor?.nome}
             />
             <CarDetailSpecCard
-              icon={<IconAssentos />}
+              icon={<IconAssentos size={12} />}
               title="Assentos"
               value={`${car.assentos}`}
             />
             <CarDetailSpecCard
-              icon={<IconCarroceria />}
+              icon={<IconCarroceria size={12} />}
               title="Carroceria"
               value={car.carroceria?.nome}
             />
           </div>
         </div>
       </div>
-      <h4 className={styles.optionalsHeadTitle}>Opcionais</h4>
+      <h4 className={styles.optionalsHeadTitle}>Especificações técnicas</h4>
       <div className={styles.optionalsWrapper}>
         <OptionalCard
           icon={<IconEssenciais />}
