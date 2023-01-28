@@ -35,7 +35,7 @@ export default function Location() {
             ></iframe>
           </div>
           <div className={styles.cardContent}>
-            <h1 className={styles.pageTitle}>Nossa Loja</h1>
+            <h1 className={styles.pageTitle}>Localização</h1>
             <p className={styles.copyTitle}>Endereço</p>
             <p className={styles.copy}>Praça 13 de Maio, 70,</p>
             <p className={styles.copy}>Centro, Capivari - SP</p>

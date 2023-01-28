@@ -13,7 +13,7 @@ export default function OurStore() {
         <div className={styles.card}>
           <div className={styles.cardImage}></div>
           <div className={styles.cardContent}>
-            <h1 className={styles.title}>Nossa Loja</h1>
+            <h1 className={styles.title}>Conheça a loja</h1>
             <p className={styles.copy}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis

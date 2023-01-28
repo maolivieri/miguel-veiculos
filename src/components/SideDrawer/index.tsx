@@ -1,13 +1,12 @@
 import { ReactNode, useContext } from "react";
 import Link, { LinkProps } from "next/link";
 import { BsInfoCircle, BsTelephone } from "react-icons/bs";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaRegPaperPlane,
-  FaWhatsapp,
-} from "react-icons/fa";
-import { MdOutlineLocationOn, MdOutlineStorefront } from "react-icons/md";
+  MdOutlineLocationOn,
+  MdOutlineStorefront,
+  MdOutlineMailOutline,
+} from "react-icons/md";
 import { SystemContext } from "../../context/systemContext";
 import { CloseButton } from "../../design/CloseButton";
 import styles from "./styles.module.scss";
@@ -55,6 +54,7 @@ export function SideDrawer() {
           <CloseButton onClick={toggleDrawer} />
         </div>
         <div className={styles.contactWrapper}>
+          <h3 className={styles.lineTitle}>Entre em contato</h3>
           <LineItem
             icon={<FaWhatsapp />}
             text="WhatsApp"
@@ -73,7 +73,7 @@ export function SideDrawer() {
             to="https://www.facebook.com/profile.php?id=100009341935363"
           />
           <LineItem
-            icon={<FaRegPaperPlane />}
+            icon={<MdOutlineMailOutline />}
             text="Email"
             to="mailto:test@test.com"
           />
