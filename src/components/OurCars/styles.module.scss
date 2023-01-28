@@ -26,6 +26,27 @@
   }
 }
 
+.notfoundcontainer {
+  display: flex;
+  padding: 0.5rem 1.6rem 2rem 1.6rem;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    padding: 2rem 3.25rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-left: calc((110vw - 992px) / 2);
+    padding-right: calc((110vw - 992px) / 2);
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc((88vw - 1200px) / 2);
+    padding-right: calc((88vw - 1200px) / 2);
+    margin: 0 2rem;
+  }
+}
+
 .title {
   font-size: 1.5rem;
   font-weight: 800;
