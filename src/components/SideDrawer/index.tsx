@@ -22,10 +22,27 @@ interface LinkItemProps extends LinkProps {
   icon: ReactNode;
   text: string;
   href: string;
+  type?: string;
+}
+
+interface TextItemProps extends React.HTMLProps<HTMLDivElement> {
+  icon: ReactNode;
+  text: string;
+  type?: string;
 }
 
 export function SideDrawer() {
   const { isDrawerOpen, toggleDrawer } = useContext(SystemContext);
+
+  const TextItem = ({ icon, text, type = "", ...props }: TextItemProps) => {
+    const additionalCSS = type === "phone" && styles.phone;
+    return (
+      <div className={`${styles.lineItem} ${additionalCSS}`} {...props}>
+        <div>{icon}</div>
+        <p>{text}</p>
+      </div>
+    );
+  };
 
   const LinkItem = ({ icon, text, href, ...props }: LinkItemProps) => {
     return (
@@ -40,7 +57,7 @@ export function SideDrawer() {
 
   const LineItem = ({ icon, text, to, target = "_blank" }: LineItemProps) => {
     return (
-      <a className={styles.lineItem} href={to} target={target}>
+      <a className={`${styles.lineItem}`} href={to} target={target}>
         <div>{icon}</div>
         <p>{text}</p>
       </a>
@@ -61,7 +78,13 @@ export function SideDrawer() {
             aria-label="Contato pelo WhatsApp"
             to="https://wa.me/5519971568585"
           />
-          <LineItem icon={<BsTelephone />} text="Telefone" to="" />
+          <TextItem
+            icon={<BsTelephone />}
+            text="Telefone"
+            type="phone"
+            onClick={() => window.open("tel:900300400")}
+            // onClick="window.open('tel:900300400')"
+          />
           <LineItem
             icon={<FaInstagram />}
             text="Instagram"
