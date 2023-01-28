@@ -18,12 +18,24 @@
   justify-content: flex-end;
   transition: background-color 3s ease;
   // overflow: hidden;
+
+  @media (min-width: 992px) {
+    padding-left: calc((130vw - 992px) / 2);
+    padding-right: calc((130vw - 992px) / 2);
+    // grid-template-columns: 4fr 4fr 4fr; //12columns
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc((120vw - 1200px) / 2);
+    padding-right: calc((120vw - 1200px) / 2);
+  }
 }
 
 .main {
   background: var(--white);
   border-radius: 10px 10px 0 0;
   padding: 1.3rem;
+  // width: 80vw;
 
   transition: height 1.5s;
 }
