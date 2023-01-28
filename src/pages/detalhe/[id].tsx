@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 import { CarDetailsCard } from "../../components/CarDetailsCard";
 import { DetailsHeader } from "../../components/DetailsHeader";
 import { client } from "../../lib/apollo";
@@ -7,16 +7,27 @@ import styles from "./styles.module.scss";
 import { ICar } from "../../types/Car";
 import { GetStaticProps } from "next";
 import { SideDrawer } from "../../components/SideDrawer";
+import { SpinnerComponent } from "../../design/Spinner";
+import { useContext, useEffect } from "react";
+import { UIContext } from "../../context/uiContext";
 
 interface IProps {
   carProps: ICar;
 }
 
 export default function CarDetailsPage({ carProps }: IProps) {
+  const { isLoading, stopLoading } = useContext(UIContext);
   const car = carProps;
+
+  useEffect(() => {
+    stopLoading();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={styles.container}>
+      zz
+      <SpinnerComponent active={isLoading} />
       <SideDrawer />
       <DetailsHeader />
       {!!car && <CarDetailsCard car={car} />}
@@ -126,10 +137,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  // console.log(data);
-
   const car: ICar = data.car;
-  // const car = null;
   return {
     props: { carProps: car },
   };

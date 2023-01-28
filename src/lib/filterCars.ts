@@ -39,9 +39,6 @@ function isWithinAllListItems(
 }
 
 export function filterCar(car: ICar, filter: Filters): boolean {
-  //   console.log("CAR", car.carroceria);
-  //   console.log("FILTERS", filter.carrocerias);
-  //   console.log("test", isWithinList(car.carroceria.nome, filter.carrocerias));
   return (
     isWithinValue(car.preco, filter.minPrice, filter.maxPrice) &&
     isWithinValue(car.anoModelo, filter.startYear, filter.endYear) &&

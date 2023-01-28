@@ -1,0 +1,54 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9990;
+}
+
+.inactiveWrapper {
+  display: none;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9995;
+}
+
+.loader {
+  height: 100vh;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.logo {
+  fill: rgba(255, 255, 255, 0.1);
+  transition: anime 0.5s ease infinite;
+}
+
+@keyframes anime {
+  to {
+    fill: red;
+  }
+}
+
+// @keyframes pulse {
+//   0% {
+//     fill: red;
+//   }
+//   40% {
+//     fill: blue;
+//   }
+//   80% {
+//     fill: green;
+//   }
+//   100% {
+//     fill: white;
+//   }
+// }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./styles.module.scss";
@@ -8,6 +8,7 @@ import car_placeholder from "../../../public/assets/images/car-placeholder.png";
 import { ICar } from "../../types/Car";
 import { formatToCurrency } from "../../lib/formatToCurrency";
 import { IconAno, IconCombustivel, IconKM } from "../../design/Icons";
+import { UIContext } from "../../context/uiContext";
 
 interface IProps {
   car: ICar;
@@ -15,6 +16,7 @@ interface IProps {
 
 export function CarCard({ car }: IProps) {
   const [checked, setChecked] = useState(false);
+  const { startLoading } = useContext(UIContext);
 
   return (
     <Link
@@ -22,7 +24,7 @@ export function CarCard({ car }: IProps) {
         pathname: `/detalhe/${car.id}`,
       }}
     >
-      <div className={styles.container}>
+      <div className={styles.container} onClick={startLoading}>
         <div className={styles.header}>
           <div className={styles.imageWrapper}>
             <Image

@@ -11,8 +11,10 @@ import { ReturnButton } from "../../design/ReturnButton";
 import { useContext } from "react";
 import { SystemContext } from "../../context/systemContext";
 import Link from "next/link";
+import { UIContext } from "../../context/uiContext";
 
 export function DetailsHeader() {
+  const { startLoading } = useContext(UIContext);
   const { toggleDrawer } = useContext(SystemContext);
 
   return (
@@ -21,7 +23,7 @@ export function DetailsHeader() {
         <ReturnButton />
       </div>
       <Link href="/" passHref>
-        <a className={styles.logoWrapper}>
+        <a className={styles.logoWrapper} onClick={startLoading}>
           <Image width={48} height={48} src={iconLogo} alt="" />
         </a>
       </Link>

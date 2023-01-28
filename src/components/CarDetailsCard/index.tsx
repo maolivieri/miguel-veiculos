@@ -25,6 +25,8 @@ import {
   IconTecnologia,
   IconTracao,
 } from "../../design/Icons";
+import { UIContext } from "../../context/uiContext";
+import { useContext } from "react";
 
 //icons
 
@@ -33,8 +35,6 @@ interface IProps {
 }
 
 export function CarDetailsCard({ car }: IProps) {
-  console.log(car);
-
   return (
     <main className={styles.mainContainer}>
       <header>

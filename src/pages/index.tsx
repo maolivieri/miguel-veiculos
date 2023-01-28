@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { FiltersModal } from "../components/FiltersModal";
@@ -12,6 +12,8 @@ import { Layout } from "../components/Layout";
 import { OurCars } from "../components/OurCars";
 import { SideDrawer } from "../components/SideDrawer";
 import { SystemContext } from "../context/systemContext";
+import { UIContext } from "../context/uiContext";
+import { SpinnerComponent } from "../design/Spinner";
 import { client } from "../lib/apollo";
 import { filterCar } from "../lib/filterCars";
 import { ICar } from "../types/Car";
@@ -20,9 +22,14 @@ const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { activeFilters } = useContext(SystemContext);
+  const { isLoading, stopLoading } = useContext(UIContext);
 
   const [isSearchVisible, setIsSearchVisible] = useState(true);
   const [searchValue, setSearchValue] = useState("");
+
+  useEffect(() => {
+    stopLoading();
+  }, []);
 
   const cars: ICar[] = carsProps;
 
@@ -39,6 +46,7 @@ const Home: NextPage = ({
   const carsArray = carsFiltered;
   return (
     <Layout>
+      <SpinnerComponent active={isLoading} />
       <SideDrawer />
       <Header isSearchVisible={isSearchVisible} />
       <ReactVisibilitySensor

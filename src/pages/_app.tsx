@@ -5,6 +5,7 @@ import { SystemContextProvider } from "../context/systemContext";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "../lib/apollo";
 import { ListsContextProvider } from "../context/listsContext";
+import { UIContextProvider } from "../context/uiContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,7 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         <ListsContextProvider>
           <SystemContextProvider>
-            <Component {...pageProps} />
+            <UIContextProvider>
+              <Component {...pageProps} />
+            </UIContextProvider>
           </SystemContextProvider>
         </ListsContextProvider>
       </ApolloProvider>

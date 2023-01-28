@@ -16,9 +16,6 @@ export function FilterKM() {
   const [maxValue, setMaxValue] = useState(activeFilters.kmEnd || maxRange);
 
   const handleConfirmFilter = () => {
-    console.log(minValue);
-    console.log(maxValue);
-
     setActiveFilters((prevState) => ({
       ...prevState,
       kmStart: minValue,
