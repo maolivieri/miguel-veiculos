@@ -4,7 +4,7 @@ import { SystemContext } from "../../../../context/systemContext";
 import { ButtonPrimary } from "../../../../design/ButtonPrimary";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconOpcionais } from "../../../../design/Icons";
-import { FilterListCheckboxItem } from "../FilterListCheckboxItem";
+import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
 
 export function FilterOpcionais() {
@@ -81,7 +81,7 @@ export function FilterOpcionais() {
       <div className={styles.filterWrapper}>
         <h6 className={styles.listTitle}>Essenciais</h6>
         {essenciais.map((essential) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={essential.nome}
             name={essential.nome}
             handleCheckboxChange={() => handleEssentialsChange(essential.nome)}
@@ -90,7 +90,7 @@ export function FilterOpcionais() {
         ))}
         <h6 className={styles.listTitle}>Conforto</h6>
         {confortos.map((conf) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={conf.nome}
             name={conf.nome}
             handleCheckboxChange={() => handleConfortChange(conf.nome)}
@@ -99,7 +99,7 @@ export function FilterOpcionais() {
         ))}
         <h6 className={styles.listTitle}>Technologia</h6>
         {tecnologias.map((tech) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={tech.nome}
             name={tech.nome}
             handleCheckboxChange={() => handleTechnologyChange(tech.nome)}
@@ -108,7 +108,7 @@ export function FilterOpcionais() {
         ))}
         <h6 className={styles.listTitle}>Segurança</h6>
         {segurancas.map((safe) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={safe.nome}
             name={safe.nome}
             handleCheckboxChange={() => handleSafetyChange(safe.nome)}

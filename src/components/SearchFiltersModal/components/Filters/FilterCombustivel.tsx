@@ -4,7 +4,7 @@ import { SystemContext } from "../../../../context/systemContext";
 import { ButtonPrimary } from "../../../../design/ButtonPrimary";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconCombustivel } from "../../../../design/Icons";
-import { FilterListCheckboxItem } from "../FilterListCheckboxItem";
+import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
 
 export function FilterCombustivel() {
@@ -46,7 +46,7 @@ export function FilterCombustivel() {
       </div>
       <div className={styles.filterWrapper}>
         {combustivels.map((combustivel) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={combustivel.nome}
             name={combustivel.nome}
             handleCheckboxChange={() => handleCheckboxChange(combustivel.nome)}

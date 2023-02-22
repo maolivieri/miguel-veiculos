@@ -4,7 +4,7 @@ import { SystemContext } from "../../../../context/systemContext";
 import { ButtonPrimary } from "../../../../design/ButtonPrimary";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconMarca } from "../../../../design/Icons";
-import { FilterListCheckboxItem } from "../FilterListCheckboxItem";
+import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
 
 export function FilterMarcas() {
@@ -46,7 +46,7 @@ export function FilterMarcas() {
       </div>
       <div className={styles.filterWrapper}>
         {marcas.map((marca) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={marca.nome}
             name={marca.nome}
             handleCheckboxChange={() => handleCheckboxChange(marca.nome)}

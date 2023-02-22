@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-import { Checkbox } from "../../../../design/Checkbox";
+import { Checkbox } from "../Checkbox";
 
 interface IProps {
   checked: boolean;
@@ -9,7 +9,7 @@ interface IProps {
   hex?: string;
 }
 
-export function FilterListCheckboxItem({
+export function CheckboxFilter({
   checked,
   name,
   handleCheckboxChange,

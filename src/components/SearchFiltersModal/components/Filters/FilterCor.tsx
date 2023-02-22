@@ -4,7 +4,7 @@ import { SystemContext } from "../../../../context/systemContext";
 import { ButtonPrimary } from "../../../../design/ButtonPrimary";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconCor } from "../../../../design/Icons";
-import { FilterListCheckboxItem } from "../FilterListCheckboxItem";
+import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
 
 export function FilterCor() {
@@ -46,7 +46,7 @@ export function FilterCor() {
       </div>
       <div className={styles.filterWrapper}>
         {cors.map((cor) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={cor.nome}
             name={cor.nome}
             hex={cor.cor.hex}

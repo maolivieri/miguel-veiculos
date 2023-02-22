@@ -4,7 +4,7 @@ import { SystemContext } from "../../../../context/systemContext";
 import { ButtonPrimary } from "../../../../design/ButtonPrimary";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconCarroceria } from "../../../../design/Icons";
-import { FilterListCheckboxItem } from "../FilterListCheckboxItem";
+import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
 
 export function FilterCarroceria() {
@@ -46,7 +46,7 @@ export function FilterCarroceria() {
       </div>
       <div className={styles.filterWrapper}>
         {carrocerias.map((carroceria) => (
-          <FilterListCheckboxItem
+          <CheckboxFilter
             key={carroceria.nome}
             name={carroceria.nome}
             handleCheckboxChange={() => handleCheckboxChange(carroceria.nome)}
