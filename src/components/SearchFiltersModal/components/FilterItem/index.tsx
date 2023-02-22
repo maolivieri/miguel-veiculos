@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from "react";
-import { MdAdd } from "react-icons/md";
+import { MdAdd, MdCheck } from "react-icons/md";
 import {
   FilterOptions,
   SystemContext,
@@ -9,7 +9,7 @@ import styles from "./styles.module.scss";
 interface IProps {
   icon: ReactNode;
   title: string;
-  total: number;
+  total: number | string | null;
   filter: FilterOptions;
 }
 
@@ -31,13 +31,13 @@ export function FilterItem({ icon, title, total, filter }: IProps) {
         <p className={styles.title}>{title}</p>
       </div>
       <div className={styles.row}>
-        {total > 0 && (
+        {!!total && (
           <div className={styles.total}>
-            <p>{total}</p>
+            {total === "active" ? <MdCheck color="#FFFFFF" /> : <p>{total}</p>}
           </div>
         )}
         <div className={styles.add} onClick={handleAddClick}>
-          <MdAdd size='1.5rem' />
+          <MdAdd size="1.5rem" />
         </div>
       </div>
     </div>

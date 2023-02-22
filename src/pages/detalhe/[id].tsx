@@ -26,7 +26,6 @@ export default function CarDetailsPage({ carProps }: IProps) {
 
   return (
     <div className={styles.container}>
-      zz
       <SpinnerComponent active={isLoading} />
       <SideDrawer />
       <DetailsHeader />

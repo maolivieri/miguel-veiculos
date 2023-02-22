@@ -10,7 +10,8 @@ export function FilterAno() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
     useContext(SystemContext);
   const minRange = 1970;
-  const maxRange = new Date().getFullYear();
+  // const maxRange = new Date().getFullYear();
+  const maxRange = 2023;
   const [minValue, setMinValue] = useState(activeFilters.startYear || minRange);
   const [maxValue, setMaxValue] = useState(activeFilters.endYear || maxRange);
 

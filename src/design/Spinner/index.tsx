@@ -6,8 +6,9 @@ interface IProps {
 }
 
 export function SpinnerComponent(props: IProps) {
+  const { active } = props;
   return (
-    <div className={props.active ? styles.wrapper : styles.inactiveWrapper}>
+    <div className={active ? styles.wrapper : styles.inactiveWrapper}>
       <div className={styles.backdrop} />
       <div className={styles.loader}>
         <svg width="83" height="83" viewBox="0 0 83 83">

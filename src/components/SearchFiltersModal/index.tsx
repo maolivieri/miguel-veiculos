@@ -29,15 +29,11 @@ import {
 } from "../../design/Icons";
 
 export function FiltersModal() {
-  const { isFiltersOpen, toggleFilters, setActiveFilters } =
+  const { isFiltersOpen, toggleFilters, setActiveFilters, activeFilters } =
     useContext(SystemContext);
 
   return (
-    <div
-      className={
-        isFiltersOpen ? styles.filtersModalContainer : styles.hiddenModal
-      }
-    >
+    <>
       <div className={styles.dropShaddow} onClick={toggleFilters} />
       <div className={styles.main}>
         <h4 className={styles.title}>Filtros</h4>
@@ -45,46 +41,71 @@ export function FiltersModal() {
           <FilterItem
             icon={<IconPreco />}
             title="Preço"
-            total={1}
+            total={
+              (activeFilters.minPrice || activeFilters.maxPrice) && "active"
+            }
             filter="preco"
           />
-          <FilterItem icon={<IconAno />} title="Ano" total={1} filter="ano" />
-          <FilterItem icon={<IconKM />} title="KM" total={1} filter="km" />
+          <FilterItem
+            icon={<IconAno />}
+            title="Ano"
+            total={
+              (activeFilters.startYear || activeFilters.endYear) && "active"
+            }
+            filter="ano"
+          />
+          <FilterItem
+            icon={<IconKM />}
+            title="KM"
+            total={(activeFilters.kmStart || activeFilters.kmEnd) && "active"}
+            filter="km"
+          />
           <FilterItem
             icon={<IconCarroceria />}
             title="Carroceria"
-            total={1}
+            total={activeFilters.carrocerias.length}
             filter="carroceria"
           />
           <FilterItem
             icon={<IconOpcionais />}
             title="Opcionais"
-            total={1}
+            total={
+              (activeFilters.conforto.length ||
+                activeFilters.tecnologia.length ||
+                activeFilters.seguranca.length ||
+                activeFilters.essenciais.length) &&
+              "active"
+            }
             filter="opcionais"
           />
           <FilterItem
             icon={<IconMarca />}
             title="Marca"
-            total={1}
+            total={activeFilters.marcas.length}
             filter="marca"
           />
           <FilterItem
             icon={<IconCambio />}
             title="Câmbio"
-            total={1}
+            total={activeFilters.cambios.length}
             filter="cambio"
           />
           <FilterItem
             icon={<IconCombustivel />}
             title="Combustível"
-            total={1}
+            total={activeFilters.combustiveis.length}
             filter="combustivel"
           />
-          <FilterItem icon={<IconCor />} title="Cor" total={1} filter="cor" />
+          <FilterItem
+            icon={<IconCor />}
+            title="Cor"
+            total={activeFilters.cores.length}
+            filter="cor"
+          />
           <FilterItem
             icon={<IconDocumentation />}
             title="Documentação"
-            total={1}
+            total={activeFilters.documentacoes.length}
             filter="documentacao"
           />
           {/* <FilterItem
@@ -115,6 +136,6 @@ export function FiltersModal() {
         </div>
       </div>
       <FilterWrapper />
-    </div>
+    </>
   );
 }

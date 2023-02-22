@@ -3,7 +3,6 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
 
 import ReactVisibilitySensor from "react-visibility-sensor";
-import { FiltersModal } from "../components/FiltersModal";
 
 import { Header } from "../components/Header";
 import { HomeFloatingMenu } from "../components/HomeFloatingMenu";
@@ -17,6 +16,7 @@ import { SpinnerComponent } from "../design/Spinner";
 import { client } from "../lib/apollo";
 import { filterCar } from "../lib/filterCars";
 import { ICar } from "../types/Car";
+import { SearchFilters } from "../components/SearchFIlters";
 
 const Home: NextPage = ({
   carsProps,
@@ -61,7 +61,7 @@ const Home: NextPage = ({
       </ReactVisibilitySensor>
       <OurCars cars={carsArray} />
       <HomeFloatingMenu isSearchVisible={isSearchVisible} />
-      <FiltersModal />
+      <SearchFilters />
     </Layout>
   );
 };
