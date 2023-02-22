@@ -46,21 +46,26 @@ const Home: NextPage = ({
   const carsArray = carsFiltered;
   return (
     <Layout>
-      <SpinnerComponent active={isLoading} />
-      <SideDrawer />
-      <Header isSearchVisible={isSearchVisible} />
-      <ReactVisibilitySensor
-        partialVisibility
-        offset={{ top: 140 }}
-        // minTopValue={300}
-        onChange={(isVisible: boolean) => {
-          setIsSearchVisible(!isVisible);
-        }}
-      >
-        <HomeSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-      </ReactVisibilitySensor>
-      <OurCars cars={carsArray} />
-      <HomeFloatingMenu isSearchVisible={isSearchVisible} />
+      <div>
+        <SpinnerComponent active={isLoading} />
+        <SideDrawer />
+        <Header isSearchVisible={isSearchVisible} />
+        <ReactVisibilitySensor
+          partialVisibility
+          offset={{ top: 140 }}
+          // minTopValue={300}
+          onChange={(isVisible: boolean) => {
+            setIsSearchVisible(!isVisible);
+          }}
+        >
+          <HomeSearch
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </ReactVisibilitySensor>
+        <OurCars cars={carsArray} />
+        <HomeFloatingMenu isSearchVisible={isSearchVisible} />
+      </div>
       <SearchFilters />
     </Layout>
   );
