@@ -22,11 +22,9 @@ import {
   IconKM,
   IconMarca,
   IconOpcionais,
-  IconPortas,
-  IconPotencia,
   IconPreco,
-  IconTracao,
 } from "../../design/Icons";
+import { BiChevronDown } from "react-icons/bi";
 
 export function FiltersModal() {
   const { isFiltersOpen, toggleFilters, setActiveFilters, activeFilters } =
@@ -36,6 +34,9 @@ export function FiltersModal() {
     <>
       <div className={styles.dropShaddow} onClick={toggleFilters} />
       <div className={styles.main}>
+        <div className={styles.closeArrow} onClick={toggleFilters}>
+          <BiChevronDown size="2.3rem" />
+        </div>
         <h4 className={styles.title}>Filtros</h4>
         <div className={styles.filterWrapper}>
           <FilterItem
