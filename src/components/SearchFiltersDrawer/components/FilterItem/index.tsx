@@ -8,9 +8,16 @@ interface Props {
   icon: ReactNode;
   countSelected: number;
   children: ReactNode;
+  multi?: boolean;
 }
 
-export function FilterItem({ title, icon, countSelected, children }: Props) {
+export function FilterItem({
+  title,
+  icon,
+  countSelected,
+  children,
+  multi = false,
+}: Props) {
   return (
     <div className={styles.item}>
       <div className={styles.header}>
@@ -18,7 +25,9 @@ export function FilterItem({ title, icon, countSelected, children }: Props) {
         <h6>{title}</h6>
         {!!countSelected && <div className={styles.count}>{countSelected}</div>}
       </div>
-      <div className={styles.content}>{children}</div>
+      <div className={multi ? styles.multiContent : styles.content}>
+        {children}
+      </div>
     </div>
   );
 }

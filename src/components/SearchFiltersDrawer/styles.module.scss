@@ -32,3 +32,8 @@
 
   border-bottom: 1px solid var(--gray-400);
 }
+
+.body {
+  overflow: scroll;
+  max-height: calc(100vh - 13rem);
+}

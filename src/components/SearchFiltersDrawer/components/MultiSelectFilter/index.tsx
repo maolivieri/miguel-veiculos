@@ -10,9 +10,10 @@ interface Object {
 
 interface IProps {
   items: Object[];
+  color?: boolean;
 }
 
-export function MultiSelectFilter({ items }: IProps) {
+export function MultiSelectFilter({ items, color = false }: IProps) {
   const [viewAll, setViewAll] = useState(false);
   const finalSplice = viewAll ? items.length : 3;
 
@@ -35,14 +36,21 @@ export function MultiSelectFilter({ items }: IProps) {
       <div className={styles.content}>
         {values.map((value) => (
           <div key={value.name} className={styles.item}>
-            <div className={`${styles.icon} ${isActive() && styles.selected}`}>
-              <Image
-                height={80}
-                width={80}
-                src={value.icon || ""}
-                alt=""
-                layout="responsive"
-              />
+            <div
+              className={`${styles.icon} ${isActive() && styles.selected}`}
+              style={{
+                backgroundColor: `${color ? value.icon : "transparent"}`,
+              }}
+            >
+              {!color && (
+                <Image
+                  height={80}
+                  width={80}
+                  src={value.icon || ""}
+                  alt=""
+                  layout="responsive"
+                />
+              )}
             </div>
             <p className={styles.name}>{value.name}</p>
           </div>

@@ -1,0 +1,31 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.title {
+  font-size: 0.8;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  div {
+    height: 1.56rem;
+    width: 1.56rem;
+  }
+
+  p {
+    color: var(--primary);
+    margin: 0;
+    padding: 0.4rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
