@@ -1,22 +1,25 @@
 export const toCurrency = (input: string | number) => {
-  console.log("qweqweqweq = ", input);
   const inputString = String(input);
+  const hasComma = inputString.indexOf(",") > -1;
   const formatter = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
     minimumFractionDigits: 2,
   });
   if (input !== null && input !== "" && input !== undefined) {
-    const replaceComma = inputString.replace(/,/g, ".");
-    const toFloat = parseFloat(replaceComma.replace(/[^0-9.]+/g, ""));
-    if (!isNaN(toFloat)) {
-      return formatter.format(toFloat);
+    const replaceComma = inputString.replace(/,/g, ",");
+    const toFloat = parseFloat(replaceComma.replace(/[^0-9]+/g, ""));
+    const res = hasComma ? toFloat / 100 : toFloat;
+    if (!isNaN(res)) {
+      return formatter.format(res);
     } else return formatter.format(0);
   } else return formatter.format(0);
 };
 
 export const toNumber = (input: string) => {
-  const res = input.replace(/[^0-9.-]+/g, "");
+  const hasComma = input.indexOf(",") > -1;
+  const filter = Number(input.replace(/[^0-9-]+/g, ""));
+  const res = hasComma ? filter / 100 : filter;
   return Number(res);
 };
 

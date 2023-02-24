@@ -61,7 +61,7 @@ export function FilterInput({
   prefix,
   ...props
 }: InputProps) {
-  const initValue = isMin ? min : max;
+  // const initValue = isMin ? min : max;
   const title = isMin ? "Mínimo" : "Máximo";
   const subTitle = isMin ? `Min.:${min}` : `Max.:${max}`;
 
