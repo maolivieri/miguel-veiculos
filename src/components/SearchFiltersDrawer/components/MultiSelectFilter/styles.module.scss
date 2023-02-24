@@ -1,0 +1,51 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 0.3rem;
+  padding: 1.5rem 0.5rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  //   background: red;
+  border-radius: 6px;
+  display: flex;
+  border: 1px solid var(--gray-400);
+}
+
+.name {
+  font-weight: 400;
+  margin: 0;
+  padding: 0.2rem 0;
+}
+
+.selected {
+  border: 2px solid var(--primary);
+}
+
+.showButton {
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}

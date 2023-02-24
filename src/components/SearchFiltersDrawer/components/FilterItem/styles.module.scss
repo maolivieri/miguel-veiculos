@@ -2,3 +2,37 @@
   padding: 1rem;
   border-bottom: 1px solid var(--gray-400);
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  h6 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--primary);
+  }
+
+  svg {
+    color: var(--gray-600);
+  }
+}
+
+.count {
+  background: var(--secondary);
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--white);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.content {
+  flex: 1;
+}

@@ -6,6 +6,9 @@ const GET_LISTS = gql`
   query GetLists {
     carrocerias {
       nome
+      icon {
+        url
+      }
     }
     essenciais {
       nome
@@ -51,6 +54,13 @@ interface DefaultProps {
   nome: string;
 }
 
+interface CarroceriasProps {
+  nome: string;
+  icon?: {
+    url?: string;
+  };
+}
+
 interface MarcasProps {
   nome: string;
   logo?: {
@@ -66,7 +76,7 @@ interface CoresProps {
 }
 
 type API_DATA = {
-  carrocerias: DefaultProps[];
+  carrocerias: CarroceriasProps[];
   essenciais: DefaultProps[];
   segurancas: DefaultProps[];
   tecnologias: DefaultProps[];

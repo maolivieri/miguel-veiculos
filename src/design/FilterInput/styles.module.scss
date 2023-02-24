@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+
+  .title {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0.3rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    padding-left: 1.2rem;
+    padding-top: 0.3rem;
+  }
+}
+
+.inputBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-radius: 0.8rem;
+  border: 1px solid var(--gray-200);
+
+  input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+  }
+  input:focus {
+    outline: none !important;
+  }
+
+  span {
+    padding: 0.5rem 0.3rem;
+    color: var(--primary);
+  }
+
+  @media (min-width: 992px) {
+    height: 3rem;
+    padding: 0.1rem 0.4rem 0.1rem 1rem;
+  }
+}
+
+.input {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 200;
+  padding: 0.5rem 0.3rem;
+  border: none;
+  color: var(--primary);
+
+  :focus-visible {
+    outline: none !important;
+  }
+}
+
+.clearButton {
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
