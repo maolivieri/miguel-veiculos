@@ -44,17 +44,22 @@ export function FiltersDrawer() {
   } = useContext(ListsContext);
 
   const countActiveFilters = countValidFilters(activeFilters);
+  const activeFiltersString = !!countActiveFilters
+    ? ` (${countActiveFilters})`
+    : "";
 
   return (
     <div>
-      <div className={styles.closeButton} onClick={toggleFilters}>
-        <CloseButton />
-      </div>
       <div className={styles.header}>
-        <h6>{`Filtros (${countActiveFilters})`}</h6>
-        <p onClick={() => setActiveFilters(initialFiltersValue)}>
-          Limpar Filtros
-        </p>
+        <div className={styles.title}>
+          <h3>{`Filtros${activeFiltersString}`}</h3>
+          <CloseButton onClick={toggleFilters} />
+        </div>
+        {!!countActiveFilters && (
+          <p onClick={() => setActiveFilters(initialFiltersValue)}>
+            Limpar filtros
+          </p>
+        )}
       </div>
       <div className={styles.line} />
       <div className={styles.body}>

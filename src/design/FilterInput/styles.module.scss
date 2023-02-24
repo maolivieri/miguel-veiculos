@@ -7,14 +7,16 @@
     padding: 0;
     margin: 0;
     padding-bottom: 0.3rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
   }
 
   span {
     font-weight: 300;
     font-size: 0.8rem;
     color: var(--gray-600);
-    padding-left: 1.2rem;
+    padding-left: 0.8rem;
     padding-top: 0.3rem;
   }
 }
@@ -23,8 +25,12 @@
   flex: 1;
   display: flex;
   align-items: center;
-  border-radius: 0.8rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--gray-200);
+
+  &:focus-within {
+    border: 1px solid var(--gray-400);
+  }
 
   input {
     border: 0;
@@ -42,17 +48,21 @@
 
   @media (min-width: 992px) {
     height: 3rem;
-    padding: 0.1rem 0.4rem 0.1rem 1rem;
+    padding: 0.1rem 0.4rem 0.1rem 0.5rem;
   }
 }
 
 .input {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 200;
   padding: 0.5rem 0.3rem;
   border: none;
   color: var(--primary);
+
+  &::placeholder {
+    color: var(--gray-600);
+  }
 
   :focus-visible {
     outline: none !important;
