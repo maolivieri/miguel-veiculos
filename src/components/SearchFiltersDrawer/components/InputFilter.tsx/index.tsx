@@ -1,5 +1,5 @@
-import { Dispatch, KeyboardEvent, SetStateAction, useState } from "react";
-import { Filters } from "../../../../context/systemContext";
+import { Dispatch, SetStateAction, useState } from "react";
+import { Filters, FiltersIndexes } from "../../../../context/systemContext";
 import { FilterInput, PriceFilterInput } from "../../../../design/FilterInput";
 import { toCurrency, toNumber } from "../../../../lib/formatInputCurrency";
 import styles from "./styles.module.scss";
@@ -10,8 +10,8 @@ interface InputProps {
   minValue: number | string;
   maxValue: number | string;
   placeholder: string;
-  value1Name: string;
-  value2Name: string;
+  value1Name: FiltersIndexes;
+  value2Name: FiltersIndexes;
   filters: Filters;
   price?: boolean;
 }

@@ -101,6 +101,9 @@ export function FiltersDrawer() {
           countSelected={1}
         >
           <MultiSelectFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="carrocerias"
             items={carrocerias.map((x) => ({
               name: x.nome,
               icon: x.icon?.url,
@@ -114,24 +117,39 @@ export function FiltersDrawer() {
           multi
         >
           <CheckboxFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="conforto"
             items={confortos.map((x) => x.nome)}
             title="Conforto"
           />
           <CheckboxFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="essenciais"
             items={essenciais.map((x) => x.nome)}
             title="Essenciais"
           />
           <CheckboxFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="seguranca"
             items={segurancas.map((x) => x.nome)}
             title="Segurança"
           />
           <CheckboxFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="tecnologia"
             items={tecnologias.map((x) => x.nome)}
             title="Tecnologia"
           />
         </FilterItem>
         <FilterItem icon={<IconMarca />} title="Marcas" countSelected={1}>
           <MultiSelectFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="marcas"
             items={marcas.map((x) => ({
               name: x.nome,
               icon: x.logo?.url,
@@ -139,17 +157,30 @@ export function FiltersDrawer() {
           />
         </FilterItem>
         <FilterItem icon={<IconCambio />} title="Câmbio" countSelected={1}>
-          <CheckboxFilter items={cambios.map((x) => x.nome)} />
+          <CheckboxFilter
+            items={cambios.map((x) => x.nome)}
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="cambios"
+          />
         </FilterItem>
         <FilterItem
           icon={<IconCombustivel />}
           title="Combustivel"
           countSelected={1}
         >
-          <CheckboxFilter items={combustivels.map((x) => x.nome)} />
+          <CheckboxFilter
+            items={combustivels.map((x) => x.nome)}
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="combustiveis"
+          />
         </FilterItem>
         <FilterItem icon={<IconCor />} title="Cor" countSelected={1}>
           <MultiSelectFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="cores"
             items={cors.map((x) => ({
               name: x.nome,
               icon: x.cor.hex,
@@ -162,7 +193,12 @@ export function FiltersDrawer() {
           title="Documentação"
           countSelected={1}
         >
-          <CheckboxFilter items={documentacoes.map((x) => x.nome)} />
+          <CheckboxFilter
+            items={documentacoes.map((x) => x.nome)}
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="documentacoes"
+          />
         </FilterItem>
       </div>
     </div>

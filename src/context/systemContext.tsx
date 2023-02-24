@@ -22,6 +22,24 @@ export type FilterOptions =
   | "tracao"
   | null;
 
+export type FiltersIndexes =
+  | "minPrice"
+  | "maxPrice"
+  | "startYear"
+  | "endYear"
+  | "kmStart"
+  | "kmEnd"
+  | "carrocerias"
+  | "marcas"
+  | "cambios"
+  | "combustiveis"
+  | "cores"
+  | "essenciais"
+  | "conforto"
+  | "tecnologia"
+  | "seguranca"
+  | "documentacoes";
+
 export interface Filters {
   minPrice: number | null;
   maxPrice: number | null;
@@ -98,6 +116,8 @@ export const SystemContextProvider = ({ children }: Props) => {
   const toggleFilters = () => {
     setIsFilterOpen((prevState) => !prevState);
   };
+
+  console.log(activeFilters);
 
   return (
     <SystemContext.Provider

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
-import { ListsContext } from "../../../../context/listsContext";
+import { Dispatch, SetStateAction, useState } from "react";
+import { Filters, FiltersIndexes } from "../../../../context/systemContext";
 import styles from "./styles.module.scss";
 
 interface Object {
@@ -10,34 +10,56 @@ interface Object {
 
 interface IProps {
   items: Object[];
+  setFilters: Dispatch<SetStateAction<Filters>>;
+  filters: Filters;
+  fieldName: FiltersIndexes;
   color?: boolean;
 }
 
-export function MultiSelectFilter({ items, color = false }: IProps) {
+export function MultiSelectFilter({
+  items,
+  fieldName,
+  filters,
+  setFilters,
+  color = false,
+}: IProps) {
   const [viewAll, setViewAll] = useState(false);
   const finalSplice = viewAll ? items.length : 3;
+  const values = items.slice(0, finalSplice);
+
+  const thisFilter = filters[fieldName];
+  const existingItems: string[] = Array.isArray(thisFilter) ? thisFilter : [];
 
   function handleShowButton() {
     setViewAll((prevState) => !prevState);
   }
 
-  function handleSelection() {
-    console.log("abc");
-  }
+  function handleSelection(name: string) {
+    const indexOfName = existingItems.indexOf(name);
 
-  const values = items.slice(0, finalSplice);
-
-  function isActive(): Boolean {
-    return false;
+    if (indexOfName > -1) {
+      setFilters({
+        ...filters,
+        [fieldName]: existingItems.filter((item) => item !== name),
+      });
+    } else {
+      setFilters({ ...filters, [fieldName]: [...existingItems, name] });
+    }
   }
 
   return (
     <div className={styles.box}>
       <div className={styles.content}>
         {values.map((value) => (
-          <div key={value.name} className={styles.item}>
+          <div
+            key={value.name}
+            className={styles.item}
+            onClick={() => handleSelection(value.name)}
+          >
             <div
-              className={`${styles.icon} ${isActive() && styles.selected}`}
+              className={`${styles.icon} ${
+                !!existingItems.find((x) => x === value.name) && styles.selected
+              }`}
               style={{
                 backgroundColor: `${color ? value.icon : "transparent"}`,
               }}
