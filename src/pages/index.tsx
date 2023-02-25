@@ -67,7 +67,7 @@ const Home: NextPage = ({
   const carsArray = carsFiltered;
   return (
     <Layout>
-      <div className="pageBody">
+      <div className={`pageBody`}>
         <SpinnerComponent active={isLoading} />
         <SideDrawer />
         <Header isSearchVisible={isSearchVisible} />
