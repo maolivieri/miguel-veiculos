@@ -26,9 +26,10 @@ import {
 import { MultiSelectFilter } from "./components/MultiSelectFilter";
 import { ListsContext } from "../../context/listsContext";
 import { CheckboxFilter } from "./components/CheckboxFilter";
+import { toCurrency } from "../../lib/formatInputCurrency";
 
 export function FiltersDrawer() {
-  const { toggleFilters, setActiveFilters, activeFilters } =
+  const { toggleFilters, setActiveFilters, activeFilters, filterRanges } =
     useContext(SystemContext);
   const {
     carrocerias,
@@ -68,8 +69,8 @@ export function FiltersDrawer() {
             filters={activeFilters}
             setFilters={setActiveFilters}
             format=""
-            minValue="R$ 0,00"
-            maxValue="R$ 200.000,00"
+            minValue={toCurrency(String(filterRanges.minPrice))}
+            maxValue={toCurrency(String(filterRanges.maxPrice))}
             placeholder="Preço"
             value1Name="minPrice"
             value2Name="maxPrice"
@@ -81,8 +82,8 @@ export function FiltersDrawer() {
             filters={activeFilters}
             setFilters={setActiveFilters}
             format=""
-            minValue="1970"
-            maxValue={String(new Date().getFullYear())}
+            minValue={Number(filterRanges.minYear)}
+            maxValue={Number(filterRanges.maxYear)}
             placeholder="Ano"
             value1Name="startYear"
             value2Name="endYear"
@@ -93,8 +94,12 @@ export function FiltersDrawer() {
             filters={activeFilters}
             setFilters={setActiveFilters}
             format=""
-            minValue="0"
-            maxValue="0"
+            minValue={`${new Intl.NumberFormat("pt-BR").format(
+              Number(filterRanges.minKM)
+            )} km`}
+            maxValue={`${new Intl.NumberFormat("pt-BR").format(
+              Number(filterRanges.maxKM)
+            )} km`}
             placeholder="KM"
             value1Name="kmStart"
             value2Name="kmEnd"

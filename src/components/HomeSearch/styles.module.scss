@@ -18,3 +18,23 @@
     padding-right: calc((100vw - 1200px) / 2);
   }
 }
+
+.filterButton {
+  position: relative;
+}
+
+.buttonIndicator {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  background: var(--secondary);
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--white);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.8rem;
+}

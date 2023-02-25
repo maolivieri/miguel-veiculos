@@ -28,9 +28,9 @@ export function SearchInput({
           <MdClear size="1.2rem" />
         </div>
       )}
-      <div className={styles.buttonContainer}>
+      {/* <div className={styles.buttonContainer}>
         <TbSearch size="1.4rem" />
-      </div>
+      </div> */}
     </div>
   );
 }

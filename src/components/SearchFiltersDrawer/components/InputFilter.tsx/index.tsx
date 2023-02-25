@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, FocusEvent, SetStateAction, useState } from "react";
 import { Filters, FiltersIndexes } from "../../../../context/systemContext";
 import { FilterInput, PriceFilterInput } from "../../../../design/FilterInput";
 import { toCurrency, toNumber } from "../../../../lib/formatInputCurrency";
@@ -27,23 +27,32 @@ export function InputFilter({
   filters,
   price = false,
 }: InputProps) {
-  const [v1, setV1] = useState(minValue);
-  const [v2, setV2] = useState(maxValue);
+  const [v1, setV1] = useState<number | string>("");
+  const [v2, setV2] = useState<number | string>("");
 
-  const handleBlur = () => {
+  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
     setFilters({ ...filters, [value1Name]: v1, [value2Name]: v2 });
   };
 
-  const handlePriceBlur = () => {
-    const numberValue1 = toNumber(v1.toString());
-    const numberValue2 = toNumber(v2.toString());
-    setV1((prevState) => toCurrency(prevState));
-    setV2((prevState) => toCurrency(prevState));
-    setFilters({
-      ...filters,
-      [value1Name]: numberValue1,
-      [value2Name]: numberValue2,
-    });
+  const handlePrice1Blur = (e: FocusEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      const numberValue1 = toNumber(v1.toString());
+      setV1((prevState) => toCurrency(prevState));
+      setFilters({
+        ...filters,
+        [value1Name]: numberValue1,
+      });
+    }
+  };
+  const handlePrice2Blur = (e: FocusEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      const numberValue2 = toNumber(v2.toString());
+      setV2((prevState) => toCurrency(prevState));
+      setFilters({
+        ...filters,
+        [value2Name]: numberValue2,
+      });
+    }
   };
 
   if (price) {
@@ -56,7 +65,7 @@ export function InputFilter({
           max={maxValue}
           placeholder={placeholder}
           format={format}
-          onBlur={handlePriceBlur}
+          onBlur={handlePrice1Blur}
           isMin
         />
         <PriceFilterInput
@@ -65,7 +74,7 @@ export function InputFilter({
           min={minValue}
           max={maxValue}
           placeholder={placeholder}
-          onBlur={handlePriceBlur}
+          onBlur={handlePrice2Blur}
           format={format}
         />
       </div>

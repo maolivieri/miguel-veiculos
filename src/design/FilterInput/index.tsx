@@ -24,7 +24,7 @@ export function PriceFilterInput({
   prefix,
   ...props
 }: InputProps) {
-  const title = isMin ? "Mínimo" : "Máximo";
+  const title = isMin ? "De" : "Até";
   const subTitle = isMin ? `Min.: ${min}` : `Max.: ${max}`;
 
   return (
@@ -39,7 +39,7 @@ export function PriceFilterInput({
           name={`${placeholder}`}
           pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
           data-type="currency"
-          placeholder={`${placeholder}`}
+          placeholder={`R$`}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           {...props}
@@ -62,8 +62,8 @@ export function FilterInput({
   ...props
 }: InputProps) {
   // const initValue = isMin ? min : max;
-  const title = isMin ? "Mínimo" : "Máximo";
-  const subTitle = isMin ? `Min.:${min}` : `Max.:${max}`;
+  const title = isMin ? "De" : "Até";
+  const subTitle = isMin ? `Min.: ${min}` : `Max.: ${max}`;
 
   return (
     <div className={styles.container}>

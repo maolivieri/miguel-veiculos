@@ -17,21 +17,41 @@ import { client } from "../lib/apollo";
 import { filterCar } from "../lib/filterCars";
 import { ICar } from "../types/Car";
 import { SearchFilters } from "../components/SearchFIlters";
+import { getMaxValues, getMinValues } from "../lib/getMinMaxValues";
 
 const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { activeFilters } = useContext(SystemContext);
+  const { activeFilters, setFilterRanges } = useContext(SystemContext);
   const { isLoading, stopLoading } = useContext(UIContext);
 
   const [isSearchVisible, setIsSearchVisible] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
+  const cars: ICar[] = carsProps;
+
+  const pricesArray = cars.map((car) => car.preco);
+  const kmArray = cars.map((car) => car.km);
+  const yearArray = cars.map((car) => car.anoModelo);
+
+  const minPrice = getMinValues(pricesArray);
+  const maxPrice = getMaxValues(pricesArray);
+  const minKM = getMinValues(kmArray);
+  const maxKM = getMaxValues(kmArray);
+  const minYear = getMinValues(yearArray);
+  const maxYear = getMaxValues(yearArray);
+
   useEffect(() => {
     stopLoading();
+    setFilterRanges({
+      minPrice,
+      maxPrice,
+      minKM,
+      maxKM,
+      minYear,
+      maxYear,
+    });
   }, []);
-
-  const cars: ICar[] = carsProps;
 
   const carsSearchResult = cars.filter(
     (car) =>

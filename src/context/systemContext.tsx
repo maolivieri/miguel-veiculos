@@ -59,6 +59,15 @@ export interface Filters {
   documentacoes: string[];
 }
 
+export interface FiltersRange {
+  minPrice: number | null;
+  maxPrice: number | null;
+  minYear: number | null;
+  maxYear: number | null;
+  minKM: number | null;
+  maxKM: number | null;
+}
+
 type SystemContextType = {
   isDrawerOpen: boolean;
   toggleDrawer: () => void;
@@ -68,6 +77,8 @@ type SystemContextType = {
   setFocusedFilter: Dispatch<SetStateAction<FilterOptions>>;
   activeFilters: Filters;
   setActiveFilters: Dispatch<SetStateAction<Filters>>;
+  filterRanges: FiltersRange;
+  setFilterRanges: Dispatch<SetStateAction<FiltersRange>>;
 };
 
 export const SystemContext = createContext({} as SystemContextType);
@@ -83,6 +94,15 @@ interface Props {
 //cambio
 //carroceria
 //combustivel
+export const initialFilterRanges = {
+  minPrice: null,
+  maxPrice: null,
+  minYear: null,
+  maxYear: null,
+  minKM: null,
+  maxKM: null,
+};
+
 export const initialFiltersValue = {
   minPrice: null,
   maxPrice: null,
@@ -109,6 +129,9 @@ export const SystemContextProvider = ({ children }: Props) => {
   const [activeFilters, setActiveFilters] =
     useState<Filters>(initialFiltersValue);
 
+  const [filterRanges, setFilterRanges] =
+    useState<FiltersRange>(initialFilterRanges);
+
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
   };
@@ -116,8 +139,6 @@ export const SystemContextProvider = ({ children }: Props) => {
   const toggleFilters = () => {
     setIsFilterOpen((prevState) => !prevState);
   };
-
-  console.log(activeFilters);
 
   return (
     <SystemContext.Provider
@@ -130,6 +151,8 @@ export const SystemContextProvider = ({ children }: Props) => {
         setFocusedFilter,
         activeFilters,
         setActiveFilters,
+        filterRanges,
+        setFilterRanges,
       }}
     >
       {children}
