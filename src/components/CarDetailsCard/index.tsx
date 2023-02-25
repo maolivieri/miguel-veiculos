@@ -80,7 +80,7 @@ export function CarDetailsCard({ car }: IProps) {
       </header>
       <div className={styles.imageAndDetailsWrapper}>
         <div className={styles.imageCarrousel}>
-          <div ref={sliderRef} className="keen-slider  zoom-out">
+          <div ref={sliderRef} className="keen-slider zoom-out">
             {arrayOfImages.map((url, idx) => (
               <div
                 key={idx}
