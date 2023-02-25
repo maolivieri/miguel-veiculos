@@ -64,7 +64,13 @@ export function FiltersDrawer() {
       </div>
       <div className={styles.line} />
       <div className={styles.body}>
-        <FilterItem icon={<IconPreco />} title="Preço" countSelected={1}>
+        <FilterItem
+          icon={<IconPreco />}
+          title="Preço"
+          countSelected={
+            activeFilters.minPrice || activeFilters.maxPrice ? 1 : 0
+          }
+        >
           <InputFilter
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -77,7 +83,13 @@ export function FiltersDrawer() {
             price
           />
         </FilterItem>
-        <FilterItem icon={<IconAno />} title="Ano" countSelected={1}>
+        <FilterItem
+          icon={<IconAno />}
+          title="Ano"
+          countSelected={
+            activeFilters.startYear || activeFilters.endYear ? 1 : 0
+          }
+        >
           <InputFilter
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -89,7 +101,11 @@ export function FiltersDrawer() {
             value2Name="endYear"
           />
         </FilterItem>
-        <FilterItem icon={<IconKM />} title="KM" countSelected={0}>
+        <FilterItem
+          icon={<IconKM />}
+          title="KM"
+          countSelected={activeFilters.kmStart || activeFilters.kmEnd ? 1 : 0}
+        >
           <InputFilter
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -108,7 +124,7 @@ export function FiltersDrawer() {
         <FilterItem
           icon={<IconCarroceria />}
           title="Carroceria"
-          countSelected={1}
+          countSelected={activeFilters.carrocerias.length}
         >
           <MultiSelectFilter
             filters={activeFilters}
@@ -123,7 +139,12 @@ export function FiltersDrawer() {
         <FilterItem
           icon={<IconOpcionais />}
           title="Opcionais"
-          countSelected={0}
+          countSelected={
+            activeFilters.conforto.length +
+            activeFilters.essenciais.length +
+            activeFilters.seguranca.length +
+            activeFilters.tecnologia.length
+          }
           multi
         >
           <CheckboxFilter
@@ -155,7 +176,11 @@ export function FiltersDrawer() {
             title="Tecnologia"
           />
         </FilterItem>
-        <FilterItem icon={<IconMarca />} title="Marcas" countSelected={1}>
+        <FilterItem
+          icon={<IconMarca />}
+          title="Marcas"
+          countSelected={activeFilters.marcas.length}
+        >
           <MultiSelectFilter
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -166,7 +191,11 @@ export function FiltersDrawer() {
             }))}
           />
         </FilterItem>
-        <FilterItem icon={<IconCambio />} title="Câmbio" countSelected={1}>
+        <FilterItem
+          icon={<IconCambio />}
+          title="Câmbio"
+          countSelected={activeFilters.cambios.length}
+        >
           <CheckboxFilter
             items={cambios.map((x) => x.nome)}
             filters={activeFilters}
@@ -177,7 +206,7 @@ export function FiltersDrawer() {
         <FilterItem
           icon={<IconCombustivel />}
           title="Combustivel"
-          countSelected={1}
+          countSelected={activeFilters.combustiveis.length}
         >
           <CheckboxFilter
             items={combustivels.map((x) => x.nome)}
@@ -186,7 +215,11 @@ export function FiltersDrawer() {
             fieldName="combustiveis"
           />
         </FilterItem>
-        <FilterItem icon={<IconCor />} title="Cor" countSelected={1}>
+        <FilterItem
+          icon={<IconCor />}
+          title="Cor"
+          countSelected={activeFilters.cores.length}
+        >
           <MultiSelectFilter
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -201,7 +234,7 @@ export function FiltersDrawer() {
         <FilterItem
           icon={<IconDocumentation />}
           title="Documentação"
-          countSelected={1}
+          countSelected={activeFilters.documentacoes.length}
         >
           <CheckboxFilter
             items={documentacoes.map((x) => x.nome)}
