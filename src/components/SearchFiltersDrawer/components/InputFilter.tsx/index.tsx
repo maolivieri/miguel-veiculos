@@ -1,4 +1,10 @@
-import { Dispatch, FocusEvent, SetStateAction, useState } from "react";
+import {
+  Dispatch,
+  FocusEvent,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { Filters, FiltersIndexes } from "../../../../context/systemContext";
 import { FilterInput, PriceFilterInput } from "../../../../design/FilterInput";
 import { toCurrency, toNumber } from "../../../../lib/formatInputCurrency";
@@ -29,6 +35,18 @@ export function InputFilter({
 }: InputProps) {
   const [v1, setV1] = useState<number | string>("");
   const [v2, setV2] = useState<number | string>("");
+
+  const filter1 = filters[value1Name];
+  const filter2 = filters[value2Name];
+
+  useEffect(() => {
+    if (filter1 === null) {
+      setV1("");
+    }
+    if (filter2 === null) {
+      setV2("");
+    }
+  }, [filter1, filter2]);
 
   const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
     setFilters({ ...filters, [value1Name]: v1, [value2Name]: v2 });
