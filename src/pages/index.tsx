@@ -22,7 +22,8 @@ import { getMaxValues, getMinValues } from "../lib/getMinMaxValues";
 const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { activeFilters, setFilterRanges } = useContext(SystemContext);
+  const { activeFilters, setFilterRanges, filterRanges } =
+    useContext(SystemContext);
   const { isLoading, stopLoading } = useContext(UIContext);
 
   const [isSearchVisible, setIsSearchVisible] = useState(true);
@@ -60,13 +61,13 @@ const Home: NextPage = ({
   );
 
   const carsFiltered = carsSearchResult.filter((car) =>
-    filterCar(car, activeFilters)
+    filterCar(car, activeFilters, filterRanges)
   );
 
   const carsArray = carsFiltered;
   return (
     <Layout>
-      <div>
+      <div className="pageBody">
         <SpinnerComponent active={isLoading} />
         <SideDrawer />
         <Header isSearchVisible={isSearchVisible} />
