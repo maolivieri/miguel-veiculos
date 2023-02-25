@@ -68,9 +68,10 @@ export function CarDetailsCard({ car }: IProps) {
     };
   }
 
-  const arrayOfImages = [car.main_image?.url, car.main_image?.url].filter(
-    Boolean
-  );
+  const arrayOfImages = [
+    car.main_image?.url,
+    car?.fotos?.fotos?.map((foto) => foto?.url),
+  ].filter(Boolean);
 
   return (
     <main className={styles.mainContainer}>

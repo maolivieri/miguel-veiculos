@@ -46,8 +46,8 @@ export type ICar = {
   fotos: {
     fotos: {
       url: string;
-    };
-  }[];
+    }[];
+  };
   segurancas: {
     nome: string;
   }[];
