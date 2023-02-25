@@ -27,6 +27,7 @@ import { MultiSelectFilter } from "./components/MultiSelectFilter";
 import { ListsContext } from "../../context/listsContext";
 import { CheckboxFilter } from "./components/CheckboxFilter";
 import { toCurrency } from "../../lib/formatInputCurrency";
+import { formatToBigNumber } from "../../lib/formatBigNumber";
 
 export function FiltersDrawer() {
   const { toggleFilters, setActiveFilters, activeFilters, filterRanges } =
@@ -110,12 +111,8 @@ export function FiltersDrawer() {
             filters={activeFilters}
             setFilters={setActiveFilters}
             format=""
-            minValue={`${new Intl.NumberFormat("pt-BR").format(
-              Number(filterRanges.minKM)
-            )} km`}
-            maxValue={`${new Intl.NumberFormat("pt-BR").format(
-              Number(filterRanges.maxKM)
-            )} km`}
+            minValue={`${formatToBigNumber(filterRanges.minKM)} km`}
+            maxValue={`${formatToBigNumber(filterRanges.maxKM)} km`}
             placeholder="KM"
             value1Name="kmStart"
             value2Name="kmEnd"

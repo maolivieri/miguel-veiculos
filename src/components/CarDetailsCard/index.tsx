@@ -33,6 +33,7 @@ import "keen-slider/keen-slider.min.css";
 import { TrackDetails } from "keen-slider";
 import { SliderArrow } from "../../design/SliderArrow";
 import { SliderDots } from "../../design/SliderDot";
+import { formatToBigNumber } from "../../lib/formatBigNumber";
 //icons
 
 interface IProps {
@@ -68,7 +69,7 @@ export function CarDetailsCard({ car }: IProps) {
     };
   }
 
-  const arrayOfFotos = car?.fotos?.fotos?.map((foto) => foto?.url);
+  const arrayOfFotos = car?.fotos?.fotos?.map((foto) => foto?.url) || [];
 
   const arrayOfImages = [car.main_image?.url, ...arrayOfFotos].filter(Boolean);
 
@@ -168,7 +169,7 @@ export function CarDetailsCard({ car }: IProps) {
             <CarDetailSpecCard
               icon={<IconKM size={12} />}
               title="KM"
-              value={`${car.km} KM`}
+              value={`${formatToBigNumber(car.km)} KM`}
             />
             <CarDetailSpecCard
               icon={<IconCombustivel size={12} />}

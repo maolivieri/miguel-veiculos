@@ -9,6 +9,7 @@ import { ICar } from "../../types/Car";
 import { formatToCurrency } from "../../lib/formatToCurrency";
 import { IconAno, IconCombustivel, IconKM } from "../../design/Icons";
 import { UIContext } from "../../context/uiContext";
+import { formatToBigNumber } from "../../lib/formatBigNumber";
 
 interface IProps {
   car: ICar;
@@ -56,7 +57,7 @@ export function CarCard({ car }: IProps) {
           </div>
           <div className={styles.detail}>
             <IconKM size="1rem" />
-            <p>{`${car.km} KM`}</p>
+            <p>{`${formatToBigNumber(car.km)} KM`}</p>
           </div>
         </div>
       </div>
