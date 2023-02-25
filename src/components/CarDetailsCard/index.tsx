@@ -26,8 +26,13 @@ import {
   IconTracao,
 } from "../../design/Icons";
 import { UIContext } from "../../context/uiContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { TrackDetails } from "keen-slider";
+import { SliderArrow } from "../../design/SliderArrow";
+import { SliderDots } from "../../design/SliderDot";
 //icons
 
 interface IProps {
@@ -35,21 +40,93 @@ interface IProps {
 }
 
 export function CarDetailsCard({ car }: IProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [details, setDetails] = useState<TrackDetails | null>(null);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    detailsChanged(s) {
+      setDetails(s.track.details);
+    },
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+  });
+
+  function scaleStyle(idx: number) {
+    if (!details) return {};
+    const slide = details.slides[idx];
+    const scale_size = 0.7;
+    const scale = 1 - (scale_size - scale_size * slide.portion);
+    return {
+      transform: `scale(${scale})`,
+      WebkitTransform: `scale(${scale})`,
+    };
+  }
+
+  const arrayOfImages = [car.main_image?.url, car.main_image?.url].filter(
+    Boolean
+  );
+
   return (
     <main className={styles.mainContainer}>
       <header>
         <ReturnButton />
       </header>
       <div className={styles.imageAndDetailsWrapper}>
-        <div className={styles.imageWrapper}>
-          <Image
-            width={1350}
-            height={885}
-            src={car.main_image?.url || car_placeholder}
-            alt=""
-          />
+        <div className={styles.imageCarrousel}>
+          <div ref={sliderRef} className="keen-slider  zoom-out">
+            {arrayOfImages.map((url, idx) => (
+              <div
+                key={idx}
+                className={`${styles.imageWrapper} keen-slider__slide  zoom-out__slide`}
+              >
+                <div style={scaleStyle(idx)}>
+                  <Image
+                    width={1350}
+                    height={885}
+                    src={url || car_placeholder}
+                    alt=""
+                  />
+                </div>
+              </div>
+            ))}
+
+            {loaded && instanceRef.current && (
+              <>
+                <SliderArrow
+                  left
+                  onClick={(e: any) =>
+                    e.stopPropagation() || instanceRef.current?.prev()
+                  }
+                  disabled={currentSlide === 0}
+                />
+
+                <SliderArrow
+                  onClick={(e: any) =>
+                    e.stopPropagation() || instanceRef.current?.next()
+                  }
+                  disabled={
+                    currentSlide ===
+                    instanceRef.current.track.details.slides.length - 1
+                  }
+                />
+              </>
+            )}
+          </div>
+          {loaded && instanceRef.current && (
+            <SliderDots
+              currentSlide={currentSlide}
+              dotsLength={instanceRef.current.track.details.slides.length}
+              moveToIndex={instanceRef.current?.moveToIdx}
+            />
+          )}
         </div>
-        <div>
+        <div className={styles.info}>
           <div className={styles.carInfoWrapper}>
             <div className={styles.brandImageWrapper}>
               <Image
