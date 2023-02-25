@@ -1,6 +1,10 @@
 .item {
   padding: 1.5rem;
   border-bottom: 1px solid var(--gray-400);
+
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 
 .header {

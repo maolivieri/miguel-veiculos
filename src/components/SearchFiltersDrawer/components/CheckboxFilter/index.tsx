@@ -19,7 +19,7 @@ export function CheckboxFilter({
   setFilters,
 }: IProps) {
   const [viewAll, setViewAll] = useState(false);
-  const finalSplice = viewAll ? items.length : 3;
+  const finalSplice = viewAll ? items.length : 10;
   const values = items.slice(0, finalSplice);
 
   const thisFilter = filters[fieldName];
@@ -61,11 +61,11 @@ export function CheckboxFilter({
         <></>
       ) : !viewAll ? (
         <div className={styles.showButton} onClick={handleShowButton}>
-          {`VER MAIS ${items.length - values.length}`}
+          {`Ver mais ${items.length - values.length}`}
         </div>
       ) : (
         <div className={styles.showButton} onClick={handleShowButton}>
-          VER MENOS
+          Ver menos
         </div>
       )}
     </div>

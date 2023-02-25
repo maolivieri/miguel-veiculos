@@ -29,7 +29,7 @@ export function PriceFilterInput({
 
   return (
     <div className={styles.container}>
-      <label className={styles.title}>{title}</label>
+      <p className={styles.title}>{title}</p>
       <div className={styles.inputBox}>
         {prefix && <span>{prefix}</span>}
         <input

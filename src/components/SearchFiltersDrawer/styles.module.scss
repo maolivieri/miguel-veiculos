@@ -33,6 +33,6 @@
 }
 
 .body {
-  overflow: scroll;
-  max-height: calc(100vh - 13rem);
+  overflow: auto;
+  max-height: calc(100vh - 9rem);
 }
