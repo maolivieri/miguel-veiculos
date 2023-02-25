@@ -19,6 +19,18 @@
   }
 }
 
+.openDrawer {
+  @media (min-width: 992px) {
+    padding-left: calc(((100vw - 992px) / 2) - 14rem);
+    padding-right: calc(((100vw - 992px) / 2) + 20rem);
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: calc(((100vw - 1200px) / 2) - 14rem);
+    padding-right: calc(((100vw - 1200px) / 2) + 14rem);
+  }
+}
+
 .filterButton {
   position: relative;
 }

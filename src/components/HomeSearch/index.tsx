@@ -13,12 +13,15 @@ interface IProps {
 }
 
 export function HomeSearch({ searchValue, setSearchValue }: IProps) {
-  const { toggleFilters, activeFilters } = useContext(SystemContext);
+  const { toggleFilters, activeFilters, isFiltersOpen } =
+    useContext(SystemContext);
 
   const countActiveFilters = countValidFilters(activeFilters);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${isFiltersOpen && styles.openDrawer}`}
+    >
       <SearchInput searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className={styles.filterButton}>
         <IconButtonPrimary

@@ -1,6 +1,11 @@
 import { Filters } from "../context/systemContext";
 import { ICar } from "../types/Car";
 
+interface ListNome {
+  nome: string;
+}
+[];
+
 function isWithinValue(
   value: number,
   min: null | number,
@@ -20,11 +25,6 @@ function isWithinList(value: string, list: string[]): boolean {
     return true;
   } else return false;
 }
-
-interface ListNome {
-  nome: string;
-}
-[];
 
 function isWithinAllListItems(
   value: { nome: string }[],

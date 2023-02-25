@@ -26,6 +26,18 @@
   }
 }
 
+.openDrawer {
+  @media (min-width: 992px) {
+    // padding-right: 25rem;
+    padding-right: calc(((110vw - 992px) / 2) + 25rem);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 3fr 3fr; //6columns
+    padding-right: calc(((88vw - 1200px) / 2) + 10rem);
+  }
+}
+
 .notfoundcontainer {
   display: flex;
   padding: 0.5rem 1.6rem 2rem 1.6rem;
