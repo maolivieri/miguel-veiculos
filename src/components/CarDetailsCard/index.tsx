@@ -222,46 +222,44 @@ export function CarDetailsCard({ car }: IProps) {
           </div>
         </div>
       </div>
-      {!!car.essenciais.length &&
-        !!car.confortos.length &&
-        !!car.tecnologias.length &&
-        !!car.segurancas.length && (
-          <>
-            <h4 className={styles.optionalsHeadTitle}>
-              Especificações técnicas
-            </h4>
-            <div className={styles.optionalsWrapper}>
-              {!!car.essenciais.length && (
-                <OptionalCard
-                  icon={<IconEssenciais />}
-                  title="Essenciais"
-                  list={car.essenciais}
-                />
-              )}
-              {!!car.confortos.length && (
-                <OptionalCard
-                  icon={<IconConforto />}
-                  title="Conforto"
-                  list={car.confortos}
-                />
-              )}
-              {!!car.tecnologias.length && (
-                <OptionalCard
-                  icon={<IconTecnologia />}
-                  title="Tecnologia"
-                  list={car.tecnologias}
-                />
-              )}
-              {!!car.segurancas.length && (
-                <OptionalCard
-                  icon={<IconSeguranca />}
-                  title="Segurança"
-                  list={car.segurancas}
-                />
-              )}
-            </div>
-          </>
-        )}
+      {(!!car.essenciais.length ||
+        !!car.confortos.length ||
+        !!car.tecnologias.length ||
+        !!car.segurancas.length) && (
+        <>
+          <h4 className={styles.optionalsHeadTitle}>Especificações técnicas</h4>
+          <div className={styles.optionalsWrapper}>
+            {!!car.essenciais.length && (
+              <OptionalCard
+                icon={<IconEssenciais />}
+                title="Essenciais"
+                list={car.essenciais}
+              />
+            )}
+            {!!car.confortos.length && (
+              <OptionalCard
+                icon={<IconConforto />}
+                title="Conforto"
+                list={car.confortos}
+              />
+            )}
+            {!!car.tecnologias.length && (
+              <OptionalCard
+                icon={<IconTecnologia />}
+                title="Tecnologia"
+                list={car.tecnologias}
+              />
+            )}
+            {!!car.segurancas.length && (
+              <OptionalCard
+                icon={<IconSeguranca />}
+                title="Segurança"
+                list={car.segurancas}
+              />
+            )}
+          </div>
+        </>
+      )}
     </main>
   );
 }
