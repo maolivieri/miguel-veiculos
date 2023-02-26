@@ -29,7 +29,7 @@
 .listGrid {
   grid-template-columns: 1fr;
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
 }

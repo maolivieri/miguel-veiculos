@@ -13,11 +13,18 @@ import { formatToBigNumber } from "../../lib/formatBigNumber";
 
 interface IProps {
   car: ICar;
+  alternativeLayout?: boolean;
 }
 
-export function CarCard({ car }: IProps) {
+export function CarCard({ car, alternativeLayout = false }: IProps) {
   const [checked, setChecked] = useState(false);
-  const { startLoading } = useContext(UIContext);
+  const { startLoading, display } = useContext(UIContext);
+
+  const altLayout =
+    (display === "list" || alternativeLayout) && styles.altLayout;
+
+  const altImageLayout =
+    (display === "list" || alternativeLayout) && styles.altImageLayout;
 
   return (
     <Link
@@ -25,9 +32,12 @@ export function CarCard({ car }: IProps) {
         pathname: `/detalhe/${car.id}`,
       }}
     >
-      <div className={styles.container} onClick={startLoading}>
+      <div
+        className={`${styles.container} ${altLayout}`}
+        onClick={startLoading}
+      >
         <div className={styles.header}>
-          <div className={styles.imageWrapper}>
+          <div className={`${styles.imageWrapper} ${altImageLayout}`}>
             <Image
               width={1350}
               height={885}
@@ -35,29 +45,25 @@ export function CarCard({ car }: IProps) {
               alt=""
             />
           </div>
-          {/* <div className={styles.checkboxWrapper}>
-          <Checkbox
-            checked={checked}
-            onChange={() => setChecked((prevState) => !prevState)}
-          />
-        </div> */}
         </div>
-        <div className={styles.main}>
-          <p className={styles.name}>{car.modelo}</p>
-          <p className={styles.price}>{formatToCurrency(car.preco)}</p>
-        </div>
-        <div className={styles.footer}>
-          <div className={styles.detail}>
-            <IconAno size="1rem" />
-            <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
+        <div>
+          <div className={styles.main}>
+            <p className={styles.name}>{car.modelo}</p>
+            <p className={styles.price}>{formatToCurrency(car.preco)}</p>
           </div>
-          <div className={styles.detail}>
-            <IconCombustivel size="1rem" />
-            <p>{car.combustivel?.nome}</p>
-          </div>
-          <div className={styles.detail}>
-            <IconKM size="1rem" />
-            <p>{`${formatToBigNumber(car.km)} KM`}</p>
+          <div className={styles.footer}>
+            <div className={styles.detail}>
+              <IconAno size="1rem" />
+              <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
+            </div>
+            <div className={styles.detail}>
+              <IconCombustivel size="1rem" />
+              <p>{car.combustivel?.nome}</p>
+            </div>
+            <div className={styles.detail}>
+              <IconKM size="1rem" />
+              <p>{`${formatToBigNumber(car.km)} KM`}</p>
+            </div>
           </div>
         </div>
       </div>
