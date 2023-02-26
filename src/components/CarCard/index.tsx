@@ -7,7 +7,12 @@ import car_placeholder from "../../../public/assets/images/car-placeholder.png";
 
 import { ICar } from "../../types/Car";
 import { formatToCurrency } from "../../lib/formatToCurrency";
-import { IconAno, IconCombustivel, IconKM } from "../../design/Icons";
+import {
+  IconAno,
+  IconCombustivel,
+  IconKM,
+  IconPotencia,
+} from "../../design/Icons";
 import { UIContext } from "../../context/uiContext";
 import { formatToBigNumber } from "../../lib/formatBigNumber";
 
@@ -62,15 +67,19 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
             </div>
             <div className={styles.footer}>
               <div className={styles.detail}>
-                <IconAno size="1rem" />
+                <IconPotencia size="0.7rem" color="var(--gray-700)" />
+                <p>{car.potencia}</p>
+              </div>
+              <div className={styles.detail}>
+                <IconAno size="0.7rem" color="var(--gray-700)" />
                 <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
               </div>
               <div className={styles.detail}>
-                <IconCombustivel size="1rem" />
+                <IconCombustivel size="0.7rem" color="var(--gray-700)" />
                 <p>{car.combustivel?.nome}</p>
               </div>
               <div className={styles.detail}>
-                <IconKM size="1rem" />
+                <IconKM size="0.7rem" color="var(--gray-700)" />
                 <p>{`${formatToBigNumber(car.km)} KM`}</p>
               </div>
             </div>

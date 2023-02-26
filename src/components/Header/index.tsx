@@ -34,7 +34,7 @@ export function Header({ isSearchVisible }: IProps) {
           clearTimeout(timeout);
           timeout = setTimeout(() => {
             slider.next();
-          }, 2000);
+          }, 2500);
         }
         slider.on("created", () => {
           nextTimeout();
