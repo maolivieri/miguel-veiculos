@@ -90,6 +90,7 @@ export function CarDetailsCard({ car }: IProps) {
                     height={885}
                     src={url || car_placeholder}
                     alt=""
+                    priority
                   />
                 </div>
               </div>

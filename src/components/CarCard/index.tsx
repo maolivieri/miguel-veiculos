@@ -17,7 +17,6 @@ interface IProps {
 }
 
 export function CarCard({ car, alternativeLayout = false }: IProps) {
-  const [checked, setChecked] = useState(false);
   const { startLoading, display } = useContext(UIContext);
 
   const altLayout =
@@ -32,37 +31,48 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
         pathname: `/detalhe/${car.id}`,
       }}
     >
-      <div
-        className={`${styles.container} ${altLayout}`}
-        onClick={startLoading}
-      >
-        <div className={styles.header}>
-          <div className={`${styles.imageWrapper} ${altImageLayout}`}>
-            <Image
-              width={1350}
-              height={885}
-              src={car.main_image?.url || car_placeholder}
-              alt=""
-            />
+      <div className={styles.box}>
+        {(car.opcional_esquerdo || car.opcional_direito) && (
+          <div
+            className={`${styles.bonusFlag} ${
+              car.opcional_esquerdo ? styles.leftFlag : styles.rightFlag
+            }`}
+          >
+            <p>{car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}</p>
           </div>
-        </div>
-        <div>
-          <div className={styles.main}>
-            <p className={styles.name}>{car.modelo}</p>
-            <p className={styles.price}>{formatToCurrency(car.preco)}</p>
+        )}
+        <div
+          className={`${styles.container} ${altLayout}`}
+          onClick={startLoading}
+        >
+          <div className={styles.header}>
+            <div className={`${styles.imageWrapper} ${altImageLayout}`}>
+              <Image
+                width={1350}
+                height={885}
+                src={car.main_image?.url || car_placeholder}
+                alt=""
+              />
+            </div>
           </div>
-          <div className={styles.footer}>
-            <div className={styles.detail}>
-              <IconAno size="1rem" />
-              <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
+          <div>
+            <div className={styles.main}>
+              <p className={styles.name}>{car.modelo}</p>
+              <p className={styles.price}>{formatToCurrency(car.preco)}</p>
             </div>
-            <div className={styles.detail}>
-              <IconCombustivel size="1rem" />
-              <p>{car.combustivel?.nome}</p>
-            </div>
-            <div className={styles.detail}>
-              <IconKM size="1rem" />
-              <p>{`${formatToBigNumber(car.km)} KM`}</p>
+            <div className={styles.footer}>
+              <div className={styles.detail}>
+                <IconAno size="1rem" />
+                <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
+              </div>
+              <div className={styles.detail}>
+                <IconCombustivel size="1rem" />
+                <p>{car.combustivel?.nome}</p>
+              </div>
+              <div className={styles.detail}>
+                <IconKM size="1rem" />
+                <p>{`${formatToBigNumber(car.km)} KM`}</p>
+              </div>
             </div>
           </div>
         </div>
