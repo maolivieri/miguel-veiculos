@@ -110,7 +110,7 @@ const Home: NextPage = ({
         </Modal>
         <HomeFloatingMenu
           handleSearchOpen={handleSearchOpen}
-          handleSortOpen={handleSearchOpen}
+          handleSortOpen={handleSortOpen}
           isSearchVisible={isSearchVisible}
         />
         <SearchFilters />
