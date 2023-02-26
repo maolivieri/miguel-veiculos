@@ -21,8 +21,28 @@
 
 .altLayout {
   @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
     flex-direction: row;
     gap: 1rem;
+    padding-left: 0;
+    padding-right: 1.5rem;
+
+    .main {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
+      margin-bottom: 0.8rem;
+
+      .price {
+        font-size: 0.9rem;
+      }
+    }
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
@@ -156,8 +176,8 @@
   }
 
   @media (min-width: 1200px) {
-    width: 100%;
-    margin-top: -3rem;
+    width: 95%;
+    margin-top: -4rem;
   }
 }
 

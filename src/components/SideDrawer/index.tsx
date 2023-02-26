@@ -67,58 +67,68 @@ export function SideDrawer() {
   return (
     <div className={`${styles.container} ${isDrawerOpen && styles.openDrawer}`}>
       <nav className={`${styles.nav} ${isDrawerOpen && styles.openNavDrawer}`}>
-        <div className={styles.closeButton}>
-          <CloseButton onClick={toggleDrawer} />
+        <div className={styles.content}>
+          <div className={styles.closeButton}>
+            <CloseButton onClick={toggleDrawer} />
+          </div>
+          <div className={styles.abouttWrapper}>
+            <h1 className={styles.drawerTitle}>Miguel Veículos</h1>
+            <p className={styles.drawerDescription}>
+              Desde 1998 fazendo bons negócios!
+            </p>
+            <LinkItem
+              icon={<BsInfoCircle />}
+              text="Sobre nós"
+              href="/sobre-nos"
+            />
+            <LinkItem
+              icon={<MdOutlineStorefront />}
+              text="Conheça a loja"
+              href="/nossa-loja"
+            />
+            <LinkItem
+              icon={<MdOutlineLocationOn />}
+              text="Localização"
+              href="/localizacao"
+            />
+          </div>
+          <div className={styles.contactWrapper}>
+            <h3 className={styles.lineTitle}>Contato</h3>
+            <LineItem
+              icon={<FaWhatsapp />}
+              text="WhatsApp"
+              aria-label="Contato pelo WhatsApp"
+              to="https://wa.me/5519971568585"
+            />
+            <TextItem
+              icon={<BsTelephone />}
+              text="Telefone"
+              type="phone"
+              onClick={() => window.open("tel:900300400")}
+              // onClick="window.open('tel:900300400')"
+            />
+            <LineItem
+              icon={<MdOutlineMailOutline />}
+              text="Email"
+              to="mailto:test@test.com"
+            />
+          </div>
+          <div className={styles.contactWrapper}>
+            <h3 className={styles.lineTitle}>Nos acompanhe</h3>
+
+            <LineItem
+              icon={<FaInstagram />}
+              text="Instagram"
+              to="https://www.instagram.com/veiculosmiguel/"
+            />
+            <LineItem
+              icon={<FaFacebookF />}
+              text="Facebook"
+              to="https://www.facebook.com/profile.php?id=100009341935363"
+            />
+          </div>
         </div>
-        <div className={styles.contactWrapper}>
-          <h3 className={styles.lineTitle}>Entre em contato</h3>
-          <LineItem
-            icon={<FaWhatsapp />}
-            text="WhatsApp"
-            aria-label="Contato pelo WhatsApp"
-            to="https://wa.me/5519971568585"
-          />
-          <TextItem
-            icon={<BsTelephone />}
-            text="Telefone"
-            type="phone"
-            onClick={() => window.open("tel:900300400")}
-            // onClick="window.open('tel:900300400')"
-          />
-          <LineItem
-            icon={<FaInstagram />}
-            text="Instagram"
-            to="https://www.instagram.com/veiculosmiguel/"
-          />
-          <LineItem
-            icon={<FaFacebookF />}
-            text="Facebook"
-            to="https://www.facebook.com/profile.php?id=100009341935363"
-          />
-          <LineItem
-            icon={<MdOutlineMailOutline />}
-            text="Email"
-            to="mailto:test@test.com"
-          />
-        </div>
-        <div className={styles.abouttWrapper}>
-          <h3 className={styles.lineTitle}>Miguel Veículos</h3>
-          <LinkItem
-            icon={<BsInfoCircle />}
-            text="Sobre nós"
-            href="/sobre-nos"
-          />
-          <LinkItem
-            icon={<MdOutlineStorefront />}
-            text="Conheça a loja"
-            href="/nossa-loja"
-          />
-          <LinkItem
-            icon={<MdOutlineLocationOn />}
-            text="Localização"
-            href="/localizacao"
-          />
-        </div>
+        <p>© Copyright 2023 Miguel Veículos</p>
       </nav>
       <div className={styles.dropShaddow} onClick={toggleDrawer} />
     </div>

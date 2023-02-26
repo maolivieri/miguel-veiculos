@@ -139,7 +139,8 @@
   // }
 
   @media (min-width: 1200px) {
-    grid-gap: 0.8rem;
+    column-gap: 0.5rem;
+    row-gap: 0;
     grid-template-areas:
       "logo title"
       "logo price";
