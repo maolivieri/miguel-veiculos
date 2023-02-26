@@ -6,6 +6,14 @@ import {
   useState,
 } from "react";
 
+export type SortOptions =
+  | "az"
+  | "menorpreco"
+  | "maiorpreco"
+  | "menorano"
+  | "menorkm"
+  | null;
+
 export type FilterOptions =
   | "preco"
   | "ano"
@@ -79,6 +87,8 @@ type SystemContextType = {
   setActiveFilters: Dispatch<SetStateAction<Filters>>;
   filterRanges: FiltersRange;
   setFilterRanges: Dispatch<SetStateAction<FiltersRange>>;
+  listSort: SortOptions;
+  setListSort: Dispatch<SetStateAction<SortOptions>>;
 };
 
 export const SystemContext = createContext({} as SystemContextType);
@@ -128,9 +138,9 @@ export const SystemContextProvider = ({ children }: Props) => {
   const [focusedFilter, setFocusedFilter] = useState<FilterOptions>(null);
   const [activeFilters, setActiveFilters] =
     useState<Filters>(initialFiltersValue);
-
   const [filterRanges, setFilterRanges] =
     useState<FiltersRange>(initialFilterRanges);
+  const [listSort, setListSort] = useState<SortOptions>(null);
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prevState) => !prevState);
@@ -153,6 +163,8 @@ export const SystemContextProvider = ({ children }: Props) => {
         setActiveFilters,
         filterRanges,
         setFilterRanges,
+        listSort,
+        setListSort,
       }}
     >
       {children}

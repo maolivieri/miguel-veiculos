@@ -26,6 +26,14 @@
   }
 }
 
+.listGrid {
+  grid-template-columns: 1fr;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .openDrawer {
   @media (min-width: 992px) {
     // padding-right: 25rem;

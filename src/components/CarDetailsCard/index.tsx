@@ -75,9 +75,7 @@ export function CarDetailsCard({ car }: IProps) {
 
   return (
     <main className={styles.mainContainer}>
-      <header>
-        <ReturnButton />
-      </header>
+      <header>{/* <ReturnButton /> */}</header>
       <div className={styles.imageAndDetailsWrapper}>
         <div className={styles.imageCarrousel}>
           <div ref={sliderRef} className="keen-slider zoom-out">
@@ -224,29 +222,46 @@ export function CarDetailsCard({ car }: IProps) {
           </div>
         </div>
       </div>
-      <h4 className={styles.optionalsHeadTitle}>Especificações técnicas</h4>
-      <div className={styles.optionalsWrapper}>
-        <OptionalCard
-          icon={<IconEssenciais />}
-          title="Essenciais"
-          list={car.essenciais}
-        />
-        <OptionalCard
-          icon={<IconConforto />}
-          title="Conforto"
-          list={car.confortos}
-        />
-        <OptionalCard
-          icon={<IconTecnologia />}
-          title="Tecnologia"
-          list={car.tecnologias}
-        />
-        <OptionalCard
-          icon={<IconSeguranca />}
-          title="Segurança"
-          list={car.segurancas}
-        />
-      </div>
+      {!!car.essenciais.length &&
+        !!car.confortos.length &&
+        !!car.tecnologias.length &&
+        !!car.segurancas.length && (
+          <>
+            <h4 className={styles.optionalsHeadTitle}>
+              Especificações técnicas
+            </h4>
+            <div className={styles.optionalsWrapper}>
+              {!!car.essenciais.length && (
+                <OptionalCard
+                  icon={<IconEssenciais />}
+                  title="Essenciais"
+                  list={car.essenciais}
+                />
+              )}
+              {!!car.confortos.length && (
+                <OptionalCard
+                  icon={<IconConforto />}
+                  title="Conforto"
+                  list={car.confortos}
+                />
+              )}
+              {!!car.tecnologias.length && (
+                <OptionalCard
+                  icon={<IconTecnologia />}
+                  title="Tecnologia"
+                  list={car.tecnologias}
+                />
+              )}
+              {!!car.segurancas.length && (
+                <OptionalCard
+                  icon={<IconSeguranca />}
+                  title="Segurança"
+                  list={car.segurancas}
+                />
+              )}
+            </div>
+          </>
+        )}
     </main>
   );
 }

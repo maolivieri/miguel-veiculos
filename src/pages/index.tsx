@@ -18,16 +18,29 @@ import { filterCar } from "../lib/filterCars";
 import { ICar } from "../types/Car";
 import { SearchFilters } from "../components/SearchFIlters";
 import { getMaxValues, getMinValues } from "../lib/getMinMaxValues";
+import { SortCars } from "../lib/sortCars";
+import { Modal } from "../design/Modal";
+import { SortCarsList } from "../components/SortCarsList";
+import { ModalCarSearch } from "../components/ModalCarSearch";
 
 const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { activeFilters, setFilterRanges, filterRanges } =
+  const { activeFilters, setFilterRanges, filterRanges, listSort } =
     useContext(SystemContext);
   const { isLoading, stopLoading } = useContext(UIContext);
 
   const [isSearchVisible, setIsSearchVisible] = useState(true);
   const [searchValue, setSearchValue] = useState("");
+
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  function handleSortOpen() {
+    setIsSortOpen((prevState) => !prevState);
+  }
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  function handleSearchOpen() {
+    setIsSearchOpen((prevState) => !prevState);
+  }
 
   const cars: ICar[] = carsProps;
 
@@ -64,7 +77,7 @@ const Home: NextPage = ({
     filterCar(car, activeFilters, filterRanges)
   );
 
-  const carsArray = carsFiltered;
+  const carsArray = SortCars(carsFiltered, listSort);
   return (
     <Layout>
       <div className={`pageBody`}>
@@ -85,9 +98,23 @@ const Home: NextPage = ({
           />
         </ReactVisibilitySensor>
         <OurCars cars={carsArray} />
-        <HomeFloatingMenu isSearchVisible={isSearchVisible} />
+        <Modal isOpen={isSortOpen} toggleModal={handleSortOpen}>
+          <SortCarsList toggleFilters={handleSortOpen} />
+        </Modal>
+        <Modal isOpen={isSearchOpen} toggleModal={handleSearchOpen}>
+          <ModalCarSearch
+            toggleModal={handleSearchOpen}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </Modal>
+        <HomeFloatingMenu
+          handleSearchOpen={handleSearchOpen}
+          handleSortOpen={handleSearchOpen}
+          isSearchVisible={isSearchVisible}
+        />
+        <SearchFilters />
       </div>
-      <SearchFilters />
     </Layout>
   );
 };

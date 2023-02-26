@@ -27,7 +27,7 @@ import {
 import { BiChevronDown } from "react-icons/bi";
 
 export function FiltersModal() {
-  const { isFiltersOpen, toggleFilters, setActiveFilters, activeFilters } =
+  const { toggleFilters, setActiveFilters, activeFilters } =
     useContext(SystemContext);
 
   return (
