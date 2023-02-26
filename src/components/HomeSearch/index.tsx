@@ -24,10 +24,11 @@ export function HomeSearch({ searchValue, setSearchValue }: IProps) {
     >
       <SearchInput searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className={styles.filterButton}>
-        <IconButtonPrimary
+        <IconButtonSecondary
           icon={<TbAdjustmentsHorizontal size="1.4rem" />}
           onClick={toggleFilters}
-          alt
+          text="Filtro"
+          // alt
         />
         {!!countActiveFilters && (
           <div className={styles.buttonIndicator}>{countActiveFilters}</div>

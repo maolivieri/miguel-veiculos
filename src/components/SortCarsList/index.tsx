@@ -27,7 +27,7 @@ export function SortCarsList({ toggleFilters }: Props) {
         </div>
         <div className={styles.item} onClick={() => handleOnClick("az")}>
           <div className={`${listSort === "az" && styles.active}`} />
-          <p>Ordem alfabética</p>
+          <p>A - Z</p>
         </div>
         <div
           className={styles.item}
@@ -43,14 +43,14 @@ export function SortCarsList({ toggleFilters }: Props) {
           <div className={`${listSort === "maiorpreco" && styles.active}`} />
           <p>Maior preço</p>
         </div>
-        <div className={styles.item} onClick={() => handleOnClick("menorano")}>
+        {/* <div className={styles.item} onClick={() => handleOnClick("menorano")}>
           <div className={`${listSort === "menorano" && styles.active}`} />
           <p>Ano mais novo</p>
-        </div>
-        <div className={styles.item} onClick={() => handleOnClick("menorkm")}>
+        </div> */}
+        {/* <div className={styles.item} onClick={() => handleOnClick("menorkm")}>
           <div className={`${listSort === "menorkm" && styles.active}`} />
           <p>Mais novo</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

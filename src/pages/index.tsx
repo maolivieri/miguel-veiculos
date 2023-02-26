@@ -70,7 +70,10 @@ const Home: NextPage = ({
   const carsSearchResult = cars.filter(
     (car) =>
       car.modelo.toLowerCase().includes(searchValue.toLocaleLowerCase()) ||
-      car.marca.nome.toLowerCase().includes(searchValue.toLocaleLowerCase())
+      car.marca.nome.toLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+      car.carroceria.nome
+        .toLowerCase()
+        .includes(searchValue.toLocaleLowerCase())
   );
 
   const carsFiltered = carsSearchResult.filter((car) =>

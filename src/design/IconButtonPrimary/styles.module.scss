@@ -37,3 +37,14 @@
 .alt {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
+
+.text {
+  min-width: 100%;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 0.1rem 0.5rem;
+
+  .svg {
+    flex: 1;
+  }
+}
