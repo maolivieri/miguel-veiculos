@@ -78,11 +78,14 @@ export function CarDetailsCard({ car }: IProps) {
       <header>{/* <ReturnButton /> */}</header>
       <div className={styles.imageAndDetailsWrapper}>
         <div className={styles.imageCarrousel}>
-          <div ref={sliderRef} className="keen-slider zoom-out">
+          <div
+            ref={sliderRef}
+            className={`keen-slider zoom-out ${styles.slider}`}
+          >
             {arrayOfImages.map((url, idx) => (
               <div
                 key={idx}
-                className={`${styles.imageWrapper} keen-slider__slide  zoom-out__slide`}
+                className={`keen-slider__slide  zoom-out__slide ${styles.imageWrapper} `}
               >
                 <div style={scaleStyle(idx)}>
                   <Image

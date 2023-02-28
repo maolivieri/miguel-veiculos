@@ -51,6 +51,10 @@
   // }
 }
 
+.slider {
+  width: 98%;
+}
+
 .imageAndDetailsWrapper {
   display: flex;
   flex-direction: column;
@@ -67,7 +71,7 @@
   @media (min-width: 1200px) {
     // display: flex;
     flex-direction: row;
-    gap: 5rem;
+    gap: 4rem;
 
     // grid-template-columns: 7fr 5fr;
     // gap: 4rem;
@@ -81,7 +85,7 @@
   // margin: 3rem;
 
   @media (min-width: 1200px) {
-    width: 50%;
+    width: 48%;
   }
 }
 
@@ -89,7 +93,7 @@
   width: 100%;
 
   @media (min-width: 1200px) {
-    width: 50%;
+    width: 47%;
   }
 }
 
