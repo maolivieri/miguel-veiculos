@@ -23,7 +23,7 @@ export function SortCarsList({ toggleFilters }: Props) {
       <div className={styles.main}>
         <div className={styles.item} onClick={() => handleOnClick(null)}>
           <div className={`${listSort === null && styles.active}`} />
-          <p>Adicionados recentemente</p>
+          <p>Mais recentes</p>
         </div>
         <div className={styles.item} onClick={() => handleOnClick("az")}>
           <div className={`${listSort === "az" && styles.active}`} />

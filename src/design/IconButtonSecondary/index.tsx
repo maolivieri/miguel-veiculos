@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 interface IconButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: ReactNode;
-  text: string;
+  text?: string;
 }
 
 export function IconButtonSecondary({

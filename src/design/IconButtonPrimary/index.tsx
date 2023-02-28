@@ -21,7 +21,7 @@ export function IconButtonPrimary({
   return (
     <button className={buttonStyling} {...props}>
       {icon}
-      {text}
+      <span>{text}</span>
     </button>
   );
 }

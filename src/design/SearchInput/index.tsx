@@ -16,8 +16,9 @@ export function SearchInput({
 }: SearchInputProps) {
   return (
     <div className={styles.container}>
+      <TbSearch size="1.4rem" />
       <input
-        placeholder="Buscar"
+        placeholder="Busque por marca ou modelo do carro"
         className={styles.input}
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
