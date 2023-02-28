@@ -31,17 +31,17 @@
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
-.openDrawer {
-  @media (min-width: 992px) {
-    padding-left: calc(((100vw - 992px) / 2) - 14rem);
-    padding-right: calc(((100vw - 992px) / 2) + 20rem);
-  }
+// .openDrawer {
+//   @media (min-width: 992px) {
+//     padding-left: calc(((100vw - 992px) / 2) - 14rem);
+//     padding-right: calc(((100vw - 992px) / 2) + 20rem);
+//   }
 
-  @media (min-width: 1200px) {
-    padding-left: calc(((100vw - 1200px) / 2) - 14rem);
-    padding-right: calc(((100vw - 1200px) / 2) + 14rem);
-  }
-}
+//   @media (min-width: 1200px) {
+//     padding-left: calc(((100vw - 1200px) / 2) - 14rem);
+//     padding-right: calc(((100vw - 1200px) / 2) + 14rem);
+//   }
+// }
 
 .filterButton {
   position: relative;
@@ -51,10 +51,10 @@
   position: absolute;
   top: -0.6rem;
   right: -0.6rem;
-  background: var(--white);
+  background: var(--secondary);
   width: 1.2rem;
   height: 1.2rem;
-  color: var(--primary);
+  color: var(--white);
   border-radius: 6px;
   display: flex;
   align-items: center;

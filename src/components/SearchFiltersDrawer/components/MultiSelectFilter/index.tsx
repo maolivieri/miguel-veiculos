@@ -79,7 +79,7 @@ export function MultiSelectFilter({
           </div>
         ))}
       </div>
-      {items.length === values.length ? (
+      {items.length === values.length && !viewAll ? (
         <></>
       ) : !viewAll ? (
         <div className={styles.showButton} onClick={handleShowButton}>

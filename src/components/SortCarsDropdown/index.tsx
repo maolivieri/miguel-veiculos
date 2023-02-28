@@ -5,7 +5,7 @@ import { SortOptions, SystemContext } from "../../context/systemContext";
 
 export function SortCarsDropdown() {
   const { setListSort, listSort } = useContext(SystemContext);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("Mais recentes");
   const selectRef = useRef<HTMLSelectElement>(null);
 

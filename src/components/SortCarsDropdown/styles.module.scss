@@ -21,6 +21,10 @@
     }
   }
 
+  @media (max-width: 768px) {
+    height: 3.5rem;
+  }
+
   .select {
     flex: 1;
     background: var(--gray-250);

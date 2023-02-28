@@ -66,7 +66,22 @@ export function FiltersDrawer() {
       <div className={styles.line} />
       <div className={styles.body}>
         <FilterItem
-          icon={<IconPreco />}
+          icon={<IconMarca size="1rem" />}
+          title="Marcas"
+          countSelected={activeFilters.marcas.length}
+        >
+          <MultiSelectFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="marcas"
+            items={marcas.map((x) => ({
+              name: x.nome,
+              icon: x.logo?.url,
+            }))}
+          />
+        </FilterItem>
+        <FilterItem
+          icon={<IconPreco size="1rem" />}
           title="Preço"
           countSelected={
             activeFilters.minPrice || activeFilters.maxPrice ? 1 : 0
@@ -85,7 +100,7 @@ export function FiltersDrawer() {
           />
         </FilterItem>
         <FilterItem
-          icon={<IconAno />}
+          icon={<IconAno size="1rem" />}
           title="Ano"
           countSelected={
             activeFilters.startYear || activeFilters.endYear ? 1 : 0
@@ -103,8 +118,8 @@ export function FiltersDrawer() {
           />
         </FilterItem>
         <FilterItem
-          icon={<IconKM />}
-          title="KM"
+          icon={<IconKM size="1rem" />}
+          title="Quilometragem"
           countSelected={activeFilters.kmStart || activeFilters.kmEnd ? 1 : 0}
         >
           <InputFilter
@@ -119,7 +134,7 @@ export function FiltersDrawer() {
           />
         </FilterItem>
         <FilterItem
-          icon={<IconCarroceria />}
+          icon={<IconCarroceria size="1rem" />}
           title="Carroceria"
           countSelected={activeFilters.carrocerias.length}
         >
@@ -133,8 +148,49 @@ export function FiltersDrawer() {
             }))}
           />
         </FilterItem>
+
         <FilterItem
-          icon={<IconOpcionais />}
+          icon={<IconCambio size="1rem" />}
+          title="Câmbio"
+          countSelected={activeFilters.cambios.length}
+        >
+          <CheckboxFilter
+            items={cambios.map((x) => x.nome)}
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="cambios"
+          />
+        </FilterItem>
+        <FilterItem
+          icon={<IconCombustivel size="1rem" />}
+          title="Combustivel"
+          countSelected={activeFilters.combustiveis.length}
+        >
+          <CheckboxFilter
+            items={combustivels.map((x) => x.nome)}
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="combustiveis"
+          />
+        </FilterItem>
+        <FilterItem
+          icon={<IconCor size="1rem" />}
+          title="Cor"
+          countSelected={activeFilters.cores.length}
+        >
+          <MultiSelectFilter
+            filters={activeFilters}
+            setFilters={setActiveFilters}
+            fieldName="cores"
+            items={cors.map((x) => ({
+              name: x.nome,
+              icon: x.cor.hex,
+            }))}
+            color
+          />
+        </FilterItem>
+        <FilterItem
+          icon={<IconOpcionais size="1rem" />}
           title="Opcionais"
           countSelected={
             activeFilters.conforto.length +
@@ -174,62 +230,7 @@ export function FiltersDrawer() {
           />
         </FilterItem>
         <FilterItem
-          icon={<IconMarca />}
-          title="Marcas"
-          countSelected={activeFilters.marcas.length}
-        >
-          <MultiSelectFilter
-            filters={activeFilters}
-            setFilters={setActiveFilters}
-            fieldName="marcas"
-            items={marcas.map((x) => ({
-              name: x.nome,
-              icon: x.logo?.url,
-            }))}
-          />
-        </FilterItem>
-        <FilterItem
-          icon={<IconCambio />}
-          title="Câmbio"
-          countSelected={activeFilters.cambios.length}
-        >
-          <CheckboxFilter
-            items={cambios.map((x) => x.nome)}
-            filters={activeFilters}
-            setFilters={setActiveFilters}
-            fieldName="cambios"
-          />
-        </FilterItem>
-        <FilterItem
-          icon={<IconCombustivel />}
-          title="Combustivel"
-          countSelected={activeFilters.combustiveis.length}
-        >
-          <CheckboxFilter
-            items={combustivels.map((x) => x.nome)}
-            filters={activeFilters}
-            setFilters={setActiveFilters}
-            fieldName="combustiveis"
-          />
-        </FilterItem>
-        <FilterItem
-          icon={<IconCor />}
-          title="Cor"
-          countSelected={activeFilters.cores.length}
-        >
-          <MultiSelectFilter
-            filters={activeFilters}
-            setFilters={setActiveFilters}
-            fieldName="cores"
-            items={cors.map((x) => ({
-              name: x.nome,
-              icon: x.cor.hex,
-            }))}
-            color
-          />
-        </FilterItem>
-        <FilterItem
-          icon={<IconDocumentation />}
+          icon={<IconDocumentation size="1rem" />}
           title="Documentação"
           countSelected={activeFilters.documentacoes.length}
         >
