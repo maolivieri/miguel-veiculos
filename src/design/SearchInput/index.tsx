@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 
 import { TbSearch } from "react-icons/tb";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { MdClear } from "react-icons/md";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -19,7 +19,21 @@ export function SearchInput({
       <TbSearch size="1.4rem" />
       <input
         placeholder="Busque por marca ou modelo do carro"
-        className={styles.input}
+        className={`${styles.input} ${styles.large}`}
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        {...props}
+      />
+      <input
+        placeholder="Busque por marca ou modelo"
+        className={`${styles.input} ${styles.medium}`}
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        {...props}
+      />
+      <input
+        placeholder="Buscar"
+        className={`${styles.input} ${styles.small}`}
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
         {...props}

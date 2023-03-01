@@ -87,7 +87,10 @@ export function CarDetailsCard({ car }: IProps) {
                 key={idx}
                 className={`keen-slider__slide  zoom-out__slide ${styles.imageWrapper} `}
               >
-                <div style={scaleStyle(idx)}>
+                <div
+                  style={scaleStyle(idx)}
+                  onContextMenu={(e) => e.preventDefault()}
+                >
                   <Image
                     width={1350}
                     height={885}

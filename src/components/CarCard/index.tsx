@@ -51,7 +51,10 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
           onClick={startLoading}
         >
           <div className={styles.header}>
-            <div className={`${styles.imageWrapper} ${altImageLayout}`}>
+            <div
+              className={`${styles.imageWrapper} ${altImageLayout}`}
+              onContextMenu={(e) => e.preventDefault()}
+            >
               <Image
                 width={1350}
                 height={885}

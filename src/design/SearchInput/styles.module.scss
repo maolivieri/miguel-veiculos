@@ -11,6 +11,7 @@
   input {
     border: 0;
     outline: 0;
+    width: 6rem;
   }
   input:focus {
     outline: none !important;
@@ -32,6 +33,34 @@
   @media (min-width: 992px) {
     height: 3rem;
     padding: 0.1rem 0.4rem 0.1rem 1rem;
+  }
+}
+
+.small {
+  display: block;
+
+  @media (min-width: 390px) {
+    display: none;
+  }
+}
+
+.medium {
+  display: none;
+
+  @media (min-width: 390px) {
+    display: block;
+  }
+
+  @media (min-width: 450px) {
+    display: none;
+  }
+}
+
+.large {
+  display: none;
+
+  @media (min-width: 450px) {
+    display: block;
   }
 }
 
