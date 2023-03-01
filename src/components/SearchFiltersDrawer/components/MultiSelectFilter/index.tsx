@@ -65,13 +65,13 @@ export function MultiSelectFilter({
                 backgroundColor: `${color ? value.icon : "transparent"}`,
               }}
             >
-              {!color && (
+              {!color && !!value.icon && (
                 <Image
                   height={80}
                   width={80}
-                  src={value.icon || ""}
+                  src={value.icon}
                   alt=""
-                  layout="responsive"
+                  // layout="responsive"
                 />
               )}
             </div>

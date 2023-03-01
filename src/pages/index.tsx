@@ -127,7 +127,7 @@ export default Home;
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
-      query MyQuery {
+      query GetAllCars {
         cars {
           id
           km

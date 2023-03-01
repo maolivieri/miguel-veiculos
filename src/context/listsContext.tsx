@@ -4,7 +4,7 @@ import { client } from "../lib/apollo";
 
 const GET_LISTS = gql`
   query GetLists {
-    carrocerias {
+    carrocerias(where: { cars_every: { id_contains: "" } }) {
       nome
       icon {
         url
@@ -19,7 +19,7 @@ const GET_LISTS = gql`
     tecnologias {
       nome
     }
-    marcas {
+    marcas(where: { cars_every: { id_contains: "" } }) {
       nome
       logo {
         url
@@ -28,7 +28,7 @@ const GET_LISTS = gql`
     documentacoes {
       nome
     }
-    cors {
+    cors(where: { cars_every: { id_contains: "" } }) {
       cor {
         hex
       }
