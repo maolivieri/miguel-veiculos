@@ -26,13 +26,6 @@ export function SearchInput({
       />
       <input
         placeholder="Busque por marca ou modelo"
-        className={`${styles.input} ${styles.medium}`}
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        {...props}
-      />
-      <input
-        placeholder="Buscar"
         className={`${styles.input} ${styles.small}`}
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}

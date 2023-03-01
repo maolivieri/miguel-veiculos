@@ -19,11 +19,19 @@
 
   ::placeholder {
     font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     // font-weight: 500;
+
+    @media (min-width: 350px) {
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 420px) {
+      font-size: 1rem;
+    }
   }
 
   svg {
@@ -39,19 +47,7 @@
 .small {
   display: block;
 
-  @media (min-width: 390px) {
-    display: none;
-  }
-}
-
-.medium {
-  display: none;
-
-  @media (min-width: 390px) {
-    display: block;
-  }
-
-  @media (min-width: 450px) {
+  @media (min-width: 420px) {
     display: none;
   }
 }
@@ -59,7 +55,7 @@
 .large {
   display: none;
 
-  @media (min-width: 450px) {
+  @media (min-width: 420px) {
     display: block;
   }
 }
