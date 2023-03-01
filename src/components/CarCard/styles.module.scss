@@ -20,6 +20,25 @@
 }
 
 .altLayout {
+  .name {
+    font-size: 1.4rem;
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .detail {
+      p {
+        font-size: 1rem;
+        padding-left: 0.4rem;
+      }
+    }
+  }
+
   @media (min-width: 992px) {
     display: grid;
     grid-template-columns: 6fr 4fr;
@@ -37,12 +56,34 @@
       .price {
         font-size: 0.9rem;
       }
+
+      .name {
+        font-size: 1rem;
+      }
     }
 
     .footer {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
+      .detail {
+        p {
+          font-size: 0.8rem;
+          padding-left: 0.4rem;
+        }
+
+        svg {
+          height: 0.9rem !important;
+          width: 0.9rem !important;
+        }
+      }
     }
+  }
+}
+
+.altLayoutAddClass {
+  .bonusFlagText {
+    font-size: 0.8rem;
   }
 }
 

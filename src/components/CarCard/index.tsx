@@ -27,6 +27,9 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
   const altLayout =
     (display === "list" || alternativeLayout) && styles.altLayout;
 
+  const altLayoutAddClass =
+    (display === "list" || alternativeLayout) && styles.altLayoutAddClass;
+
   const altImageLayout =
     (display === "list" || alternativeLayout) && styles.altImageLayout;
 
@@ -41,9 +44,11 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
           <div
             className={`${styles.bonusFlag} ${
               car.opcional_esquerdo ? styles.leftFlag : styles.rightFlag
-            }`}
+            } ${altLayoutAddClass}`}
           >
-            <p>{car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}</p>
+            <p className={styles.bonusFlagText}>
+              {car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}
+            </p>
           </div>
         )}
         <div
@@ -70,19 +75,31 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
             </div>
             <div className={styles.footer}>
               <div className={styles.detail}>
-                <IconPotencia size="0.7rem" color="var(--gray-700)" />
+                <IconPotencia
+                  size={display === "list" ? "1.2rem" : "0.7rem"}
+                  color="var(--gray-700)"
+                />
                 <p>{car.potencia}</p>
               </div>
               <div className={styles.detail}>
-                <IconAno size="0.7rem" color="var(--gray-700)" />
+                <IconAno
+                  size={display === "list" ? "1.2rem" : "0.7rem"}
+                  color="var(--gray-700)"
+                />
                 <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
               </div>
               <div className={styles.detail}>
-                <IconCombustivel size="0.7rem" color="var(--gray-700)" />
+                <IconCombustivel
+                  size={display === "list" ? "1.2rem" : "0.7rem"}
+                  color="var(--gray-700)"
+                />
                 <p>{car.combustivel?.nome}</p>
               </div>
               <div className={styles.detail}>
-                <IconKM size="0.7rem" color="var(--gray-700)" />
+                <IconKM
+                  size={display === "list" ? "1.2rem" : "0.7rem"}
+                  color="var(--gray-700)"
+                />
                 <p>{`${formatToBigNumber(car.km)} KM`}</p>
               </div>
             </div>
