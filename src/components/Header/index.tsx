@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
-import whiteLogo from "../../../public/assets/logo_branco.svg";
-import greenLogo from "../../../public/assets/logo_verde.svg";
+import whiteLogo from "../../../public/assets/whiteLogo.png";
+import greenLogo from "../../../public/assets/greenLogo.png";
 import Image from "next/image";
 
 import { useKeenSlider } from "keen-slider/react";

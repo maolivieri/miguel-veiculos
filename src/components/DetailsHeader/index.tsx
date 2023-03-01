@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import greenLogo from "../../../public/assets/logo_verde.svg";
+import greenLogo from "../../../public/assets/greenLogo.png";
 import iconLogo from "../../../public/assets/logo_icon.svg";
 import Image from "next/image";
 

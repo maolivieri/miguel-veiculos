@@ -8,7 +8,7 @@ import { IconButtonPrimary } from "../../design/IconButtonPrimary";
 import { SystemContext } from "../../context/systemContext";
 
 //assets
-import greenLogo from "../../../public/assets/logo_verde.svg";
+import greenLogo from "../../../public/assets/greenLogo.png";
 import logoIcon from "../../../public/assets/logo_icon.svg";
 
 //icons
