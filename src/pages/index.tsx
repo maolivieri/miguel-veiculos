@@ -22,6 +22,7 @@ import { SortCars } from "../lib/sortCars";
 import { Modal } from "../design/Modal";
 import { SortCarsList } from "../components/SortCarsList";
 import { ModalCarSearch } from "../components/ModalCarSearch";
+import { PageFooter } from "../components/PageFooter";
 
 const Home: NextPage = ({
   carsProps,
@@ -101,6 +102,7 @@ const Home: NextPage = ({
           />
         </ReactVisibilitySensor>
         <OurCars cars={carsArray} />
+        <PageFooter floatingFilter />
         <Modal isOpen={isSortOpen} toggleModal={handleSortOpen}>
           <SortCarsList toggleFilters={handleSortOpen} />
         </Modal>

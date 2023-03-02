@@ -98,19 +98,19 @@ export function SideDrawer() {
               icon={<FaWhatsapp />}
               text="WhatsApp"
               aria-label="Contato pelo WhatsApp"
-              to="https://wa.me/5519971568585"
+              to="https://wa.me/5519974040531"
             />
             <TextItem
               icon={<BsTelephone />}
               text="Telefone"
               type="phone"
-              onClick={() => window.open("tel:900300400")}
+              onClick={() => window.open("tel:1934913114")}
               // onClick="window.open('tel:900300400')"
             />
             <LineItem
               icon={<MdOutlineMailOutline />}
               text="Email"
-              to="mailto:test@test.com"
+              to="mailto:miguel.veiculos@uol.com.br"
             />
           </div>
           <div className={styles.contactWrapper}>
