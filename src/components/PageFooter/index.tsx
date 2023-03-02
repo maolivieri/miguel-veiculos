@@ -3,13 +3,9 @@ import logoIcon from "../../../public/assets/logo_icon_white.svg";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-interface Props {
-  floatingFilter?: Boolean;
-}
-
-export function PageFooter({ floatingFilter = false }: Props) {
+export function PageFooter() {
   return (
-    <footer className={`${styles.footer} ${floatingFilter && styles.floating}`}>
+    <footer className={`${styles.footer}`}>
       <div className={styles.logo}>
         <Image width={48} height={48} src={logoIcon} alt="" />
       </div>

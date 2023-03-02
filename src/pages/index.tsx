@@ -102,7 +102,7 @@ const Home: NextPage = ({
           />
         </ReactVisibilitySensor>
         <OurCars cars={carsArray} />
-        <PageFooter floatingFilter />
+        <PageFooter />
         <Modal isOpen={isSortOpen} toggleModal={handleSortOpen}>
           <SortCarsList toggleFilters={handleSortOpen} />
         </Modal>

@@ -1,8 +1,9 @@
 .HeaderContainer {
+  position: fixed;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  // height: 30vh;
-  // background: var(--white);
+  align-items: center;
+  justify-content: center;
   z-index: 99;
 }
 
@@ -11,7 +12,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  position: fixed;
+
   backdrop-filter: blur(7.8px);
   -webkit-backdrop-filter: blur(7.8px);
 
@@ -20,8 +21,9 @@
   }
 
   @media (min-width: 1200px) {
-    padding-left: calc((110vw - 1500px) / 2);
-    padding-right: calc((110vw - 1500px) / 2);
+    width: 90%;
+    // padding-left: calc((110vw - 1500px) / 2);
+    // padding-right: calc((110vw - 1500px) / 2);
   }
 }
 

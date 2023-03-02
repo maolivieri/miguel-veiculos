@@ -1,3 +1,4 @@
+import { PageFooter } from "../../components/PageFooter";
 import { SideDrawer } from "../../components/SideDrawer";
 import { SubPagesHeader } from "../../components/SubpagesHeader";
 import { ButtonPrimary } from "../../design/ButtonPrimary";
@@ -5,7 +6,7 @@ import styles from "./styles.module.scss";
 
 export default function Location() {
   return (
-    <div className={styles.container}>
+    <div className={styles.page}>
       <SideDrawer />
       <header className={styles.header}>
         <SubPagesHeader />
@@ -46,6 +47,7 @@ export default function Location() {
           </div>
         </div>
       </main>
+      <PageFooter />
     </div>
   );
 }
