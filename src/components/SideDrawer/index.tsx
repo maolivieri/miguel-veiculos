@@ -25,24 +25,8 @@ interface LinkItemProps extends LinkProps {
   type?: string;
 }
 
-interface TextItemProps extends React.HTMLProps<HTMLDivElement> {
-  icon: ReactNode;
-  text: string;
-  type?: string;
-}
-
 export function SideDrawer() {
   const { isDrawerOpen, toggleDrawer } = useContext(SystemContext);
-
-  const TextItem = ({ icon, text, type = "", ...props }: TextItemProps) => {
-    const additionalCSS = type === "phone" && styles.phone;
-    return (
-      <div className={`${styles.lineItem} ${additionalCSS}`} {...props}>
-        <div>{icon}</div>
-        <p>{text}</p>
-      </div>
-    );
-  };
 
   const LinkItem = ({ icon, text, href, ...props }: LinkItemProps) => {
     return (
@@ -100,12 +84,10 @@ export function SideDrawer() {
               aria-label="Contato pelo WhatsApp"
               to="https://wa.me/5519974040531"
             />
-            <TextItem
+            <LineItem
               icon={<BsTelephone />}
-              text="Telefone"
-              type="phone"
-              onClick={() => window.open("tel:1934913114")}
-              // onClick="window.open('tel:900300400')"
+              text="(19) 3491-3114"
+              to="tel:1934913114"
             />
             <LineItem
               icon={<MdOutlineMailOutline />}

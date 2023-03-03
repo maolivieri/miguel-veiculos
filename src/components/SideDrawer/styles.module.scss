@@ -45,8 +45,6 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
-  // backdrop-filter: blur(0.8px);
-  // -webkit-backdrop-filter: blur(0.8px);
 }
 
 .closeButton {
@@ -95,18 +93,4 @@
     width: 1.15rem;
     height: 1.15rem;
   }
-}
-
-.phone:hover p {
-  display: none;
-}
-
-.phone:hover:after {
-  content: "+55 19 3491-3114";
-  padding: 0;
-  padding-left: 1rem;
-  margin: 0;
-  font-size: 1rem;
-  color: var(--primary);
-  font-weight: 500;
 }
