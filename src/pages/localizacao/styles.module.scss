@@ -10,7 +10,7 @@
 
   @media (min-width: 992px) {
     flex: 1;
-    height: 8rem;
+    // height: 18rem;
     background: var(--gray-200);
   }
 
@@ -23,11 +23,11 @@
 }
 
 .main {
-  z-index: 100;
-  height: 40vh;
+  z-index: 10;
   width: 100vw;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 4rem;
 
   @media (min-width: 768px) {
     padding-left: 3rem;
@@ -37,6 +37,8 @@
     padding-left: calc((110vw - 992px) / 2);
     padding-right: calc((110vw - 992px) / 2);
     flex: 1;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
   }
 
   @media (min-width: 1200px) {
@@ -79,11 +81,12 @@
   }
 
   .cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     @media (min-width: 678px) {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
   }
 }
@@ -142,7 +145,7 @@
   width: 100%;
 
   flex: 1;
-  // height: 60vh;
+  height: 60vh;
   // top: 0;
   z-index: 1;
 
