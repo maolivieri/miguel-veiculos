@@ -77,7 +77,7 @@ export function Header({ isSearchVisible }: IProps) {
         <div className={styles.buttonsContainer}>
           <a
             aria-label="Contato pelo WhatsApp"
-            href="https://wa.me/5519971568585"
+            href="https://wa.me/5519974040531"
           >
             <IconButtonPrimary icon={<TbBrandWhatsapp size="1.6rem" />} />
           </a>

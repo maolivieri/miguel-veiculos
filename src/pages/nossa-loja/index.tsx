@@ -3,7 +3,7 @@ import SubPages from "../../components/SubPage";
 export default function OurStore() {
   return (
     <SubPages
-      image="/assets/images/cover.png"
+      images={["/assets/images/cover.png"]}
       copy="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis
     massa sed elementum tempus egestas sed sed. Est velit egestas dui
