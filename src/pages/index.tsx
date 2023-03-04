@@ -120,13 +120,13 @@ const Home: NextPage = ({
             setSearchValue={setSearchValue}
           />
         </Modal>
+        <SearchFilters />
         <HomeFloatingMenu
           handleSearchOpen={handleSearchOpen}
           handleSortOpen={handleSortOpen}
           isSearchVisible={isSearchVisible}
           openModals={[isSortOpen, isSearchOpen, isFiltersOpen]}
         />
-        <SearchFilters />
       </div>
     </Layout>
   );

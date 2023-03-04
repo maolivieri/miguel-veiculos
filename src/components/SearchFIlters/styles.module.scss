@@ -11,7 +11,7 @@
   bottom: 0;
   width: 100vw;
   min-height: 100vh;
-  z-index: 9999;
+  z-index: 985;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -29,6 +29,7 @@
     justify-content: flex-start;
     // transition: background-color 0s ease;
     transition: right 3s ease;
+    z-index: 998;
   }
 }
 
