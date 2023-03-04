@@ -9,16 +9,8 @@
   }
 
   @media (min-width: 1200px) {
-    height: 40vh;
+    height: 50vh;
   }
-}
-
-.image1 {
-  background: url("/assets/images/header.png");
-}
-
-.image2 {
-  background: url("/assets/images/header_alt.png");
 }
 
 .HeaderImageBox {
@@ -26,7 +18,7 @@
   inset: 0;
   // background: url("/assets/images/header.png");
   background-repeat: no-repeat;
-  background-position: right 65%;
+  background-position: center 50%;
   background-size: 992px;
   display: flex;
   justify-content: space-between;

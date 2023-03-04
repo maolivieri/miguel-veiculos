@@ -50,10 +50,23 @@ export function Header({ isSearchVisible }: IProps) {
     <div className={styles.HeaderContainer}>
       <div ref={ref} className="keen-slider">
         <div
-          className={`keen-slider__slide ${styles.HeaderImageBox} ${styles.image1}`}
+          className={`keen-slider__slide ${styles.HeaderImageBox}`}
+          style={{
+            backgroundImage: `url(/assets/images/cover_1.jpg)`,
+            backgroundPosition: "center 30%",
+          }}
         />
         <div
-          className={`keen-slider__slide ${styles.HeaderImageBox} ${styles.image2}`}
+          className={`keen-slider__slide ${styles.HeaderImageBox}`}
+          style={{ backgroundImage: `url(/assets/images/cover_2.jpg)` }}
+        />
+        <div
+          className={`keen-slider__slide ${styles.HeaderImageBox}`}
+          style={{ backgroundImage: `url(/assets/images/cover_3.jpg)` }}
+        />
+        <div
+          className={`keen-slider__slide ${styles.HeaderImageBox}`}
+          style={{ backgroundImage: `url(/assets/images/cover_4.jpg)` }}
         />
       </div>
       <div
