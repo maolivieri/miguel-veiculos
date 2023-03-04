@@ -16,12 +16,14 @@ interface IProps {
   isSearchVisible: boolean;
   handleSortOpen: () => void;
   handleSearchOpen: () => void;
+  openModals: boolean[];
 }
 
 export function HomeFloatingMenu({
   isSearchVisible,
   handleSearchOpen,
   handleSortOpen,
+  openModals,
 }: IProps) {
   const { setDisplay } = useContext(UIContext);
   const { activeFilters, toggleFilters } = useContext(SystemContext);
@@ -29,42 +31,41 @@ export function HomeFloatingMenu({
 
   const [isActive, setIsActive] = useState(0);
 
+  function handleListClick() {
+    setIsActive((prevState) => (prevState === 0 ? 1 : 0));
+    setDisplay((prevState) => (prevState === "grid" ? "list" : "grid"));
+  }
+
   return (
     <div className={`${styles.container} ${!isSearchVisible && styles.hidden}`}>
       <div className={styles.card}>
         <button
-          onClick={() => {
-            setIsActive(0);
-            setDisplay("grid");
-          }}
+          onClick={handleListClick}
           className={`${styles.iconButton} ${isActive === 0 && styles.active}`}
         >
           <IoGridOutline size="1.5rem" />
         </button>
         <button
-          onClick={() => {
-            setIsActive(1);
-            setDisplay("list");
-          }}
+          onClick={handleListClick}
           className={`${styles.iconButton} ${isActive === 1 && styles.active}`}
         >
           <IoListOutline size="1.5rem" />
         </button>
         <button
           onClick={handleSortOpen}
-          className={`${styles.iconButton} ${isActive === 2 && styles.active}`}
+          className={`${styles.iconButton} ${openModals[0] && styles.active}`}
         >
           <BiSortDown size="1.5rem" />
         </button>
         <button
           onClick={handleSearchOpen}
-          className={`${styles.iconButton} ${isActive === 3 && styles.active}`}
+          className={`${styles.iconButton} ${openModals[1] && styles.active}`}
         >
           <IoSearch size="1.5rem" />
         </button>
         <button
           onClick={toggleFilters}
-          className={`${styles.iconButton} ${isActive === 4 && styles.active}`}
+          className={`${styles.iconButton} ${openModals[2] && styles.active}`}
         >
           {countActiveFilters > 0 && (
             <div className={styles.settingFlag}>{countActiveFilters}</div>

@@ -14,9 +14,9 @@ function Content() {
       <p className={styles.copy}>Seg à Sex: 09:00 às 18:00</p>
       <p className={styles.copy}>Sábado: 09:00 às 13:00</p>
 
-      <div className={styles.button}>
+      {/* <div className={styles.button}>
         <ButtonPrimary text="Abrir Mapa" />
-      </div>
+      </div> */}
     </>
   );
 }

@@ -27,8 +27,13 @@ import { PageFooter } from "../components/PageFooter";
 const Home: NextPage = ({
   carsProps,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { activeFilters, setFilterRanges, filterRanges, listSort } =
-    useContext(SystemContext);
+  const {
+    activeFilters,
+    setFilterRanges,
+    filterRanges,
+    listSort,
+    isFiltersOpen,
+  } = useContext(SystemContext);
   const { isLoading, stopLoading } = useContext(UIContext);
 
   const [isSearchVisible, setIsSearchVisible] = useState(true);
@@ -37,10 +42,12 @@ const Home: NextPage = ({
   const [isSortOpen, setIsSortOpen] = useState(false);
   function handleSortOpen() {
     setIsSortOpen((prevState) => !prevState);
+    setIsSearchOpen(false);
   }
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   function handleSearchOpen() {
     setIsSearchOpen((prevState) => !prevState);
+    setIsSortOpen(false);
   }
 
   const cars: ICar[] = carsProps;
@@ -117,6 +124,7 @@ const Home: NextPage = ({
           handleSearchOpen={handleSearchOpen}
           handleSortOpen={handleSortOpen}
           isSearchVisible={isSearchVisible}
+          openModals={[isSortOpen, isSearchOpen, isFiltersOpen]}
         />
         <SearchFilters />
       </div>
