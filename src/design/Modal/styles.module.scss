@@ -11,14 +11,12 @@
   bottom: 0;
   width: 100vw;
   min-height: 100vh;
-  z-index: 80;
+  z-index: 986;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-end;
   transition: background-color 3s ease;
-  z-index: 0;
-  // overflow: hidden;
 }
 
 .dropShaddow {

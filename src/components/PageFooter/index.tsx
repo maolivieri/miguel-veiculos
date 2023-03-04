@@ -2,10 +2,16 @@ import styles from "./styles.module.scss";
 import logoIcon from "../../../public/assets/logo_icon_white.svg";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { useContext } from "react";
+import { SystemContext } from "../../context/systemContext";
 
 export function PageFooter() {
+  const { isFiltersOpen } = useContext(SystemContext);
+
   return (
-    <footer className={`${styles.footer}`}>
+    <footer
+      className={`${styles.footer} ${isFiltersOpen && styles.openFilterZ}`}
+    >
       <div className={styles.logo}>
         <Image width={48} height={48} src={logoIcon} alt="" />
       </div>

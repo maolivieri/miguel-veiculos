@@ -3,7 +3,6 @@
   background: var(--white);
   border-radius: 10px 10px 0 0;
   padding: 1.3rem;
-  padding-bottom: 7rem;
 
   transition: height 1.5s;
 
@@ -28,7 +27,7 @@
 
 .filterWrapper {
   overflow: scroll;
-  max-height: 60vh;
+  max-height: 50vh;
   width: 100%;
 }
 

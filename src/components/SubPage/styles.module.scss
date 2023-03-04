@@ -122,6 +122,7 @@
 
   .cardMap {
     display: none;
+    min-width: 30rem;
     width: 30rem;
     height: 30rem;
     background: var(--gray-200);
@@ -139,20 +140,15 @@
   }
 
   .cardImage {
-    display: none;
-    width: 30rem;
-    height: 30rem;
+    display: none !important;
+    aspect-ratio: 1;
     background: var(--gray-200);
     border-radius: 0.8rem;
     margin-right: 4rem;
     overflow: hidden;
 
-    iframe {
-      border: none;
-    }
-
     @media (min-width: 992px) {
-      display: flex;
+      display: flex !important;
     }
 
     .image {
@@ -162,13 +158,13 @@
   }
 
   .cardContent {
-    flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 678px) {
-      width: 100%;
+    @media (min-width: 992px) {
+      width: 60%;
     }
 
     .pageTitle {

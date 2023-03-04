@@ -33,12 +33,12 @@ export function FiltersModal() {
   return (
     <>
       <div className={styles.dropShaddow} onClick={toggleFilters} />
-      <div className={styles.main}>
+      <div className={`${styles.main}`}>
         <div className={styles.closeArrow} onClick={toggleFilters}>
           <BiChevronDown size="2.3rem" />
         </div>
         <h4 className={styles.title}>Filtros</h4>
-        <div className={styles.filterWrapper}>
+        <div className={`${styles.filterWrapper}`}>
           <FilterItem
             icon={<IconPreco />}
             title="Preço"
