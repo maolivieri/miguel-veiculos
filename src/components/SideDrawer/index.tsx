@@ -65,11 +65,11 @@ export function SideDrawer() {
               text="Sobre nós"
               href="/sobre-nos"
             />
-            <LinkItem
+            {/* <LinkItem
               icon={<MdOutlineStorefront />}
               text="Conheça a loja"
               href="/nossa-loja"
-            />
+            /> */}
             <LinkItem
               icon={<MdOutlineLocationOn />}
               text="Localização"
