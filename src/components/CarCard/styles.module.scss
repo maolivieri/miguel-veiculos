@@ -33,7 +33,7 @@
 
     .detail {
       p {
-        font-size: 0.1rem;
+        font-size: 1.1rem;
         padding-left: 0.4rem;
       }
     }
@@ -68,7 +68,7 @@
 
       .detail {
         p {
-          font-size: 0.1rem;
+          font-size: 1.1rem;
           padding-left: 0.4rem;
         }
 
@@ -229,14 +229,14 @@
 }
 
 .name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--gray-800);
   padding: 0;
   margin: 0;
 }
 .price {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
   padding: 0;
@@ -252,8 +252,12 @@
   p {
     padding: 0;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--gray-700);
+
+    @media (min-width: 992px) {
+      font-size: 0.9rem;
+    }
   }
 }
 

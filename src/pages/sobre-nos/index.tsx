@@ -6,7 +6,10 @@ export default function AboutUs() {
       images={[""]}
       copy="Fundada por Miguel Rodrigues de Jesus, na cidade de Capivari, no
     interior de São Paulo, a loja Miguel Veículos vem atuando no
-    mercado de venda de carros semi-novos desde 1998."
+    mercado de venda de carros semi-novos desde 1998.
+    
+    
+    "
       title="Sobre Nós"
     />
   );
