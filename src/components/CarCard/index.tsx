@@ -76,28 +76,28 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
             <div className={styles.footer}>
               <div className={styles.detail}>
                 <IconPotencia
-                  size={display === "list" ? "1.2rem" : "0.8rem"}
+                  size={display === "list" ? "1.2rem" : "0.9rem"}
                   color="var(--gray-700)"
                 />
                 <p>{car.potencia}</p>
               </div>
               <div className={styles.detail}>
                 <IconAno
-                  size={display === "list" ? "1.2rem" : "0.8rem"}
+                  size={display === "list" ? "1.2rem" : "0.9rem"}
                   color="var(--gray-700)"
                 />
                 <p>{`${car.anoFabricacao} | ${car.anoModelo}`}</p>
               </div>
               <div className={styles.detail}>
                 <IconCombustivel
-                  size={display === "list" ? "1.2rem" : "0.8rem"}
+                  size={display === "list" ? "1.2rem" : "0.9rem"}
                   color="var(--gray-700)"
                 />
                 <p>{car.combustivel?.nome}</p>
               </div>
               <div className={styles.detail}>
                 <IconKM
-                  size={display === "list" ? "1.2rem" : "0.8rem"}
+                  size={display === "list" ? "1.2rem" : "0.9rem"}
                   color="var(--gray-700)"
                 />
                 <p>{`${formatToBigNumber(car.km)} KM`}</p>
