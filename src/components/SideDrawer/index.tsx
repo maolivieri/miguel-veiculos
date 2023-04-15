@@ -2,11 +2,7 @@ import { ReactNode, useContext } from "react";
 import Link, { LinkProps } from "next/link";
 import { BsInfoCircle, BsTelephone } from "react-icons/bs";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import {
-  MdOutlineLocationOn,
-  MdOutlineStorefront,
-  MdOutlineMailOutline,
-} from "react-icons/md";
+import { MdOutlineLocationOn, MdOutlineMailOutline } from "react-icons/md";
 import { SystemContext } from "../../context/systemContext";
 import { CloseButton } from "../../design/CloseButton";
 import styles from "./styles.module.scss";
