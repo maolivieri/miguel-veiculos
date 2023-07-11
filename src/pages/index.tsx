@@ -138,7 +138,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
       query GetAllCars {
-        cars {
+        cars(orderBy: publishedAt_DESC) {
           id
           km
           modelo
@@ -213,6 +213,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       carsProps: cars,
     },
-    revalidate: 60 * 10 //10 minutes
+    revalidate: 60
   };
 };

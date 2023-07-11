@@ -8,7 +8,7 @@ export function SortCars(cars: ICar[], param: SortOptions) {
     case "maiorpreco":
       return cars.sort((a, b) => b.preco - a.preco);
     case "menorano":
-      return cars.sort((a, b) => a.anoModelo - b.anoModelo);
+      return cars.sort((a, b) => b.anoModelo - a.anoModelo);
     case "menorkm":
       return cars.sort((a, b) => a.km - b.km);
     case "az":
