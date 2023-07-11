@@ -54,8 +54,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking', // can also be false or true
-    revalidate: 60 * 10 //10 minutes
+    fallback: true, // can also be false or true
   };
 }
 
