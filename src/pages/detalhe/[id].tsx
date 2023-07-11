@@ -139,5 +139,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const car: ICar = data.car;
   return {
     props: { carProps: car },
+    revalidate: 60 * 10 //10 minutes
   };
 };
