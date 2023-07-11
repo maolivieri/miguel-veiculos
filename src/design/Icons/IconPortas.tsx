@@ -1,11 +1,11 @@
 import { IconBaseProps } from "react-icons";
-import { BsDoorClosed } from "react-icons/bs";
+import { PiDoorBold } from "react-icons/pi";
 
 interface IProps extends IconBaseProps {}
 
 export function IconPortasComponent({ size = "1.2rem", ...rest }: IProps) {
   return (
-    <BsDoorClosed
+    <PiDoorBold
       style={{
         height: size,
         width: size,

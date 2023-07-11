@@ -1,11 +1,11 @@
 import { IconBaseProps } from "react-icons";
-import { FaTruckMonster } from "react-icons/fa";
+import { LiaTruckPickupSolid } from "react-icons/lia";
 
 interface IProps extends IconBaseProps {}
 
 export function IconCarroceriaComponent({ size = "1.2rem", ...rest }: IProps) {
   return (
-    <FaTruckMonster
+    <LiaTruckPickupSolid
       style={{
         height: size,
         width: size,

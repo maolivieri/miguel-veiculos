@@ -1,11 +1,11 @@
 import { IconBaseProps } from "react-icons";
-import { GiCarSeat } from "react-icons/gi";
+import { LiaCouchSolid } from "react-icons/lia";
 
 interface IProps extends IconBaseProps {}
 
 export function IconAssentosComponent({ size = "1.2rem", ...rest }: IProps) {
   return (
-    <GiCarSeat
+    <LiaCouchSolid
       style={{
         height: size,
         width: size,

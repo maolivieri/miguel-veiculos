@@ -1,11 +1,11 @@
 import { IconBaseProps } from "react-icons";
-import { ImPower } from "react-icons/im";
+import { HiOutlineLightningBolt } from "react-icons/hi";
 
 interface IProps extends IconBaseProps {}
 
 export function IconPotenciaComponent({ size = "1.2rem", ...rest }: IProps) {
   return (
-    <ImPower
+    <HiOutlineLightningBolt
       style={{
         height: size,
         width: size,

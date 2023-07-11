@@ -1,11 +1,11 @@
 import { IconBaseProps } from "react-icons";
-import { BsGear } from "react-icons/bs";
+import { VscSymbolColor } from "react-icons/vsc";
 
 interface IProps extends IconBaseProps {}
 
 export function IconCorComponent({ size = "1.2rem", ...rest }: IProps) {
   return (
-    <BsGear
+    <VscSymbolColor
       style={{
         height: size,
         width: size,

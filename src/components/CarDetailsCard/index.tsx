@@ -93,7 +93,7 @@ export function CarDetailsCard({ car }: IProps) {
                 >
                   <Image
                     width={1350}
-                    height={885}
+                    height={1080}
                     src={url || car_placeholder}
                     alt=""
                     priority
@@ -167,22 +167,22 @@ export function CarDetailsCard({ car }: IProps) {
           </div>
           <div className={styles.specsWrapper}>
             <CarDetailSpecCard
-              icon={<IconAno size={12} />}
+              icon={<IconAno size={14} />}
               title="Ano"
               value={`${car.anoFabricacao} | ${car.anoModelo}`}
             />
             <CarDetailSpecCard
-              icon={<IconKM size={12} />}
+              icon={<IconKM size={14} />}
               title="KM"
               value={`${formatToBigNumber(car.km)} KM`}
             />
             <CarDetailSpecCard
-              icon={<IconCombustivel size={12} />}
+              icon={<IconCombustivel size={14} />}
               title="Combustível"
               value={car.combustivel?.nome}
             />
             <CarDetailSpecCard
-              icon={<IconPotencia size={12} />}
+              icon={<IconPotencia size={14} />}
               title="Potência"
               value={car.potencia}
             />
@@ -197,32 +197,32 @@ export function CarDetailsCard({ car }: IProps) {
               value={`${car.autonomia} Km/L`}
             />
             <CarDetailSpecCard
-              icon={<IconTracao size={12} />}
+              icon={<IconTracao size={16} />}
               title="Tração"
               value={car.tracao}
             />
             <CarDetailSpecCard
-              icon={<IconPortas size={12} />}
+              icon={<IconPortas size={14} />}
               title="Portas"
               value={`${car.portas}`}
             />
             <CarDetailSpecCard
-              icon={<IconPlaca size={12} />}
+              icon={<IconPlaca size={14} />}
               title="Placa"
               value={car.finalDaPlaca}
             />
             <CarDetailSpecCard
-              icon={<IconCor size={12} />}
+              icon={<IconCor size={14} />}
               title="Cor"
               value={car.cor?.nome}
             />
             <CarDetailSpecCard
-              icon={<IconAssentos size={12} />}
+              icon={<IconAssentos size={14} />}
               title="Assentos"
               value={`${car.assentos}`}
             />
             <CarDetailSpecCard
-              icon={<IconCarroceria size={12} />}
+              icon={<IconCarroceria size={14} />}
               title="Carroceria"
               value={car.carroceria?.nome}
             />
