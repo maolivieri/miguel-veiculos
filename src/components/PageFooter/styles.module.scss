@@ -16,7 +16,19 @@
 }
 
 .openFilterZ {
-  z-index: 985;
+  @media (min-width: 992px) {
+    margin-left: 25rem;
+
+    .text {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 1260px) {
+    .text {
+      flex-direction: row;
+    }
+  }
 }
 
 .logo {

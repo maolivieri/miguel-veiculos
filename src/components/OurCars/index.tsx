@@ -17,7 +17,7 @@ export function OurCars({ cars }: IProps) {
   const isList = display === "list";
 
   return (
-    <div className={isFiltersOpen ? styles.openDrawer : styles.none}>
+    <div className={isFiltersOpen ? styles.openDrawerWrapper : styles.none}>
       {/* <h3 className={styles.title}>Nossos Veículos</h3> */}
       {!cars.length ? (
         <div className={styles.notfoundcontainer}>
@@ -26,7 +26,7 @@ export function OurCars({ cars }: IProps) {
       ) : (
         <div
           className={`${styles.container} ${isFiltersOpen && styles.openDrawer}
-          ${!!isList && styles.listGrid} 
+          ${isList && styles.listGrid} 
           `}
         >
           {cars.map((car) => (

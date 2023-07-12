@@ -42,17 +42,24 @@
   }
 }
 
-// .openDrawer {
-//   @media (min-width: 992px) {
-//     padding-left: calc(((100vw - 992px) / 2) - 14rem);
-//     padding-right: calc(((100vw - 992px) / 2) + 20rem);
-//   }
+.openDrawerBox {
+  @media (min-width: 992px) {
+    width: 90vw;
+  }
 
-//   @media (min-width: 1200px) {
-//     padding-left: calc(((100vw - 1200px) / 2) - 14rem);
-//     padding-right: calc(((100vw - 1200px) / 2) + 14rem);
-//   }
-// }
+  @media (min-width: 1200px) {
+    width: 80vw;
+  }
+}
+
+.openDrawer {
+  @media (min-width: 992px) {
+    margin-left: 25rem;
+    width: 100vw;
+  }
+
+
+}
 
 .filterButton {
   position: relative;

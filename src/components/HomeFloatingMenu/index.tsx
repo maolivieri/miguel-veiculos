@@ -26,7 +26,7 @@ export function HomeFloatingMenu({
   openModals,
 }: IProps) {
   const { setDisplay } = useContext(UIContext);
-  const { activeFilters, toggleFilters } = useContext(SystemContext);
+  const { activeFilters, toggleFilters, isFiltersOpen } = useContext(SystemContext);
   const countActiveFilters = countValidFilters(activeFilters);
 
   const [isActive, setIsActive] = useState(0);
@@ -37,7 +37,7 @@ export function HomeFloatingMenu({
   }
 
   return (
-    <div className={`${styles.container} ${!isSearchVisible && styles.hidden}`}>
+    <div className={`${styles.container} ${!isSearchVisible && styles.hidden} ${isFiltersOpen && styles.openFilter}`}>
       <div className={styles.card}>
         <button
           onClick={handleListClick}

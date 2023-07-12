@@ -36,15 +36,28 @@
 }
 
 .openDrawer {
+  
   @media (min-width: 992px) {
-    // padding-right: 25rem;
-    padding-right: calc(((110vw - 992px) / 2) + 25rem);
+    margin-right: 0;
+    grid-template-columns: 2fr 2fr;
+    margin-left: 25rem;
+    padding-left: calc(((95vw - 992px) / 2) + 3rem);
+    padding-right: calc(((95vw - 992px) / 2) + 3rem);
   }
 
   @media (min-width: 1200px) {
-    grid-template-columns: 3fr 3fr; //6columns
-    padding-right: calc(((88vw - 1200px) / 2) + 10rem);
+    padding-left: calc(((88vw - 1200px) / 2) + 3rem);
+    padding-right: calc(((88vw - 1200px) / 2) + 3rem);
   }
+
+  @media (min-width: 1440px) {
+    padding-left: calc(((88vw - 1200px) / 2) + 2rem);
+    padding-right: calc(((88vw - 1200px) / 2) + 2rem);
+  }
+}
+
+.openDrawerWrapper {
+
 }
 
 .notfoundcontainer {

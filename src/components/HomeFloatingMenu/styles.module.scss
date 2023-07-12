@@ -7,6 +7,10 @@
   z-index: 990;
 }
 
+.openFilter {
+  width: calc(100vw + 25rem);
+}
+
 .card {
   margin: auto;
   background: var(--white);

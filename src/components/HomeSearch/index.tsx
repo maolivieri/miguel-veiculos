@@ -20,7 +20,7 @@ export function HomeSearch({ searchValue, setSearchValue }: IProps) {
   const countActiveFilters = countValidFilters(activeFilters);
 
   return (
-    <div className={styles.box}>
+    <div className={`${styles.box} ${isFiltersOpen && styles.openDrawerBox}`}>
       <div
         className={`${styles.container} ${isFiltersOpen && styles.openDrawer}`}
       >
