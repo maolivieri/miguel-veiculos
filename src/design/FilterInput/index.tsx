@@ -34,7 +34,7 @@ export function PriceFilterInput({
         {prefix && <span>{prefix}</span>}
         <input
           className={styles.input}
-          type="text"
+          type="number"
           id={`${placeholder}`}
           name={`${placeholder}`}
           pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
