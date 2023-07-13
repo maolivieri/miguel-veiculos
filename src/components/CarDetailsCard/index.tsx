@@ -16,6 +16,7 @@ import {
   IconCombustivel,
   IconConforto,
   IconCor,
+  IconDocumentation,
   IconEssenciais,
   IconKM,
   IconPlaca,
@@ -231,11 +232,19 @@ export function CarDetailsCard({ car }: IProps) {
       </div>
       {(!!car.essenciais.length ||
         !!car.confortos.length ||
+        !!car.documentacoes.length ||
         !!car.tecnologias.length ||
         !!car.segurancas.length) && (
         <>
-          <h4 className={styles.optionalsHeadTitle}>Especificações técnicas</h4>
+          <h4 className={styles.optionalsHeadTitle}>Itens do veículo</h4>
           <div className={styles.optionalsWrapper}>
+            {!!car.documentacoes.length && (
+              <OptionalCard
+                icon={<IconDocumentation />}
+                title="Documentação"
+                list={car.documentacoes}
+              />
+            )}
             {!!car.essenciais.length && (
               <OptionalCard
                 icon={<IconEssenciais />}
