@@ -24,7 +24,7 @@ export function PageFooter() {
           <span className={styles.tab}>{` | `}</span>
           <span>{`(19) 3491-3114`}</span>
           <span>{` | `}</span>
-          <span>{`(19) 97404-0532`}</span>
+          <span>{`(19) 97404-0531`}</span>
           {/* <span className={styles.tab}>{` | `}</span> */}
         </p>
         <p className={styles.socials}>
