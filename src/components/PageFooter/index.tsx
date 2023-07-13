@@ -18,7 +18,7 @@ export function PageFooter() {
       <div className={styles.text}>
         <p className={styles.address}>
           <span>{`Praça 13 de Maio, 70, Centro, `}</span>
-          <span>{`Capivari - SP - 13.360-000`}</span>
+          <span>{`Capivari - SP - 13.360-057`}</span>
         </p>
         <p className={styles.contact}>
           <span className={styles.tab}>{` | `}</span>
