@@ -4,43 +4,43 @@ import { client } from "../lib/apollo";
 
 const GET_LISTS = gql`
   query GetLists {
-    carrocerias(where: { cars_every: { id_contains: "" } }) {
+    carrocerias(orderBy: nome_ASC, where: {cars_every: {id_contains: ""}}) {
       nome
       icon {
         url
       }
     }
-    essenciais {
+    essenciais(orderBy: nome_ASC) {
       nome
     }
-    segurancas {
+    segurancas(orderBy: nome_ASC) {
       nome
     }
-    tecnologias {
+    tecnologias(orderBy: nome_ASC) {
       nome
     }
-    marcas(where: { cars_every: { id_contains: "" } }) {
+    marcas(orderBy: nome_ASC, where: {cars_every: {id_contains: ""}}) {
       nome
       logo {
         url
       }
     }
-    documentacoes {
+    documentacoes(orderBy: nome_ASC) {
       nome
     }
-    cors(where: { cars_every: { id_contains: "" } }) {
+    cors(orderBy: nome_ASC, where: {cars_every: {id_contains: ""}}) {
       cor {
         hex
       }
       nome
     }
-    confortos {
+    confortos(orderBy: nome_ASC) {
       nome
     }
-    combustivels {
+    combustivels(orderBy: nome_ASC) {
       nome
     }
-    cambios {
+    cambios(orderBy: nome_ASC) {
       nome
     }
   }
