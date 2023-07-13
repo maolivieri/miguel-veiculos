@@ -138,7 +138,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
       query GetAllCars {
-        cars(orderBy: publishedAt_DESC) {
+        cars(orderBy: publishedAt_DESC, first: 100) {
           id
           km
           modelo

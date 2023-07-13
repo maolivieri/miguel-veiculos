@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   const { data } = await client.query({
     query: gql`
       query GetCars {
-        cars {
+        cars(first: 100)) {
           id
         }
       }
