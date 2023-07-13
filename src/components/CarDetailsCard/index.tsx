@@ -183,7 +183,7 @@ export function CarDetailsCard({ car }: IProps) {
             />
             <CarDetailSpecCard
               icon={<IconPotencia size={14} />}
-              title="Potência"
+              title="Motor"
               value={car.potencia}
             />
             <CarDetailSpecCard

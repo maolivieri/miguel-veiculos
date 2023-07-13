@@ -1,11 +1,11 @@
 import { IconBaseProps } from "react-icons";
-import { HiOutlineLightningBolt } from "react-icons/hi";
+import { GoGear } from "react-icons/go";
 
 interface IProps extends IconBaseProps {}
 
 export function IconPotenciaComponent({ size = "1.2rem", ...rest }: IProps) {
   return (
-    <HiOutlineLightningBolt
+    <GoGear
       style={{
         height: size,
         width: size,
