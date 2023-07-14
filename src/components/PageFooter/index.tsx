@@ -51,7 +51,7 @@ export function PageFooter() {
           </a>
         </p>
       </div>
-      <p className={styles.c}>© Copyright 2023 Miguel Veículos</p>
+      <p className={styles.c}>© 2023 Miguel Veículos. Todos os direitos reservados.</p>
     </footer>
   );
 }

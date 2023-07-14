@@ -106,7 +106,7 @@ export function SideDrawer() {
             />
           </div>
         </div>
-        <p>© Copyright 2023 Miguel Veículos</p>
+        {/* <p>© Copyright 2023 Miguel Veículos</p> */}
       </nav>
       <div className={styles.dropShaddow} onClick={toggleDrawer} />
     </div>
