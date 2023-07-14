@@ -1,20 +1,32 @@
-export const toCurrency = (input: string | number) => {
-  const inputString = String(input);
-  const hasComma = inputString.indexOf(",") > -1;
-  const formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    minimumFractionDigits: 2,
-  });
-  if (input !== null && input !== "" && input !== undefined) {
-    const replaceComma = inputString.replace(/,/g, ",");
-    const toFloat = parseFloat(replaceComma.replace(/[^0-9]+/g, ""));
-    const res = hasComma ? toFloat / 100 : toFloat;
-    if (!isNaN(res)) {
-      return formatter.format(res);
-    } else return formatter.format(0);
-  } else return formatter.format(0);
-};
+import { formatToBigNumber } from "./formatBigNumber";
+
+export const toCurrency = (input: string | number | readonly string[]) => {
+  if (!input) {
+    return '';
+  }
+  const formattedValue = formatToBigNumber(input)
+  return `R$ ${formattedValue}`
+}
+
+
+// export const toCurrency = (input: string | number | readonly string[]) => {
+//   const inputString = String(input);
+//   const hasComma = inputString.indexOf(",") > -1;
+//   const formatter = new Intl.NumberFormat("pt-BR", {
+//     style: "currency",
+//     currency: "BRL",
+//     minimumFractionDigits: 2,
+//   });
+//   if (input !== null && input !== "" && input !== undefined) {
+//     const replaceComma = inputString.replace(/,/g, ",");
+//     const toFloat = parseFloat(replaceComma.replace(/[^0-9]+/g, ""));
+//     const res = hasComma ? toFloat / 100 : toFloat;
+//     if (!isNaN(res)) {
+//       return formatter.format(res);
+//     } else return formatter.format(0);
+//   } else return formatter.format(0);
+// };
+
 
 export const toNumber = (input: string) => {
   const hasComma = input.indexOf(",") > -1;

@@ -7,9 +7,9 @@ import { SystemContext } from "../../../../context/systemContext";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 
 export function FilterAno() {
-  const { activeFilters, setActiveFilters, setFocusedFilter } =
+  const { activeFilters, setActiveFilters, setFocusedFilter, filterRanges } =
     useContext(SystemContext);
-  const minRange = 1970;
+  const minRange = filterRanges.minYear!;
   const maxRange = new Date().getFullYear();
   // const maxRange = 2023;
   const [minValue, setMinValue] = useState(activeFilters.startYear || minRange);

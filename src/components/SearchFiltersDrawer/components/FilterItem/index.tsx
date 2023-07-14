@@ -1,6 +1,4 @@
-import { Dispatch, ReactNode, SetStateAction } from "react";
-import { Filters } from "../../../../context/systemContext";
-import { InputFilter } from "../InputFilter.tsx";
+import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 
 interface Props {

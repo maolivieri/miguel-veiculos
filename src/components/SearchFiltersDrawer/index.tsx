@@ -8,7 +8,7 @@ import {
 import { CloseButton } from "../../design/CloseButton";
 import { countValidFilters } from "../../lib/countValidFilters";
 import { FilterItem } from "./components/FilterItem";
-import { InputFilter } from "./components/InputFilter.tsx";
+import { YearInput } from "./components/YearInput";
 
 //Icons
 import {
@@ -28,6 +28,8 @@ import { ListsContext } from "../../context/listsContext";
 import { CheckboxFilter } from "./components/CheckboxFilter";
 import { toCurrency } from "../../lib/formatInputCurrency";
 import { formatToBigNumber } from "../../lib/formatBigNumber";
+import { PriceInput } from "./components/PriceInput";
+import { NumberInput } from "./components/NumberInput";
 
 export function FiltersDrawer() {
   const { toggleFilters, setActiveFilters, activeFilters, filterRanges } =
@@ -87,16 +89,14 @@ export function FiltersDrawer() {
             activeFilters.minPrice || activeFilters.maxPrice ? 1 : 0
           }
         >
-          <InputFilter
+          <PriceInput
             filters={activeFilters}
             setFilters={setActiveFilters}
-            format=""
             minValue={toCurrency(String(filterRanges.minPrice))}
             maxValue={toCurrency(String(filterRanges.maxPrice))}
             placeholder="Preço"
             value1Name="minPrice"
             value2Name="maxPrice"
-            price
           />
         </FilterItem>
         <FilterItem
@@ -106,15 +106,15 @@ export function FiltersDrawer() {
             activeFilters.startYear || activeFilters.endYear ? 1 : 0
           }
         >
-          <InputFilter
+          <YearInput
             filters={activeFilters}
             setFilters={setActiveFilters}
-            format=""
             minValue={Number(filterRanges.minYear)}
             maxValue={Number(filterRanges.maxYear)}
             placeholder="Ano"
             value1Name="startYear"
             value2Name="endYear"
+            maxLength={4}
           />
         </FilterItem>
         <FilterItem
@@ -122,10 +122,9 @@ export function FiltersDrawer() {
           title="Quilometragem"
           countSelected={activeFilters.kmStart || activeFilters.kmEnd ? 1 : 0}
         >
-          <InputFilter
+          <NumberInput
             filters={activeFilters}
             setFilters={setActiveFilters}
-            format=""
             minValue={`${formatToBigNumber(filterRanges.minKM)} km`}
             maxValue={`${formatToBigNumber(filterRanges.maxKM)} km`}
             placeholder="KM"
