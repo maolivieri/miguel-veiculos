@@ -20,7 +20,7 @@ export function OurCars({ cars }: IProps) {
     <div className={isFiltersOpen ? styles.openDrawerWrapper : styles.none}>
       {/* <h3 className={styles.title}>Nossos Veículos</h3> */}
       {!cars.length ? (
-        <div className={styles.notfoundcontainer}>
+        <div className={`${styles.notfoundcontainer} ${isFiltersOpen && styles.openDrawerNotFound}`}>
           <CarNotFound />
         </div>
       ) : (
