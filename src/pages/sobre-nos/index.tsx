@@ -4,7 +4,7 @@ export default function AboutUs() {
   const pStyles = { lineHeight: "1.5rem", color: "var(--gray-800)" };
 
   return (
-    <SubPages images={["/assets/images/miguel.png"]} title="Sobre Nós">
+    <SubPages images={["/assets/images/miguel.png", "/assets/images/lojamv1.png", "/assets/images/lojamv2.png"]} title="Sobre Nós">
       <div>
         <p style={pStyles}>
           Fundada por <b>Miguel Rodrigues de Jesus</b>, na cidade de Capivari,

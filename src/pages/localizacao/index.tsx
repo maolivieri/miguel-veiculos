@@ -23,7 +23,7 @@ function Content() {
 
 export default function Location() {
   return (
-    <SubPages map title="Localização">
+    <SubPages map hasBlur title="Localização">
       <Content />
     </SubPages>
   );

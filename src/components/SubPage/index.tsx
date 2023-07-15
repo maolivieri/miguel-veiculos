@@ -14,6 +14,7 @@ interface IProps {
   copy?: string;
   children?: ReactNode;
   map?: boolean;
+  hasBlur?: boolean;
 }
 
 const animation = { duration: 5000, easing: (t: number) => t };
@@ -24,6 +25,7 @@ export default function SubPages({
   title,
   children,
   map,
+  hasBlur = false
 }: IProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -65,7 +67,7 @@ export default function SubPages({
     <div className={styles.page}>
       <SideDrawer />
       <header className={styles.header}>
-        <SubPagesHeader />
+        <SubPagesHeader hasBlur={hasBlur} />
         {!!map && (
           <div className={styles.headerMapWrapper}>
             <div className={styles.headerMap}>

@@ -15,12 +15,16 @@ import logoIcon from "../../../public/assets/logo_icon.svg";
 import { BiMenuAltRight } from "react-icons/bi";
 import { TbBrandWhatsapp } from "react-icons/tb";
 
-export function SubPagesHeader() {
+interface SubPagesHeaderProps { 
+  hasBlur?: Boolean;
+}
+
+export function SubPagesHeader({ hasBlur = false }: SubPagesHeaderProps) {
   const { toggleDrawer } = useContext(SystemContext);
 
   return (
     <div className={styles.HeaderContainer}>
-      <div className={styles.FixedWrapper}>
+      <div className={`${styles.FixedWrapper} ${hasBlur && styles.fixedWrapperBlur}`}>
         <>
           <Link href="/" passHref>
             <a className={styles.largeLogo}>
