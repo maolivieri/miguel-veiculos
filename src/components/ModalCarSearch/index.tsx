@@ -3,6 +3,7 @@ import { BiChevronDown } from "react-icons/bi";
 import { SystemContext, SortOptions } from "../../context/systemContext";
 import { SearchInput } from "../../design/SearchInput";
 import styles from "./styles.module.scss";
+import { HiX } from "react-icons/hi";
 
 interface Props {
   toggleModal: () => void;
@@ -17,10 +18,15 @@ export function ModalCarSearch({
 }: Props) {
   return (
     <div className={styles.box}>
-      <div className={styles.closeArrow} onClick={toggleModal}>
+      {/* <div className={styles.closeArrow} onClick={toggleModal}>
         <BiChevronDown size="2.3rem" />
+      </div> */}
+      <div  className={styles.header}>
+        <h3 className={styles.title}>Busca</h3>
+        <div className={styles.closeArrow} onClick={toggleModal}>
+          <HiX size="1.5rem" />
+        </div>
       </div>
-      <h4 className={styles.title}>Digite uma palavra chave</h4>
       <div className={styles.main}>
         <SearchInput
           searchValue={searchValue}

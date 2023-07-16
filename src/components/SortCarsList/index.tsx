@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { BiChevronDown } from "react-icons/bi";
 import { SystemContext, SortOptions } from "../../context/systemContext";
 import styles from "./styles.module.scss";
+import { HiX } from "react-icons/hi";
 
 interface Props {
   toggleFilters: () => void;
@@ -16,10 +16,15 @@ export function SortCarsList({ toggleFilters }: Props) {
 
   return (
     <div className={styles.box}>
-      <div className={styles.closeArrow} onClick={toggleFilters}>
-        <BiChevronDown size="2.3rem" />
+      <div  className={styles.header}>
+        <h3 className={styles.title}>Ordem de exibição</h3>
+        <div className={styles.closeArrow} onClick={toggleFilters}>
+          <HiX size="1.5rem" />
+        </div>
+        {/* <div className={styles.closeArrow} onClick={toggleFilters}>
+          <BiChevronDown size="2.3rem" />
+        </div> */}
       </div>
-      <h4 className={styles.title}>Ordem de exibição</h4>
       <div className={styles.main}>
         <div className={styles.item} onClick={() => handleOnClick(null)}>
           <div className={`${listSort === null && styles.active}`} />
