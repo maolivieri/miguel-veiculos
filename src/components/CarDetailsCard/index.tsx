@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
-import { ReturnButton } from "../../design/ReturnButton";
 import { CarDetailSpecCard } from "../CarDetailSpecCard";
 import { OptionalCard } from "../OptionalCard";
 import { ICar } from "../../types/Car";

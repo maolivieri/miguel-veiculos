@@ -24,6 +24,8 @@
     white-space: nowrap;
     overflow: hidden;
     // font-weight: 500;
+    color: var(--primary);
+    opacity: 0.8;
 
     @media (min-width: 350px) {
       font-size: 0.9rem;
@@ -86,7 +88,7 @@
 
 .input {
   flex: 1;
-  color: blue;
+  // color: blue;
   font-size: 1.2rem;
   font-weight: 200;
   padding: 0.3rem 0.3rem;

@@ -6,18 +6,26 @@ import { UIContext } from "../../context/uiContext";
 import { useContext } from "react";
 
 interface IconButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    goHome?: boolean
+  }
 
-export function ReturnButton({ ...props }: IconButtonProps) {
+export function ReturnButton({ goHome = false, ...props }: IconButtonProps) {
   const { startLoading } = useContext(UIContext);
   const router = useRouter();
 
+  const handleClick = () => {
+    if (goHome) { 
+      router.push('/')
+    } else { 
+      router.back();
+      startLoading();
+    }
+  }
+
   return (
     <button
-      onClick={() => {
-        router.back();
-        startLoading();
-      }}
+      onClick={handleClick}
       className={styles.buttonContainer}
       {...props}
     >

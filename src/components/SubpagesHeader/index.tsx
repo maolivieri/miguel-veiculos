@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 //components
 import { IconButtonPrimary } from "../../design/IconButtonPrimary";
 import { SystemContext } from "../../context/systemContext";
+import { ReturnButton } from "../../design/ReturnButton";
 
 //assets
 import greenLogo from "../../../public/assets/greenLogo.png";
@@ -31,11 +32,14 @@ export function SubPagesHeader({ hasBlur = false }: SubPagesHeaderProps) {
               <Image width={129} height={48} src={greenLogo} alt="" />
             </a>
           </Link>
-          <Link href="/" passHref>
+          <div className={styles.smallLogo}>
+          <ReturnButton goHome />
+          </div>
+          {/* <Link href="/" passHref>
             <a className={styles.smallLogo}>
               <Image width={48} height={48} src={logoIcon} alt="" />
             </a>
-          </Link>
+          </Link> */}
         </>
 
         <div className={styles.buttonsContainer}>

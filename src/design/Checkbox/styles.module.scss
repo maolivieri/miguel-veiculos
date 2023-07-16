@@ -32,6 +32,12 @@
   border-radius: 5px;
 }
 
+.checkmark_large {
+  height: 1.5rem;
+  width: 1.5rem;
+
+}
+
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
   opacity: 0.9;
@@ -69,4 +75,9 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.container .checkmark_large:after {
+  left: 0.4rem;
+  top: 0.1rem;
 }

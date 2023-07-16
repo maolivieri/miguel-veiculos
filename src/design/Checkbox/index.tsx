@@ -1,12 +1,14 @@
 import styles from "./styles.module.scss";
 
-interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  large?: boolean
+}
 
-export function Checkbox({ ...props }: IProps) {
+export function Checkbox({ large = false, ...props }: IProps) {
   return (
     <label className={styles.container}>
       <input type="checkbox" {...props} />
-      <span className={styles.checkmark} />
+      <span className={`${styles.checkmark} ${large && styles.checkmark_large}`} />
     </label>
   );
 }

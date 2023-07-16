@@ -26,9 +26,8 @@ export function CheckboxFilter({
         </p>
       </div>
       <div className={styles.row}>
-        {/* <p className={styles.count}>8</p> */}
         <div className={styles.checkboxWrapper}>
-          <Checkbox checked={checked} onChange={handleCheckboxChange} />
+          <Checkbox large checked={checked} onChange={handleCheckboxChange} />
         </div>
       </div>
     </div>
