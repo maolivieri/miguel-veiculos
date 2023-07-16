@@ -6,6 +6,7 @@ import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconCambio } from "../../../../design/Icons";
 import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterCambio() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
@@ -41,10 +42,16 @@ export function FilterCambio() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconCambio size="1.4rem" />
         <h3>Câmbio</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         {cambios.map((cambio) => (
           <CheckboxFilter
             key={cambio.nome}
@@ -54,9 +61,10 @@ export function FilterCambio() {
           />
         ))}
       </div>
+      </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
+        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

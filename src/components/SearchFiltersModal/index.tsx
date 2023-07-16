@@ -24,7 +24,8 @@ import {
   IconOpcionais,
   IconPreco,
 } from "../../design/Icons";
-import { BiChevronDown } from "react-icons/bi";
+
+import { HiX } from "react-icons/hi";
 
 export function FiltersModal() {
   const { toggleFilters, setActiveFilters, activeFilters } =
@@ -34,10 +35,13 @@ export function FiltersModal() {
     <>
       <div className={styles.dropShaddow} onClick={toggleFilters} />
       <div className={`${styles.main}`}>
+        
+        <div className={styles.header}>
+        <h3 className={styles.title}>Filtros</h3>
         <div className={styles.closeArrow} onClick={toggleFilters}>
-          <BiChevronDown size="2.3rem" />
+          <HiX size="1.5rem" />
         </div>
-        <h4 className={styles.title}>Filtros</h4>
+        </div>
         <div className={`${styles.filterWrapper}`}>
           <FilterItem
             icon={<IconPreco />}
@@ -129,11 +133,11 @@ export function FiltersModal() {
           /> */}
         </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonPrimary text="Filtrar" onClick={toggleFilters} />
           <ButtonSecondary
-            text="Limpar Filtros"
+            text="Limpar filtros"
             onClick={() => setActiveFilters(initialFiltersValue)}
           />
+          <ButtonPrimary text="Filtrar" onClick={toggleFilters} />
         </div>
       </div>
       <FilterWrapper />

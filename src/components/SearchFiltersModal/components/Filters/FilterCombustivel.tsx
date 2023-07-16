@@ -6,6 +6,7 @@ import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconCombustivel } from "../../../../design/Icons";
 import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterCombustivel() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
@@ -41,10 +42,16 @@ export function FilterCombustivel() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconCombustivel size="1.4rem" />
         <h3>Combustível</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         {combustivels.map((combustivel) => (
           <CheckboxFilter
             key={combustivel.nome}
@@ -54,9 +61,10 @@ export function FilterCombustivel() {
           />
         ))}
       </div>
+      </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
+        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

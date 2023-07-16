@@ -21,9 +21,13 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   background: var(--white);
   border-radius: 10px 10px 0 0;
-  padding: 1.3rem;
+  padding: 1.3rem 2rem;
+  max-height: 92vh;
 
   transition: height 1.5s;
 

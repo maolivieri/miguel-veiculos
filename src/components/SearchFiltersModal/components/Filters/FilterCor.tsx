@@ -6,6 +6,7 @@ import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconCor } from "../../../../design/Icons";
 import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterCor() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
@@ -41,10 +42,16 @@ export function FilterCor() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconCor size="1.4rem" />
         <h3>Cor</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         {cors.map((cor) => (
           <CheckboxFilter
             key={cor.nome}
@@ -55,9 +62,10 @@ export function FilterCor() {
           />
         ))}
       </div>
+      </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         <ButtonSecondary text="Limpar" onClick={clearFilters} />
+        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

@@ -6,6 +6,7 @@ import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconDocumentation } from "../../../../design/Icons";
 import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterDocumentacao() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
@@ -41,10 +42,16 @@ export function FilterDocumentacao() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconDocumentation size="1.4rem" />
         <h3>Documentação</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         {documentacoes.map((documentacao) => (
           <CheckboxFilter
             key={documentacao.nome}
@@ -54,9 +61,10 @@ export function FilterDocumentacao() {
           />
         ))}
       </div>
+      </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
+        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

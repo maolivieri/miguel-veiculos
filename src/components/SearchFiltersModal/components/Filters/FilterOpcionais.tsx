@@ -6,6 +6,7 @@ import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { IconOpcionais } from "../../../../design/Icons";
 import { CheckboxFilter } from "../../../../design/CheckboxFilter";
 import styles from "./styles.module.scss";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterOpcionais() {
   const { activeFilters, setActiveFilters, setFocusedFilter } =
@@ -75,10 +76,16 @@ export function FilterOpcionais() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconOpcionais size="1.4rem" />
         <h3>Opcionais</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         <h6 className={styles.listTitle}>Essenciais</h6>
         {essenciais.map((essential) => (
           <CheckboxFilter
@@ -116,9 +123,10 @@ export function FilterOpcionais() {
           />
         ))}
       </div>
+      </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         <ButtonSecondary text="Limpar" onClick={clearFilters} />
+        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

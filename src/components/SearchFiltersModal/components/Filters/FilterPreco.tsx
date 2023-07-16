@@ -6,12 +6,13 @@ import { IconPreco } from "../../../../design/Icons";
 import { RangeSlider } from "../../../../design/RangeSlider";
 import { formatToCurrency } from "../../../../lib/formatToCurrency";
 import styles from "./styles.module.scss";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterPreco() {
-  const { activeFilters, setActiveFilters, setFocusedFilter } =
+  const { activeFilters, setActiveFilters, setFocusedFilter, filterRanges } =
     useContext(SystemContext);
-  const minRange = 10000;
-  const maxRange = 200000;
+  const minRange = filterRanges.minPrice!;;
+  const maxRange = filterRanges.maxPrice!;;
   const [minValue, setMinValue] = useState(activeFilters.minPrice || minRange);
   const [maxValue, setMaxValue] = useState(activeFilters.maxPrice || maxRange);
 
@@ -37,10 +38,16 @@ export function FilterPreco() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconPreco size="1.4rem" />
         <h3>Preço</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         <div className={styles.filterRange}>
           <div>
             <p>De</p>
@@ -59,9 +66,10 @@ export function FilterPreco() {
           setMinValue={setMinValue}
           setMaxValue={setMaxValue}
         />
+        </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
           <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
+          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         </div>
       </div>
     </>

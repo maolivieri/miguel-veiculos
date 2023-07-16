@@ -1,4 +1,5 @@
 .SliderContainer {
+  margin-top: 1rem;
   width: 100%;
 }
 
@@ -36,7 +37,7 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: calc(100% - 2rem);
+  width: calc(100% - 4rem);
   outline: none;
 }
 

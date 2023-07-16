@@ -5,13 +5,13 @@ import { RangeSlider } from "../../../../design/RangeSlider";
 import styles from "./styles.module.scss";
 import { SystemContext } from "../../../../context/systemContext";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterAno() {
   const { activeFilters, setActiveFilters, setFocusedFilter, filterRanges } =
     useContext(SystemContext);
   const minRange = filterRanges.minYear!;
   const maxRange = new Date().getFullYear();
-  // const maxRange = 2023;
   const [minValue, setMinValue] = useState(activeFilters.startYear || minRange);
   const [maxValue, setMaxValue] = useState(activeFilters.endYear || maxRange);
 
@@ -37,10 +37,16 @@ export function FilterAno() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+        <div className={styles.mainTitle}>
         <IconAno size="1.4rem" />
         <h3>Ano</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         <div className={styles.filterRange}>
           <div>
             <p>De</p>
@@ -59,9 +65,10 @@ export function FilterAno() {
           setMinValue={setMinValue}
           setMaxValue={setMaxValue}
         />
+        </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
           <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
+          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         </div>
       </div>
     </>

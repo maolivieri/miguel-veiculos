@@ -6,12 +6,13 @@ import styles from "./styles.module.scss";
 import { SystemContext } from "../../../../context/systemContext";
 import { ButtonSecondary } from "../../../../design/ButtonSecondary";
 import { formatToBigNumber } from "../../../../lib/formatBigNumber";
+import { BiChevronLeft } from "react-icons/bi";
 
 export function FilterKM() {
-  const { activeFilters, setActiveFilters, setFocusedFilter } =
+  const { activeFilters, setActiveFilters, setFocusedFilter, filterRanges } =
     useContext(SystemContext);
-  const minRange = 0;
-  const maxRange = 500000;
+  const minRange = filterRanges.minKM!;
+  const maxRange = filterRanges.maxKM!;;
   const [minValue, setMinValue] = useState(activeFilters.kmStart || minRange);
   const [maxValue, setMaxValue] = useState(activeFilters.kmEnd || maxRange);
 
@@ -37,10 +38,16 @@ export function FilterKM() {
   return (
     <>
       <div className={styles.mainTitleWrapper}>
+      <div className={styles.mainTitle}>
         <IconKM size="1.4rem" />
         <h3>KM</h3>
+        </div>
+        <div className={styles.closeArrow} onClick={() => setFocusedFilter(null)}>
+          <BiChevronLeft size="2rem" />
+        </div>
       </div>
       <div className={styles.filterWrapper}>
+        <div>
         <div className={styles.filterRange}>
           <div>
             <p>De</p>
@@ -59,9 +66,10 @@ export function FilterKM() {
           setMinValue={setMinValue}
           setMaxValue={setMaxValue}
         />
+        </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
           <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
+          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
         </div>
       </div>
     </>
