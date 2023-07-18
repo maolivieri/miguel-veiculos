@@ -39,6 +39,8 @@ export function FilterCor() {
     }
   };
 
+  const isButtonDisabled = (!value?.length)
+
   return (
     <>
       <div className={styles.mainTitleWrapper}>
@@ -64,8 +66,8 @@ export function FilterCor() {
       </div>
       </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonSecondary text="Limpar" onClick={clearFilters} />
-        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
+        <ButtonSecondary text="Limpar" onClick={clearFilters} disabled={isButtonDisabled} />
+        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled} />
       </div>
     </>
   );

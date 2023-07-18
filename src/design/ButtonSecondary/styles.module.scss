@@ -27,3 +27,12 @@
   font-weight: inherit;
   line-height: inherit;
 }
+
+.buttonContainerDisabled {
+  background: var(--gray-250);
+  box-shadow: none;
+
+  .buttonText {
+    color: var(--gray-350);
+  }
+}

@@ -35,6 +35,8 @@ export function FilterPreco() {
     }));
   };
 
+  const isButtonDisabled = (minValue === minRange && maxValue === maxRange)
+
   return (
     <>
       <div className={styles.mainTitleWrapper}>
@@ -46,7 +48,7 @@ export function FilterPreco() {
           <BiChevronLeft size="2rem" />
         </div>
       </div>
-      <div className={styles.filterWrapper}>
+      <div className={styles.filterWrapperSlider}>
         <div>
         <div className={styles.filterRange}>
           <div>
@@ -68,8 +70,8 @@ export function FilterPreco() {
         />
         </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
-          <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
+          <ButtonSecondary text="Limpar" onClick={clearPriceFilters} disabled={isButtonDisabled}  />
+          <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled}  />
         </div>
       </div>
     </>

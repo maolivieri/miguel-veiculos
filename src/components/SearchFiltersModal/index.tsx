@@ -26,6 +26,7 @@ import {
 } from "../../design/Icons";
 
 import { HiX } from "react-icons/hi";
+import { countValidFilters } from "../../lib/countValidFilters";
 
 export function FiltersModal() {
   const { toggleFilters, setActiveFilters, activeFilters } =
@@ -136,8 +137,9 @@ export function FiltersModal() {
           <ButtonSecondary
             text="Limpar filtros"
             onClick={() => setActiveFilters(initialFiltersValue)}
+            disabled={countValidFilters(activeFilters) === 0}
           />
-          <ButtonPrimary text="Filtrar" onClick={toggleFilters} />
+          <ButtonPrimary text="Filtrar" onClick={toggleFilters} disabled={countValidFilters(activeFilters) === 0} />
         </div>
       </div>
       <FilterWrapper />

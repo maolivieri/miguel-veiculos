@@ -7,8 +7,10 @@ interface IconButtonProps
 }
 
 export function ButtonSecondary({ text, ...props }: IconButtonProps) {
+  const classNames = `${styles.buttonContainer} ${props.disabled && styles.buttonContainerDisabled}`
+
   return (
-    <button className={styles.buttonContainer} {...props}>
+    <button className={classNames} {...props}>
       <p className={styles.buttonText}>{text}</p>
     </button>
   );

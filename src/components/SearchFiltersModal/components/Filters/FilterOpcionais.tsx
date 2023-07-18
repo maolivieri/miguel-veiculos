@@ -73,6 +73,8 @@ export function FilterOpcionais() {
     }
   };
 
+  const isButtonDisabled = (!essentials?.length && !confort?.length && !technology?.length && !safety?.length)
+
   return (
     <>
       <div className={styles.mainTitleWrapper}>
@@ -125,8 +127,8 @@ export function FilterOpcionais() {
       </div>
       </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonSecondary text="Limpar" onClick={clearFilters} />
-        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
+        <ButtonSecondary text="Limpar" onClick={clearFilters} disabled={isButtonDisabled}  />
+        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled}  />
       </div>
     </>
   );

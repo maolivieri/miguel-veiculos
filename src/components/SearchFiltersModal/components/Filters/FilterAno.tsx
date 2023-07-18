@@ -34,6 +34,8 @@ export function FilterAno() {
     }));
   };
 
+  const isButtonDisabled = (minValue === minRange && maxValue === maxRange)
+
   return (
     <>
       <div className={styles.mainTitleWrapper}>
@@ -45,7 +47,7 @@ export function FilterAno() {
           <BiChevronLeft size="2rem" />
         </div>
       </div>
-      <div className={styles.filterWrapper}>
+      <div className={styles.filterWrapperSlider}>
         <div>
         <div className={styles.filterRange}>
           <div>
@@ -67,8 +69,8 @@ export function FilterAno() {
         />
         </div>
         <div className={styles.buttonsWrapper}>
-          <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
-          <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
+          <ButtonSecondary text="Limpar" onClick={clearPriceFilters} disabled={isButtonDisabled} />
+          <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled}/>
         </div>
       </div>
     </>

@@ -39,6 +39,8 @@ export function FilterCambio() {
     }
   };
 
+  const isButtonDisabled = (!value?.length)
+
   return (
     <>
       <div className={styles.mainTitleWrapper}>
@@ -63,8 +65,8 @@ export function FilterCambio() {
       </div>
       </div>
       <div className={styles.buttonsWrapper}>
-        <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
-        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
+        <ButtonSecondary text="Limpar" onClick={clearPriceFilters} disabled={isButtonDisabled}/>
+        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled}/>
       </div>
     </>
   );
