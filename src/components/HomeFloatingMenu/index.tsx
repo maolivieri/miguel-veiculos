@@ -39,17 +39,14 @@ export function HomeFloatingMenu({
   return (
     <div className={`${styles.container} ${!isSearchVisible && styles.hidden} ${isFiltersOpen && styles.openFilter}`}>
       <div className={styles.card}>
-        <button
-          onClick={handleListClick}
-          className={`${styles.iconButton} ${isActive === 0 && styles.active}`}
+      <button
+          onClick={toggleFilters}
+          className={`${styles.iconButton} ${openModals[2] && styles.active}`}
         >
-          <IoGridOutline size="1.5rem" />
-        </button>
-        <button
-          onClick={handleListClick}
-          className={`${styles.iconButton} ${isActive === 1 && styles.active}`}
-        >
-          <IoListOutline size="1.5rem" />
+          {countActiveFilters > 0 && (
+            <div className={styles.settingFlag}>{countActiveFilters}</div>
+          )}
+          <IoOptions size="1.6rem" />
         </button>
         <button
           onClick={handleSortOpen}
@@ -64,13 +61,16 @@ export function HomeFloatingMenu({
           <IoSearch size="1.5rem" />
         </button>
         <button
-          onClick={toggleFilters}
-          className={`${styles.iconButton} ${openModals[2] && styles.active}`}
+          onClick={handleListClick}
+          className={`${styles.iconButton} ${isActive === 1 && styles.active}`}
         >
-          {countActiveFilters > 0 && (
-            <div className={styles.settingFlag}>{countActiveFilters}</div>
-          )}
-          <IoOptions size="1.6rem" />
+          <IoListOutline size="1.5rem" />
+        </button>
+        <button
+          onClick={handleListClick}
+          className={`${styles.iconButton} ${isActive === 0 && styles.active}`}
+        >
+          <IoGridOutline size="1.5rem" />
         </button>
       </div>
     </div>
