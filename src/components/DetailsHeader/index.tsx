@@ -20,7 +20,7 @@ export function DetailsHeader() {
   return (
     <header className={styles.HeaderContainer}>
       <div className={styles.returnButtonWrapper}>
-        <ReturnButton />
+        <ReturnButton goHome />
       </div>
       <Link href="/" passHref>
         <a className={styles.logoWrapper} onClick={startLoading}>
