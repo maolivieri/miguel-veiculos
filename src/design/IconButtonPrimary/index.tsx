@@ -6,16 +6,20 @@ interface IconButtonProps
   icon: ReactNode;
   alt?: boolean;
   text?: string;
+  showText?: boolean;
 }
 
 export function IconButtonPrimary({
   icon,
   alt = false,
+  showText = false,
   text = "",
   ...props
 }: IconButtonProps) {
   const buttonStyling = `${styles.buttonContainer} ${alt && styles.alt} ${
-    !!text && styles.text
+    text && styles.text
+  } ${
+    showText && styles.showText
   }`;
 
   return (

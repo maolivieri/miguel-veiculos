@@ -1,6 +1,9 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
+import { IconButtonPrimary } from "../../design/IconButtonPrimary";
+import { TbBrandWhatsapp } from "react-icons/tb";
+
 import { CarDetailSpecCard } from "../CarDetailSpecCard";
 import { OptionalCard } from "../OptionalCard";
 import { ICar } from "../../types/Car";
@@ -25,8 +28,7 @@ import {
   IconTecnologia,
   IconTracao,
 } from "../../design/Icons";
-import { UIContext } from "../../context/uiContext";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -34,13 +36,19 @@ import { TrackDetails } from "keen-slider";
 import { SliderArrow } from "../../design/SliderArrow";
 import { SliderDots } from "../../design/SliderDot";
 import { formatToBigNumber } from "../../lib/formatBigNumber";
+import { useRouter } from "next/router";
+import { ButtonBrand } from "../../design/ButtonBrand";
+
 //icons
 
 interface IProps {
   car: ICar;
 }
 
+
+
 export function CarDetailsCard({ car }: IProps) {
+  const router = useRouter()
   const [currentSlide, setCurrentSlide] = useState(0);
   const [details, setDetails] = useState<TrackDetails | null>(null);
   const [loaded, setLoaded] = useState(false);
@@ -58,6 +66,11 @@ export function CarDetailsCard({ car }: IProps) {
     },
   });
 
+  console.log('A', router.asPath)
+  console.log('B', window.location.href)
+  console.log('C', router.pathname)
+  console.log('D', router.route)
+
   function scaleStyle(idx: number) {
     if (!details) return {};
     const slide = details.slides[idx];
@@ -70,7 +83,6 @@ export function CarDetailsCard({ car }: IProps) {
   }
 
   const arrayOfFotos = car?.fotos?.fotos?.map((foto) => foto?.url) || [];
-
   const arrayOfImages = [car.main_image?.url, ...arrayOfFotos].filter(Boolean);
 
   return (
@@ -226,9 +238,31 @@ export function CarDetailsCard({ car }: IProps) {
               title="Carroceria"
               value={car.carroceria?.nome}
             />
+          <div className={styles.contactUsBox}>
+            <div className={styles.contactUsText}>
+              <h3>Mais informações?</h3>
+              <p>Envie uma mensagem ao vendedor.</p>
+            </div>
+            <div className={styles.contactUsButton}>
+              <a
+                aria-label="Contato pelo WhatsApp"
+                target="_blank"
+                href={`https://wa.me/5519974040531?text=${encodeURIComponent(`Olá, tenho interesse nesse veículo: ${window.location.href}`)}`} 
+                rel="noreferrer"
+              >
+                <div className={styles.largeScreen}>
+                <ButtonBrand   size='large' text="Enviar mensagem" />
+                </div>
+                <div className={styles.smallScreen}>
+                <IconButtonPrimary showText icon={<TbBrandWhatsapp size="1.6rem" />} text="Enviar mensagem" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
+        </div>
       </div>
+
       {(!!car.essenciais.length ||
         !!car.confortos.length ||
         !!car.documentacoes.length ||

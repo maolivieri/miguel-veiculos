@@ -48,3 +48,13 @@
     flex: 1;
   }
 }
+
+.showText {
+  display: flex;
+  
+  @media (max-width: 768px) {
+    span {
+      display: flex;
+    }
+  }
+}

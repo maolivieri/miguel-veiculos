@@ -308,6 +308,70 @@
   }
 }
 
+.contactUsBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  width: 100vw;
+  background: white;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0px -1px 16px rgba(0, 0, 0, 0.1);
+  
+  @media (min-width: 768px) {
+    padding: 1rem 8.25rem 1rem 7.25rem;
+    justify-content: space-between;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 1rem;
+    min-width: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    grid-column: span 4;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  }
+
+}
+
+.contactUsText {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    h3 { 
+      margin: 0 0 0.5rem 0
+    }
+    p { 
+      margin: 0
+    }
+  }
+}
+
+.smallScreen {
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.largeScreen {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+// .buttonContainer {
+//   margin: 0;
+// }
+
 .optionalsWrapper {
   display: grid;
   grid-template-columns: 1fr;
