@@ -6,7 +6,7 @@ import {
   IoSearch,
   IoListOutline,
 } from "react-icons/io5";
-import { BiSortDown, BiSortUp } from "react-icons/bi";
+import { BiFilterAlt, BiSortDown, BiSortUp } from "react-icons/bi";
 import { useContext, useState } from "react";
 import { countValidFilters } from "../../lib/countValidFilters";
 import { SystemContext } from "../../context/systemContext";
@@ -46,7 +46,7 @@ export function HomeFloatingMenu({
           {countActiveFilters > 0 && (
             <div className={styles.settingFlag}>{countActiveFilters}</div>
           )}
-          <IoOptions size="1.6rem" />
+          <BiFilterAlt size="1.6rem" />
         </button>
         <button
           onClick={handleSortOpen}
