@@ -231,8 +231,7 @@ export function CarDetailsCard({ car }: IProps) {
             />
           <div className={styles.contactUsBox}>
             <div className={styles.contactUsText}>
-              <h3>Mais informações?</h3>
-              <p>Envie uma mensagem ao vendedor.</p>
+              <p><b>Mais informações? </b>Fale com nossos vendedores.</p>
             </div>
             <div className={styles.contactUsButton}>
               <ContactUsButton />

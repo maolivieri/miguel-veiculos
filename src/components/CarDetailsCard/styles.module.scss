@@ -315,19 +315,19 @@
   min-width: 100%;
   width: 100vw;
   background: white;
-  min-height: 4rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 1rem 3rem 2rem 3rem;
   box-shadow: 0px -1px 16px rgba(0, 0, 0, 0.1);
   
-  @media (min-width: 768px) {
-    padding: 1rem 8.25rem 1rem 7.25rem;
-    justify-content: space-between;
-  }
+  // @media (min-width: 768px) {
+  //   padding: 1rem 8.25rem 1rem 7.25rem;
+  // }
   
   @media (min-width: 1200px) {
+    flex-direction: row;
     padding: 1rem;
     min-width: 100%;
     width: 100%;
@@ -340,23 +340,48 @@
 }
 
 .contactUsText {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
 
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    h3 { 
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  @media (min-width: 1200px) {
+    justify-content: flex-start;
+
+
+    ::after{
+      content: "\a";
+      white-space: pre;
+  }
+
+    b { 
       margin: 0 0 0.5rem 0
     }
     p { 
-      margin: 0
+      margin: 0;
+      font-size: 0.9rem;
+      text-align: left;
     }
   }
 }
 
-// .buttonContainer {
-//   margin: 0;
-// }
+.contactUsButton {
+  width: 25rem;
+
+  @media (min-width: 1200px) {
+    width: 70%;
+
+    p {
+      font-size: 0.9rem !important;
+    }
+  }
+}
 
 .optionalsWrapper {
   display: grid;
