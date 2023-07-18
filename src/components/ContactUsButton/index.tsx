@@ -17,7 +17,7 @@ export const ContactUsButton = () => {
         href={`https://wa.me/5519974040531?text=${encodeURIComponent(`Olá, tenho interesse nesse veículo: ${currentUrl}`)}`} 
         rel="noreferrer"
       >
-        <ButtonBrand size='small' text="Enviar mensagem" />
+        <ButtonBrand size='large' text="Enviar mensagem" />
     </a>
   )
 }
