@@ -126,7 +126,7 @@ export function FilterOpcionais() {
       </div>
       <div className={styles.buttonsWrapper}>
         <ButtonSecondary text="Limpar" onClick={clearFilters} />
-        <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
+        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

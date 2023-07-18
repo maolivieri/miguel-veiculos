@@ -69,7 +69,7 @@ export function FilterPreco() {
         </div>
         <div className={styles.buttonsWrapper}>
           <ButtonSecondary text="Limpar" onClick={clearPriceFilters} />
-          <ButtonPrimary text="Confirmar" onClick={handleConfirmFilter} />
+          <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
         </div>
       </div>
     </>
