@@ -364,18 +364,16 @@
   gap: 2rem;
   padding-right: 2rem;
   padding-left: 2rem;
+  padding-bottom: 6rem;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
-
-  // @media (min-width: 992px) {
-  //   grid-template-columns: 1fr 1fr 1fr 1fr;
-  // }
-
+  
   @media (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 1rem;
+    padding-bottom: 0;
   }
 }
 
