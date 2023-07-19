@@ -110,10 +110,10 @@ const Home: NextPage = ({
         </ReactVisibilitySensor>
         <OurCars cars={carsArray} />
         <PageFooter />
-        <Modal isOpen={isSortOpen} toggleModal={handleSortOpen}>
+        <Modal isOpen={isSortOpen} toggleModal={handleSortOpen} isFilterOpen={isFiltersOpen} isSearchVisible={isSearchVisible}>
           <SortCarsList toggleFilters={handleSortOpen} />
         </Modal>
-        <Modal isOpen={isSearchOpen} toggleModal={handleSearchOpen}>
+        <Modal isOpen={isSearchOpen} toggleModal={handleSearchOpen}  isFilterOpen={isFiltersOpen} isSearchVisible={isSearchVisible}>
           <ModalCarSearch
             toggleModal={handleSearchOpen}
             searchValue={searchValue}

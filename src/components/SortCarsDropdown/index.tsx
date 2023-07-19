@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { BiSortDown, BiChevronDown } from "react-icons/bi";
 import { SortOptions, SystemContext } from "../../context/systemContext";
@@ -9,11 +9,36 @@ export function SortCarsDropdown() {
   const [selected, setSelected] = useState("Mais recentes");
   const selectRef = useRef<HTMLSelectElement>(null);
 
-  function handleOnClick(sort: SortOptions, name: string) {
+  const getSortName = (sort: SortOptions) => {
+    switch (sort) {
+      case "az":
+        return "A - Z";
+      case "menorpreco":
+        return "Menor preço"  
+      case "maiorpreco":
+        return "Maior preço"  
+      case "menorano":
+        return "Ano mais novo"  
+      case "menorkm":
+        return "Menor KM"  
+      default:
+        return "Mais recentes";
+    }
+  }
+
+  function handleOnClick(sort: SortOptions) {
+    const name = getSortName(sort);
     setListSort(sort);
     setSelected(name);
   }
 
+  useEffect(() => {
+    console.log('aaaaaa')
+    const name = getSortName(listSort);
+    setSelected(name);
+  }, [listSort])
+
+ 
   return (
     <div className={styles.container}>
       <div
@@ -32,7 +57,7 @@ export function SortCarsDropdown() {
         <div
           className={styles.item}
           onClick={() => {
-            handleOnClick(null, "Mais recentes");
+            handleOnClick(null);
             setOpen((prevState) => !prevState);
           }}
         >
@@ -42,7 +67,7 @@ export function SortCarsDropdown() {
         <div
           className={styles.item}
           onClick={() => {
-            handleOnClick("az", "A - Z");
+            handleOnClick("az");
             setOpen((prevState) => !prevState);
           }}
         >
@@ -52,7 +77,7 @@ export function SortCarsDropdown() {
         <div
           className={styles.item}
           onClick={() => {
-            handleOnClick("menorpreco", "Menor preço");
+            handleOnClick("menorpreco");
             setOpen((prevState) => !prevState);
           }}
         >
@@ -62,7 +87,7 @@ export function SortCarsDropdown() {
         <div
           className={styles.item}
           onClick={() => {
-            handleOnClick("maiorpreco", "Maior preço");
+            handleOnClick("maiorpreco");
             setOpen((prevState) => !prevState);
           }}
         >
@@ -72,7 +97,7 @@ export function SortCarsDropdown() {
         <div
           className={styles.item}
           onClick={() => {
-            handleOnClick("menorano", "Ano mais novo");
+            handleOnClick("menorano");
             setOpen((prevState) => !prevState);
           }}
         >
@@ -82,7 +107,7 @@ export function SortCarsDropdown() {
         <div
           className={styles.item}
           onClick={() => {
-            handleOnClick("menorkm", "Menor KM");
+            handleOnClick("menorkm");
             setOpen((prevState) => !prevState);
           }}
         >

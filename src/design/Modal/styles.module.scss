@@ -19,6 +19,11 @@
   transition: background-color 3s ease;
 }
 
+.openContainerWfilterOpen {
+  margin-left: 25rem;
+  width: calc(100vw - 25rem);
+}
+
 .dropShaddow {
   position: absolute;
   inset: 0;
