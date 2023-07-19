@@ -54,12 +54,12 @@ export function HomeFloatingMenu({
         >
           <BiSortDown size="1.5rem" />
         </button>
-        <button
+        {/* <button
           onClick={handleSearchOpen}
           className={`${styles.iconButton} ${openModals[1] && styles.active}`}
         >
           <IoSearch size="1.5rem" />
-        </button>
+        </button> */}
         <button
           onClick={handleListClick}
           className={`${styles.iconButton} ${isActive === 1 && styles.active}`}
