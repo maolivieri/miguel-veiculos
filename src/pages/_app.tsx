@@ -6,9 +6,14 @@ import { ApolloProvider } from "@apollo/client";
 import { client } from "../lib/apollo";
 import { ListsContextProvider } from "../context/listsContext";
 import { UIContextProvider } from "../context/uiContext";
-import Script from 'next/script'
+// import Script from 'next/script'
+import { useEffect } from "react";
+import TagManager from 'react-gtm-module'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-NHNTV36' });
+}, []);
   return (
     <>
       <Head>
@@ -27,16 +32,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ListsContextProvider>
       </ApolloProvider>
       {/* <!-- Google tag (gtag.js) --> */}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PSQVS9GBGC" />
+      {/* <Script async src="https://www.googletagmanager.com/gtag/js?id=G-3JQCVWY41H" />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
-          gtag('config', 'G-PSQVS9GBGC');
+          gtag('config', 'G-3JQCVWY41H');
         `}
-      </Script>
+      </Script> */}
     </>
   );
 }
