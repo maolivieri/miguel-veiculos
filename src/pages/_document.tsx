@@ -16,6 +16,11 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap"
             rel="stylesheet"
           />
+          <meta name="robots" content="index, follow" />
+          <meta name="theme-color" content="#3e4938" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="#3e4938" />
+          <meta name="msapplication-navbutton-color" content="#3e4938" />
+          <meta name="keywords" content="carros, semi-novos, venda, troca, compra, financiamento, concessionária, veiculos, motos, capivari, piracicaba, campinas, automóveis, loja" />
         </Head>
         <body>
           <Main />

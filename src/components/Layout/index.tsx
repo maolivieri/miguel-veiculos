@@ -3,16 +3,17 @@ import Head from "next/head";
 
 interface LayoutProps {
   children: ReactNode;
+  title?: string;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, title = 'Miguel Veiculos'  }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Miguel Veiculos</title>
+        <title>{title}</title>
         <meta
           name="description"
-          content="Website da loja de carros Miguel Veiculos em Capivari-SP"
+          content="Website com a melhor seleção de carros semi-novos em Capivari-SP na loja Miguel Veículos"
         />
       </Head>
       {children}

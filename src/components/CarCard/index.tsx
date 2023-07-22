@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import slugify from 'slugify';
 import styles from "./styles.module.scss";
 
 import car_placeholder from "../../../public/assets/images/car-placeholder.png";
@@ -32,14 +33,14 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
 
   const altImageLayout =
     (display === "list" || alternativeLayout) && styles.altImageLayout;
-
   return (
     <Link
       href={{
         pathname: `/detalhe/${car.id}`,
       }}
+      passHref
     >
-      <div className={styles.box}>
+      <div aria-label={`${slugify(car.modelo)}`} id="ga4_carClick" className={styles.box}>
         {(car.opcional_esquerdo || car.opcional_direito) && (
           <div
             className={`${styles.bonusFlag} ${

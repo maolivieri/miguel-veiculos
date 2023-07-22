@@ -1,10 +1,11 @@
+import { Layout } from "../../components/Layout";
 import SubPages from "../../components/SubPage";
 import { ButtonPrimary } from "../../design/ButtonPrimary";
 import styles from "./styles.module.scss";
 
 function Content() {
   return (
-    <>
+    <Layout title="Miguel Veiculos | Localização">
       <p className={styles.copyTitle}>Endereço</p>
       <p className={styles.copy}>Praça 13 de Maio, 70,</p>
       <p className={styles.copy}>Centro, Capivari - SP</p>
@@ -17,7 +18,7 @@ function Content() {
       {/* <div className={styles.button}>
         <ButtonPrimary text="Abrir Mapa" />
       </div> */}
-    </>
+    </Layout>
   );
 }
 

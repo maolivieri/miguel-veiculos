@@ -10,6 +10,7 @@ import { SideDrawer } from "../../components/SideDrawer";
 import { SpinnerComponent } from "../../design/Spinner";
 import { useContext, useEffect } from "react";
 import { UIContext } from "../../context/uiContext";
+import { Layout } from "../../components/Layout";
 
 interface IProps {
   carProps: ICar;
@@ -25,12 +26,14 @@ export default function CarDetailsPage({ carProps }: IProps) {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <SpinnerComponent active={isLoading} />
-      <SideDrawer />
-      <DetailsHeader />
-      {!!car && <CarDetailsCard car={car} />}
-    </div>
+    <Layout title="Miguel Veiculos | Detalhes do veículo">
+      <div className={styles.container}>
+        <SpinnerComponent active={isLoading} />
+        <SideDrawer />
+        <DetailsHeader />
+        {!!car && <CarDetailsCard car={car} />}
+      </div>
+    </Layout>
   );
 }
 
