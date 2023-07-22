@@ -69,7 +69,7 @@ export function FilterCor() {
       </div>
       <div className={styles.buttonsWrapper}>
         <ButtonSecondary text="Limpar" onClick={clearFilters} disabled={isButtonDisabled} />
-        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled} />
+        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
       </div>
     </>
   );

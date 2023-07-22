@@ -139,7 +139,7 @@ export function FiltersModal() {
             onClick={() => setActiveFilters(initialFiltersValue)}
             disabled={countValidFilters(activeFilters) === 0}
           />
-          <ButtonPrimary text="Filtrar" onClick={toggleFilters} disabled={countValidFilters(activeFilters) === 0} />
+          <ButtonPrimary text="Filtrar" onClick={toggleFilters} />
         </div>
       </div>
       <FilterWrapper />

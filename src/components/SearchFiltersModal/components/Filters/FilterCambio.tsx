@@ -68,7 +68,7 @@ export function FilterCambio() {
       </div>
       <div className={styles.buttonsWrapper}>
         <ButtonSecondary text="Limpar" onClick={clearPriceFilters} disabled={isButtonDisabled}/>
-        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} disabled={isButtonDisabled}/>
+        <ButtonPrimary text="Aplicar" onClick={handleConfirmFilter} />
       </div>
     </>
   );
