@@ -26,7 +26,7 @@ export default function CarDetailsPage({ carProps }: IProps) {
   }, [car]);
 
   return (
-    <Layout title={`Miguel Veiculos | ${car?.modelo}`}>
+    <Layout title={`Miguel Veiculos | ${car ? car?.modelo : "Detalhes do Veículo"}`}>
       <div className={styles.container}>
         <SpinnerComponent active={isLoading} />
         <SideDrawer />
