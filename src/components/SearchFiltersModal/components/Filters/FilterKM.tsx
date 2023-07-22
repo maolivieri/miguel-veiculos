@@ -61,6 +61,7 @@ export function FilterKM() {
           </div>
         </div>
         <RangeSlider
+          id="ga4_click_filter_km"
           minRange={minRange}
           maxRange={maxRange}
           minValue={minValue}

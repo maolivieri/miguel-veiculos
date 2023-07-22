@@ -56,6 +56,8 @@ export function FilterCombustivel() {
         <div>
         {combustivels.map((combustivel) => (
           <CheckboxFilter
+            id="ga4_click_filter_combustivels"
+            aria-label={combustivel.nome}
             key={combustivel.nome}
             name={combustivel.nome}
             handleCheckboxChange={() => handleCheckboxChange(combustivel.nome)}

@@ -89,6 +89,7 @@ export function CarDetailsCard({ car }: IProps) {
               <div
                 key={idx}
                 className={`keen-slider__slide  zoom-out__slide ${styles.imageWrapper} `}
+                id="ga4_click_slider_image"
               >
                 <div
                   style={scaleStyle(idx)}
@@ -234,7 +235,7 @@ export function CarDetailsCard({ car }: IProps) {
               <p><b>Mais informações? </b>Fale com nossos vendedores.</p>
             </div>
             <div className={styles.contactUsButton}>
-              <ContactUsButton />
+              <ContactUsButton id="ga4_click_contactus" />
             </div>
           </div>
         </div>

@@ -40,6 +40,7 @@ export function HomeFloatingMenu({
     <div className={`${styles.container} ${!isSearchVisible && styles.hidden} ${isFiltersOpen && styles.openFilter}`}>
       <div className={styles.card}>
       <button
+          id="ga4_click_filter"
           onClick={toggleFilters}
           className={`${styles.iconButton} ${openModals[2] && styles.active}`}
         >
@@ -61,12 +62,14 @@ export function HomeFloatingMenu({
           <IoSearch size="1.5rem" />
         </button> */}
         <button
+          id="ga4_layout_list"
           onClick={handleListClick}
           className={`${styles.iconButton} ${isActive === 1 && styles.active}`}
         >
           <IoListOutline size="1.5rem" />
         </button>
         <button
+        id="ga4_layout_grid"
           onClick={handleListClick}
           className={`${styles.iconButton} ${isActive === 0 && styles.active}`}
         >

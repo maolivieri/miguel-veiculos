@@ -60,6 +60,7 @@ export function FilterAno() {
           </div>
         </div>
         <RangeSlider
+          id="ga4_click_filter_ano"
           minRange={minRange}
           maxRange={maxRange}
           minValue={minValue}

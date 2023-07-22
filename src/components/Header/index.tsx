@@ -89,6 +89,7 @@ export function Header({ isSearchVisible }: IProps) {
 
         <div className={styles.buttonsContainer}>
           <a
+            id="ga4_click_whatsapp" 
             aria-label="Contato pelo WhatsApp"
             href="https://wa.me/5519974040531"
           >

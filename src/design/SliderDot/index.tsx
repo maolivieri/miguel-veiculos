@@ -10,6 +10,7 @@ export function SliderDots(props: {
       {Array.from(Array(props.dotsLength).keys()).map((idx) => {
         return (
           <button
+            id="ga4_click_slider_dot"
             key={idx}
             onClick={() => {
               props.moveToIndex(idx);

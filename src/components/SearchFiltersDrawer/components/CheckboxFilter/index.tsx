@@ -9,6 +9,7 @@ interface IProps {
   setFilters: Dispatch<SetStateAction<Filters>>;
   filters: Filters;
   fieldName: FiltersIndexes;
+  id?: string;
 }
 
 export function CheckboxFilter({
@@ -17,6 +18,7 @@ export function CheckboxFilter({
   fieldName,
   filters,
   setFilters,
+  id = ""
 }: IProps) {
   const [viewAll, setViewAll] = useState(false);
   const finalSplice = viewAll ? items.length : 10;
@@ -49,6 +51,8 @@ export function CheckboxFilter({
           <div key={item} className={styles.checkbox}>
             <div>
               <Checkbox
+                id={id}
+                aria-label={item}
                 checked={!!existingItems.find((x) => x === item)}
                 onChange={() => handleSelection(item)}
               />

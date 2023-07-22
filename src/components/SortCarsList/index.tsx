@@ -26,15 +26,16 @@ export function SortCarsList({ toggleFilters }: Props) {
         </div> */}
       </div>
       <div className={styles.main}>
-        <div className={styles.item} onClick={() => handleOnClick(null)}>
+        <div id="ga4_sort_recent" className={styles.item} onClick={() => handleOnClick(null)}>
           <div className={`${listSort === null && styles.active}`} />
           <p>Mais recentes</p>
         </div>
-        <div className={styles.item} onClick={() => handleOnClick("az")}>
+        <div id="ga4_sort_az" className={styles.item} onClick={() => handleOnClick("az")}>
           <div className={`${listSort === "az" && styles.active}`} />
           <p>A - Z</p>
         </div>
         <div
+          id="ga4_sort_menorpreco"
           className={styles.item}
           onClick={() => handleOnClick("menorpreco")}
         >
@@ -42,17 +43,18 @@ export function SortCarsList({ toggleFilters }: Props) {
           <p>Menor preço</p>
         </div>
         <div
+          id="ga4_sort_maiorpreco"
           className={styles.item}
           onClick={() => handleOnClick("maiorpreco")}
         >
           <div className={`${listSort === "maiorpreco" && styles.active}`} />
           <p>Maior preço</p>
         </div>
-        <div className={styles.item} onClick={() => handleOnClick("menorano")}>
+        <div id="ga4_sort_menorano" className={styles.item} onClick={() => handleOnClick("menorano")}>
           <div className={`${listSort === "menorano" && styles.active}`} />
           <p>Ano mais novo</p>
         </div>
-        <div className={styles.item} onClick={() => handleOnClick("menorkm")}>
+        <div id="ga4_sort_menorkm" className={styles.item} onClick={() => handleOnClick("menorkm")}>
           <div className={`${listSort === "menorkm" && styles.active}`} />
           <p>Menor kilometragem</p>
         </div>

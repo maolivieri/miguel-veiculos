@@ -56,6 +56,8 @@ export function FilterDocumentacao() {
         <div>
         {documentacoes.map((documentacao) => (
           <CheckboxFilter
+            id="ga4_click_filter_documentacao"
+            ariaLabel={documentacao.nome}
             key={documentacao.nome}
             name={documentacao.nome}
             handleCheckboxChange={() => handleCheckboxChange(documentacao.nome)}

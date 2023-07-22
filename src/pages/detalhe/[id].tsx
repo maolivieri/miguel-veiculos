@@ -26,7 +26,7 @@ export default function CarDetailsPage({ carProps }: IProps) {
   }, []);
 
   return (
-    <Layout title="Miguel Veiculos | Detalhes do veículo">
+    <Layout title={`Miguel Veiculos | ${car.modelo}`}>
       <div className={styles.container}>
         <SpinnerComponent active={isLoading} />
         <SideDrawer />

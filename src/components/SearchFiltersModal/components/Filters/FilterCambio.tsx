@@ -56,6 +56,8 @@ export function FilterCambio() {
         <div>
         {cambios.map((cambio) => (
           <CheckboxFilter
+            id="ga4_click_filter_cambio"
+            aria-label={cambio.nome}
             key={cambio.nome}
             name={cambio.nome}
             handleCheckboxChange={() => handleCheckboxChange(cambio.nome)}

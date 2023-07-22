@@ -25,6 +25,7 @@ export function HomeSearch({ searchValue, setSearchValue }: IProps) {
       >
         <div className={styles.filterButton}>
           <IconButtonPrimary
+            id="ga4_click_filter" 
             icon={<BiFilterAlt size="1.4rem" />}
             onClick={toggleFilters}
             text="Filtro"
@@ -35,6 +36,7 @@ export function HomeSearch({ searchValue, setSearchValue }: IProps) {
         </div>
         <SortCarsDropdown />
         <SearchInput
+          id="ga4_search_input"
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />

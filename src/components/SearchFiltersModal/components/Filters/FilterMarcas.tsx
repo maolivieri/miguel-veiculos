@@ -56,6 +56,8 @@ export function FilterMarcas() {
         <div>
         {marcas.map((marca) => (
           <CheckboxFilter
+            id="ga4_click_filter_marca"
+            ariaLabel={marca.nome}
             key={marca.nome}
             name={marca.nome}
             handleCheckboxChange={() => handleCheckboxChange(marca.nome)}

@@ -55,6 +55,7 @@ export function SortCarsDropdown() {
       </div>
       <div className={`${styles.popup} ${!open && styles.hidden}`}>
         <div
+          id="ga4_sort_recent"
           className={styles.item}
           onClick={() => {
             handleOnClick(null);
@@ -65,6 +66,7 @@ export function SortCarsDropdown() {
           <p>Mais recentes</p>
         </div>
         <div
+          id="ga4_sort_az"
           className={styles.item}
           onClick={() => {
             handleOnClick("az");
@@ -75,6 +77,7 @@ export function SortCarsDropdown() {
           <p>A - Z</p>
         </div>
         <div
+          id="ga4_sort_menorpreco"
           className={styles.item}
           onClick={() => {
             handleOnClick("menorpreco");
@@ -85,6 +88,7 @@ export function SortCarsDropdown() {
           <p>Menor preço</p>
         </div>
         <div
+          id="ga4_sort_maiorpreco"
           className={styles.item}
           onClick={() => {
             handleOnClick("maiorpreco");
@@ -95,6 +99,7 @@ export function SortCarsDropdown() {
           <p>Maior preço</p>
         </div>
         <div
+          id="ga4_sort_menorano"
           className={styles.item}
           onClick={() => {
             handleOnClick("menorano");
@@ -105,6 +110,7 @@ export function SortCarsDropdown() {
           <p>Ano mais novo</p>
         </div>
         <div
+          id="ga4_sort_menorkm"
           className={styles.item}
           onClick={() => {
             handleOnClick("menorkm");

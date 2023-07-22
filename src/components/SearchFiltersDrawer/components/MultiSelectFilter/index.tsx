@@ -14,6 +14,7 @@ interface IProps {
   filters: Filters;
   fieldName: FiltersIndexes;
   color?: boolean;
+  id?: string;
 }
 
 export function MultiSelectFilter({
@@ -22,6 +23,7 @@ export function MultiSelectFilter({
   filters,
   setFilters,
   color = false,
+  id = ""
 }: IProps) {
   const [viewAll, setViewAll] = useState(false);
   const initialFilterAmount = items.length <= 8 ? 8 : 4;
@@ -53,6 +55,8 @@ export function MultiSelectFilter({
       <div className={styles.content}>
         {values.map((value) => (
           <div
+            id={id}
+            aria-label={value.name}
             key={value.name}
             className={styles.item}
             onClick={() => handleSelection(value.name)}

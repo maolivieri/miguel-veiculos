@@ -73,6 +73,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.marcas.length}
         >
           <MultiSelectFilter
+            id="ga4_click_filter_marca"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="marcas"
@@ -90,6 +91,7 @@ export function FiltersDrawer() {
           }
         >
           <PriceInput
+            id="ga4_click_filter_preco"
             filters={activeFilters}
             setFilters={setActiveFilters}
             minValue={toCurrency(String(filterRanges.minPrice))}
@@ -107,6 +109,7 @@ export function FiltersDrawer() {
           }
         >
           <YearInput
+            id="ga4_click_filter_ano"
             filters={activeFilters}
             setFilters={setActiveFilters}
             minValue={Number(filterRanges.minYear)}
@@ -123,6 +126,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.kmStart || activeFilters.kmEnd ? 1 : 0}
         >
           <NumberInput
+            id="ga4_click_filter_km"
             filters={activeFilters}
             setFilters={setActiveFilters}
             minValue={`${formatToBigNumber(filterRanges.minKM)} km`}
@@ -138,6 +142,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.carrocerias.length}
         >
           <MultiSelectFilter
+            id="ga4_click_filter_carroceria"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="carrocerias"
@@ -154,6 +159,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.cambios.length}
         >
           <CheckboxFilter
+            id="ga4_click_filter_cambio"
             items={cambios.map((x) => x.nome)}
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -166,6 +172,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.combustiveis.length}
         >
           <CheckboxFilter
+            id="ga4_click_filter_combustivels"
             items={combustivels.map((x) => x.nome)}
             filters={activeFilters}
             setFilters={setActiveFilters}
@@ -178,6 +185,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.cores.length}
         >
           <MultiSelectFilter
+            id="ga4_click_filter_cor"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="cores"
@@ -200,6 +208,7 @@ export function FiltersDrawer() {
           multi
         >
           <CheckboxFilter
+            id="ga4_click_filter_confort"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="conforto"
@@ -207,6 +216,7 @@ export function FiltersDrawer() {
             title="Conforto"
           />
           <CheckboxFilter
+            id="ga4_click_filter_essential"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="essenciais"
@@ -214,6 +224,7 @@ export function FiltersDrawer() {
             title="Essenciais"
           />
           <CheckboxFilter
+            id="ga4_click_filter_safe"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="seguranca"
@@ -221,6 +232,7 @@ export function FiltersDrawer() {
             title="Segurança"
           />
           <CheckboxFilter
+            id="ga4_click_filter_tech"
             filters={activeFilters}
             setFilters={setActiveFilters}
             fieldName="tecnologia"
@@ -234,6 +246,7 @@ export function FiltersDrawer() {
           countSelected={activeFilters.documentacoes.length}
         >
           <CheckboxFilter
+            id="ga4_click_filter_documentacao"
             items={documentacoes.map((x) => x.nome)}
             filters={activeFilters}
             setFilters={setActiveFilters}

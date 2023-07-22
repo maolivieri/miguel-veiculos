@@ -61,6 +61,7 @@ export function FilterPreco() {
           </div>
         </div>
         <RangeSlider
+          id="ga4_click_filter_preco"
           minRange={minRange}
           maxRange={maxRange}
           minValue={minValue}

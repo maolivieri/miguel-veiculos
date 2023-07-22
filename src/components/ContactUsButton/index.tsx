@@ -1,7 +1,9 @@
 import { ButtonBrand } from "../../design/ButtonBrand"
-import { useEffect, useState } from "react"
+import { AnchorHTMLAttributes, useEffect, useState } from "react"
 
-export const ContactUsButton = () => {
+interface IProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}
+
+export const ContactUsButton = ({ ...props }: IProps) => {
   const [currentUrl, setCurrentUrl] = useState<string>('');
 
   useEffect(() => {
@@ -16,6 +18,7 @@ export const ContactUsButton = () => {
         target="_blank"
         href={`https://wa.me/5519974040531?text=${encodeURIComponent(`Olá, tenho interesse nesse veículo: ${currentUrl}`)}`} 
         rel="noreferrer"
+        {...props}
       >
         <ButtonBrand size='large' text="Enviar mensagem" />
     </a>

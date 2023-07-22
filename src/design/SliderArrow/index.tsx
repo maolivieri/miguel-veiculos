@@ -8,6 +8,7 @@ export function SliderArrow(props: {
   const disabeld = props.disabled ? styles["arrow--disabled"] : "";
   return (
     <svg
+      id={props.left ? "ga4_click_slider_prev" : "ga4_click_slider_next"}
       onClick={props.onClick}
       className={`${styles.arrow} ${
         props.left ? styles["arrow--left"] : styles["arrow--right"]

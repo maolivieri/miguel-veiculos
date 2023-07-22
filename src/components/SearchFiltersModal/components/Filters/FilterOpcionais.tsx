@@ -91,6 +91,8 @@ export function FilterOpcionais() {
         <h6 className={styles.listTitle}>Essenciais</h6>
         {essenciais.map((essential) => (
           <CheckboxFilter
+            id="ga4_click_filter_essential"
+            ariaLabel={essential.nome}
             key={essential.nome}
             name={essential.nome}
             handleCheckboxChange={() => handleEssentialsChange(essential.nome)}
@@ -100,6 +102,8 @@ export function FilterOpcionais() {
         <h6 className={styles.listTitle}>Conforto</h6>
         {confortos.map((conf) => (
           <CheckboxFilter
+            id="ga4_click_filter_confort"
+            ariaLabel={conf.nome}
             key={conf.nome}
             name={conf.nome}
             handleCheckboxChange={() => handleConfortChange(conf.nome)}
@@ -109,6 +113,8 @@ export function FilterOpcionais() {
         <h6 className={styles.listTitle}>Technologia</h6>
         {tecnologias.map((tech) => (
           <CheckboxFilter
+            id="ga4_click_filter_tech"
+            ariaLabel={tech.nome}
             key={tech.nome}
             name={tech.nome}
             handleCheckboxChange={() => handleTechnologyChange(tech.nome)}
@@ -118,6 +124,8 @@ export function FilterOpcionais() {
         <h6 className={styles.listTitle}>Segurança</h6>
         {segurancas.map((safe) => (
           <CheckboxFilter
+            id="ga4_click_filter_safe"
+            ariaLabel={safe.nome}
             key={safe.nome}
             name={safe.nome}
             handleCheckboxChange={() => handleSafetyChange(safe.nome)}

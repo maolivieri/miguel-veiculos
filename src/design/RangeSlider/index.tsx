@@ -8,6 +8,7 @@ interface IProps {
   maxValue: number;
   setMinValue: Dispatch<SetStateAction<number>>;
   setMaxValue: Dispatch<SetStateAction<number>>;
+  id: string;
 }
 
 export function RangeSlider({
@@ -17,6 +18,7 @@ export function RangeSlider({
   minValue,
   setMaxValue,
   setMinValue, 
+  id
 }: IProps) {
   const rangeWidth = (((maxValue - minValue) / (maxRange - minRange)) * 100)
   const rangeMotion =  (((minValue - minRange) / (maxRange - minRange)) * 100)
@@ -36,6 +38,7 @@ export function RangeSlider({
   return (
     <div className={styles.SliderContainer}>
       <input
+        id={id}
         title="min"
         aria-label="range-slider-min"
         type="range"
@@ -46,6 +49,7 @@ export function RangeSlider({
         className={`${styles.thumb} ${styles.thumbleft}`}
       />
       <input
+        id={id}
         title="max"
         aria-label="range-slider-max"
         type="range"

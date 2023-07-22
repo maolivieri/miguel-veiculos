@@ -56,6 +56,8 @@ export function FilterCarroceria() {
         <div>
         {carrocerias.map((carroceria) => (
           <CheckboxFilter
+            id="ga4_click_filter_carroceria"
+            aria-label={carroceria.nome}
             key={carroceria.nome}
             name={carroceria.nome}
             handleCheckboxChange={() => handleCheckboxChange(carroceria.nome)}

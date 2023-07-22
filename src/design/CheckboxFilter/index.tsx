@@ -7,6 +7,8 @@ interface IProps {
   name: string;
   handleCheckboxChange: () => void;
   hex?: string;
+  id?: string;
+  ariaLabel?: string;
 }
 
 export function CheckboxFilter({
@@ -14,6 +16,8 @@ export function CheckboxFilter({
   name,
   handleCheckboxChange,
   hex,
+  id = "",
+  ariaLabel = "",
 }: IProps) {
   return (
     <div className={styles.listItemContainer}>
@@ -27,7 +31,7 @@ export function CheckboxFilter({
       </div>
       <div className={styles.row}>
         <div className={styles.checkboxWrapper}>
-          <Checkbox large checked={checked} onChange={handleCheckboxChange} />
+          <Checkbox id={id} aria-label={ariaLabel} large checked={checked} onChange={handleCheckboxChange} />
         </div>
       </div>
     </div>

@@ -56,6 +56,8 @@ export function FilterCor() {
         <div>
         {cors.map((cor) => (
           <CheckboxFilter
+            id="ga4_click_filter_cor"
+            ariaLabel={cor.nome}
             key={cor.nome}
             name={cor.nome}
             hex={cor.cor.hex}
