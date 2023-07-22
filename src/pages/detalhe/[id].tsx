@@ -23,10 +23,10 @@ export default function CarDetailsPage({ carProps }: IProps) {
   useEffect(() => {
     stopLoading();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [car]);
 
   return (
-    <Layout title={`Miguel Veiculos | ${car.modelo}`}>
+    <Layout title={`Miguel Veiculos | ${car?.modelo}`}>
       <div className={styles.container}>
         <SpinnerComponent active={isLoading} />
         <SideDrawer />
