@@ -110,7 +110,7 @@ export function FilterOpcionais() {
             checked={!!confort.find((x) => x === conf.nome)}
           />
         ))}
-        <h6 className={styles.listTitle}>Technologia</h6>
+        <h6 className={styles.listTitle}>Tecnologia</h6>
         {tecnologias.map((tech) => (
           <CheckboxFilter
             id="ga4_click_filter_tech"
