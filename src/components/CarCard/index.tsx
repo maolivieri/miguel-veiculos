@@ -43,12 +43,11 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
       <div aria-label={`${slugify(car.modelo)}`} id="ga4_carClick" className={styles.box}>
         {(car.opcional_esquerdo || car.opcional_direito) && (
           <div
-            className={`${styles.bonusFlag} ${
-              car.opcional_esquerdo ? styles.leftFlag : styles.rightFlag
-            } ${altLayoutAddClass}`}
+            className={`${styles.bonusFlag} ${car.opcional_esquerdo ? styles.leftFlag : styles.rightFlag
+              } ${altLayoutAddClass}`}
           >
             <p className={styles.bonusFlagText}>
-              {car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}
+              {car.opcional_esquerdo ? "IPVA PARCIAL" : "IPVA PAGO"}
             </p>
           </div>
         )}

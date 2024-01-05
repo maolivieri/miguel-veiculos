@@ -156,15 +156,15 @@ export function CarDetailsCard({ car }: IProps) {
                       car.opcional_esquerdo && car.opcional_direito
                         ? styles.leftFlag
                         : car.opcional_esquerdo && !car.opcional_direito
-                        ? styles.leftFlagOnly
-                        : styles.leftFlagInverted
+                          ? styles.leftFlagOnly
+                          : styles.leftFlagInverted
                     }
                   >
-                    {car.opcional_esquerdo ? "IPVA PAGO" : "TANQUE CHEIO"}
+                    {car.opcional_esquerdo ? "IPVA PARCIAL" : "IPVA PAGO"}
                   </div>
                 )}
                 {car.opcional_esquerdo && car.opcional_direito && (
-                  <div className={styles.rightFlag}>TANQUE CHEIO</div>
+                  <div className={styles.rightFlag}>IPVA PAGO</div>
                 )}
               </div>
             </div>
@@ -230,15 +230,15 @@ export function CarDetailsCard({ car }: IProps) {
               title="Carroceria"
               value={car.carroceria?.nome}
             />
-          <div className={styles.contactUsBox}>
-            <div className={styles.contactUsText}>
-              <p><b>Mais informações? </b>Fale com nossos vendedores.</p>
-            </div>
-            <div className={styles.contactUsButton}>
-              <ContactUsButton id="ga4_click_contactus" />
+            <div className={styles.contactUsBox}>
+              <div className={styles.contactUsText}>
+                <p><b>Mais informações? </b>Fale com nossos vendedores.</p>
+              </div>
+              <div className={styles.contactUsButton}>
+                <ContactUsButton id="ga4_click_contactus" />
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
 
@@ -247,47 +247,47 @@ export function CarDetailsCard({ car }: IProps) {
         !!car.documentacoes.length ||
         !!car.tecnologias.length ||
         !!car.segurancas.length) && (
-        <>
-          <h4 className={styles.optionalsHeadTitle}>Itens do veículo</h4>
-          <div className={styles.optionalsWrapper}>
-            {!!car.documentacoes.length && (
-              <OptionalCard
-                icon={<IconDocumentation />}
-                title="Documentação"
-                list={car.documentacoes}
-              />
-            )}
-            {!!car.essenciais.length && (
-              <OptionalCard
-                icon={<IconEssenciais />}
-                title="Essenciais"
-                list={car.essenciais}
-              />
-            )}
-            {!!car.confortos.length && (
-              <OptionalCard
-                icon={<IconConforto />}
-                title="Conforto"
-                list={car.confortos}
-              />
-            )}
-            {!!car.tecnologias.length && (
-              <OptionalCard
-                icon={<IconTecnologia />}
-                title="Tecnologia"
-                list={car.tecnologias}
-              />
-            )}
-            {!!car.segurancas.length && (
-              <OptionalCard
-                icon={<IconSeguranca />}
-                title="Segurança"
-                list={car.segurancas}
-              />
-            )}
-          </div>
-        </>
-      )}
+          <>
+            <h4 className={styles.optionalsHeadTitle}>Itens do veículo</h4>
+            <div className={styles.optionalsWrapper}>
+              {!!car.documentacoes.length && (
+                <OptionalCard
+                  icon={<IconDocumentation />}
+                  title="Documentação"
+                  list={car.documentacoes}
+                />
+              )}
+              {!!car.essenciais.length && (
+                <OptionalCard
+                  icon={<IconEssenciais />}
+                  title="Essenciais"
+                  list={car.essenciais}
+                />
+              )}
+              {!!car.confortos.length && (
+                <OptionalCard
+                  icon={<IconConforto />}
+                  title="Conforto"
+                  list={car.confortos}
+                />
+              )}
+              {!!car.tecnologias.length && (
+                <OptionalCard
+                  icon={<IconTecnologia />}
+                  title="Tecnologia"
+                  list={car.tecnologias}
+                />
+              )}
+              {!!car.segurancas.length && (
+                <OptionalCard
+                  icon={<IconSeguranca />}
+                  title="Segurança"
+                  list={car.segurancas}
+                />
+              )}
+            </div>
+          </>
+        )}
     </main>
   );
 }
