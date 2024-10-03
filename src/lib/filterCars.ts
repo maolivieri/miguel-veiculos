@@ -65,7 +65,7 @@ export function filterCar(
       ranges.maxKM
     ) &&
     isWithinList(car.carroceria.nome, filter.carrocerias) &&
-    isWithinList(car.marca.nome, filter.marcas) &&
+    isWithinList(car.marca?.nome, filter.marcas) &&
     isWithinList(car.cambio.nome, filter.cambios) &&
     isWithinList(car.combustivel.nome, filter.combustiveis) &&
     isWithinList(car.cor.nome, filter.cores) &&
