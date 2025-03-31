@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 import { CarDetailsCard } from "../../components/CarDetailsCard";
 import { DetailsHeader } from "../../components/DetailsHeader";
 import { client } from "../../lib/apollo";
-import styles from "./styles.module.scss";
+import styles from "../../styles/detalhe.module.scss";
 
 import { ICar } from "../../types/Car";
 import { GetStaticProps } from "next";
@@ -142,6 +142,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const car: ICar = data.car;
   return {
     props: { carProps: car },
-    revalidate: 60 
+    revalidate: 60
   };
 };

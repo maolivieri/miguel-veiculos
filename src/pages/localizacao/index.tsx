@@ -1,7 +1,7 @@
 import { Layout } from "../../components/Layout";
 import SubPages from "../../components/SubPage";
 import { ButtonPrimary } from "../../design/ButtonPrimary";
-import styles from "./styles.module.scss";
+import styles from "../../styles/localicazao.module.scss";
 
 function Content() {
   return (
