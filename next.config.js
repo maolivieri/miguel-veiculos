@@ -1,9 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ["media.graphassets.com", "sa-east-1.graphassets.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'media.graphassets.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sa-east-1.graphassets.com',
+        pathname: '**',
+      },
+    ],
   },
 };
 

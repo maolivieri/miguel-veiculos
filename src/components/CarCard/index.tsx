@@ -65,6 +65,7 @@ export function CarCard({ car, alternativeLayout = false }: IProps) {
                 height={1080}
                 src={car.main_image?.url || car_placeholder}
                 alt=""
+                style={{ height: 'auto', width: '100%' }}
               />
             </div>
           </div>

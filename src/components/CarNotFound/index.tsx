@@ -10,7 +10,8 @@ export function CarNotFound() {
           height={30}
           src="/assets/notfoundicon.svg"
           alt=""
-          layout="responsive"
+          // fill
+          style={{ height: 'auto', width: '100%' }}
         />
       </div>
       <p className={styles.text}>

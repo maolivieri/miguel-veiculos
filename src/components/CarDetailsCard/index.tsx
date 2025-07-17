@@ -70,6 +70,9 @@ export function CarDetailsCard({ car }: IProps) {
     return {
       transform: `scale(${scale})`,
       WebkitTransform: `scale(${scale})`,
+      // aspectRatio: "1350/1080",
+      aspectRatio: "5/4",
+      width: "100%"
     };
   }
 
@@ -96,11 +99,13 @@ export function CarDetailsCard({ car }: IProps) {
                   onContextMenu={(e) => e.preventDefault()}
                 >
                   <Image
-                    width={1350}
-                    height={1080}
+                    // width={1350}
+                    // height={1080}
                     src={url || car_placeholder}
                     alt=""
                     priority
+                    fill
+                  // style={{ height: 'auto', width: '100%' }}
                   />
                 </div>
               </div>
@@ -144,6 +149,7 @@ export function CarDetailsCard({ car }: IProps) {
                 height={150}
                 src={car.marca?.logo?.url}
                 alt={`logotipo da marca ${car.marca?.nome}`}
+                style={{ height: 'auto', width: '100%' }}
               />
             </div>
             <h3 className={styles.name}>{car.modelo}</h3>

@@ -13,7 +13,7 @@ export function PageFooter() {
       className={`${styles.footer} ${isFiltersOpen && styles.openFilterZ}`}
     >
       <div className={styles.logo}>
-        <Image width={48} height={48} src={logoIcon} alt="" />
+        <Image width={48} height={48} src={logoIcon} alt="" style={{ height: 'auto', width: '100%' }} />
       </div>
       <div className={styles.text}>
         <p className={styles.address}>

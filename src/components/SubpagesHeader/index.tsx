@@ -16,7 +16,7 @@ import logoIcon from "../../../public/assets/logo_icon.svg";
 import { BiMenuAltRight } from "react-icons/bi";
 import { TbBrandWhatsapp } from "react-icons/tb";
 
-interface SubPagesHeaderProps { 
+interface SubPagesHeaderProps {
   hasBlur?: Boolean;
 }
 
@@ -27,13 +27,11 @@ export function SubPagesHeader({ hasBlur = false }: SubPagesHeaderProps) {
     <div className={styles.HeaderContainer}>
       <div className={`${styles.FixedWrapper} ${hasBlur && styles.fixedWrapperBlur}`}>
         <>
-          <Link href="/" passHref>
-            <a className={styles.largeLogo}>
-              <Image width={129} height={48} src={greenLogo} alt="" />
-            </a>
+          <Link href="/" className={styles.largeLogo} passHref>
+            <Image width={129} height={48} src={greenLogo} alt="" style={{ height: 'auto', width: '100%' }} />
           </Link>
           <div className={styles.smallLogo}>
-          <ReturnButton goHome />
+            <ReturnButton goHome />
           </div>
           {/* <Link href="/" passHref>
             <a className={styles.smallLogo}>

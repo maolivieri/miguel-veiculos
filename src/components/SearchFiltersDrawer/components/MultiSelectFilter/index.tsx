@@ -62,9 +62,8 @@ export function MultiSelectFilter({
             onClick={() => handleSelection(value.name)}
           >
             <div
-              className={`${styles.icon} ${
-                !!existingItems.find((x) => x === value.name) && styles.selected
-              }`}
+              className={`${styles.icon} ${!!existingItems.find((x) => x === value.name) && styles.selected
+                }`}
               style={{
                 backgroundColor: `${color ? value.icon : "transparent"}`,
               }}
@@ -75,7 +74,7 @@ export function MultiSelectFilter({
                   width={80}
                   src={value.icon}
                   alt=""
-                  // layout="responsive"
+                  style={{ height: 'auto', width: '100%' }}
                 />
               )}
             </div>

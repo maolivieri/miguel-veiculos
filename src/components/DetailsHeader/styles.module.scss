@@ -63,6 +63,7 @@
 .fullLogoWrapper {
   display: none;
   margin-left: 2rem;
+  position: relative;
 
   @media (min-width: 992px) {
     display: block;

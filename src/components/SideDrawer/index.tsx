@@ -26,11 +26,9 @@ export function SideDrawer() {
 
   const LinkItem = ({ icon, text, href, ...props }: LinkItemProps) => {
     return (
-      <Link href={href} passHref {...props}>
-        <a className={styles.lineItem} onClick={toggleDrawer}>
-          <div>{icon}</div>
-          <p>{text}</p>
-        </a>
+      <Link href={href} passHref className={styles.lineItem} onClick={toggleDrawer} {...props}>
+        <div>{icon}</div>
+        <p>{text}</p>
       </Link>
     );
   };

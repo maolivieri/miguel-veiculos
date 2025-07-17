@@ -23,6 +23,7 @@ import { Modal } from "../design/Modal";
 import { SortCarsList } from "../components/SortCarsList";
 import { ModalCarSearch } from "../components/ModalCarSearch";
 import { PageFooter } from "../components/PageFooter";
+import { useInView } from "react-intersection-observer";
 
 const Home: NextPage = ({
   carsProps,
@@ -49,6 +50,18 @@ const Home: NextPage = ({
     setIsSearchOpen((prevState) => !prevState);
     setIsSortOpen(false);
   }
+
+  // Intersection Observer hook:
+  const { ref: searchRef, inView } = useInView({
+    /* optional options: */
+    rootMargin: '-140px 0px 0px 0px',  // similar to offset top 140px
+    triggerOnce: false,
+  });
+
+  useEffect(() => {
+    // When component is not in view, set isSearchVisible to false
+    setIsSearchVisible(!inView);
+  }, [inView]);
 
   const cars: ICar[] = carsProps;
 
@@ -95,25 +108,18 @@ const Home: NextPage = ({
         <SpinnerComponent active={isLoading} />
         <SideDrawer />
         <Header isSearchVisible={isSearchVisible} />
-        <ReactVisibilitySensor
-          partialVisibility
-          offset={{ top: 140 }}
-          // minTopValue={300}
-          onChange={(isVisible: boolean) => {
-            setIsSearchVisible(!isVisible);
-          }}
-        >
+        <div ref={searchRef}>
           <HomeSearch
             searchValue={searchValue}
             setSearchValue={setSearchValue}
           />
-        </ReactVisibilitySensor>
+        </div>
         <OurCars cars={carsArray} />
         <PageFooter />
         <Modal isOpen={isSortOpen} toggleModal={handleSortOpen} isFilterOpen={isFiltersOpen} isSearchVisible={isSearchVisible}>
           <SortCarsList toggleFilters={handleSortOpen} />
         </Modal>
-        <Modal isOpen={isSearchOpen} toggleModal={handleSearchOpen}  isFilterOpen={isFiltersOpen} isSearchVisible={isSearchVisible}>
+        <Modal isOpen={isSearchOpen} toggleModal={handleSearchOpen} isFilterOpen={isFiltersOpen} isSearchVisible={isSearchVisible}>
           <ModalCarSearch
             toggleModal={handleSearchOpen}
             searchValue={searchValue}

@@ -71,25 +71,22 @@ export function Header({ isSearchVisible }: IProps) {
       </div>
       <div
         // className={`${styles.FixedWrapper} ${isSearchVisible && styles.hidden}`}
-        className={`${styles.FixedWrapper} ${
-          isSearchVisible && styles.fixedWrapperCondensed
-        }`}
+        className={`${styles.FixedWrapper} ${isSearchVisible && styles.fixedWrapperCondensed
+          }`}
       >
-        <Link href="/" passHref>
-          <a className={styles.logoWrapper}>
-            <Image
-              width={129}
-              height={48}
-              src={isSearchVisible ? greenLogo : whiteLogo}
-              alt=""
-              layout="responsive"
-            />
-          </a>
+        <Link href="/" className={styles.logoWrapper} passHref>
+          <Image
+            width={129}
+            height={48}
+            src={isSearchVisible ? greenLogo : whiteLogo}
+            alt=""
+            style={{ height: 'auto', width: '100%' }}
+          />
         </Link>
 
         <div className={styles.buttonsContainer}>
           <a
-            id="ga4_click_whatsapp" 
+            id="ga4_click_whatsapp"
             aria-label="Contato pelo WhatsApp"
             href="https://wa.me/5519974040531"
           >

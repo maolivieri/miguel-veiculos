@@ -22,21 +22,18 @@ export function DetailsHeader() {
       <div className={styles.returnButtonWrapper}>
         <ReturnButton goHome />
       </div>
-      <Link href="/" passHref>
-        <a className={styles.logoWrapper} onClick={startLoading}>
-          <Image width={48} height={48} src={iconLogo} alt="" />
-        </a>
+      <Link href="/" className={styles.logoWrapper} onClick={startLoading} passHref>
+        <Image width={48} height={48} src={iconLogo} alt="" style={{ height: 'auto', width: '100%' }} />
       </Link>
-      <Link href="/" passHref>
-        <a className={styles.fullLogoWrapper}>
-          <Image
-            width={129}
-            height={48}
-            src={greenLogo}
-            alt=""
-            layout="responsive"
-          />
-        </a>
+      <Link href="/" className={styles.fullLogoWrapper} passHref>
+        <Image
+          width={129}
+          height={48}
+          src={greenLogo}
+          alt=""
+          // fill
+          style={{ height: 'auto', width: '100%' }}
+        />
       </Link>
 
       <div className={styles.buttonsContainer}>
