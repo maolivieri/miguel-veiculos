@@ -1,8 +1,7 @@
 import { gql } from "@apollo/client";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
-
-import ReactVisibilitySensor from "react-visibility-sensor";
+import { useInView } from "react-intersection-observer";
 
 import { Header } from "../components/Header";
 import { HomeFloatingMenu } from "../components/HomeFloatingMenu";
@@ -23,7 +22,6 @@ import { Modal } from "../design/Modal";
 import { SortCarsList } from "../components/SortCarsList";
 import { ModalCarSearch } from "../components/ModalCarSearch";
 import { PageFooter } from "../components/PageFooter";
-import { useInView } from "react-intersection-observer";
 
 const Home: NextPage = ({
   carsProps,
